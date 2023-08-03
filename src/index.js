@@ -1,20 +1,29 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { Provider } from 'react-redux';
-import { store } from './app/store';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import './index.css';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import "./index.css";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import Homepage from "./routes/homepage/Homepage";
 
-const container = document.getElementById('root');
+const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
-  <React.StrictMode>
+  //<React.StrictMode>
+  <HashRouter>
+    {/*Use BrowserRouter outside GH-Pages */}
     <Provider store={store}>
-      <App />
+      <Routes>
+        <Route exact path="/" element={<App />}>
+          <Route exact path="/" element={<Homepage />} />
+        </Route>
+      </Routes>
     </Provider>
-  </React.StrictMode>
+  </HashRouter>
+  //</React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

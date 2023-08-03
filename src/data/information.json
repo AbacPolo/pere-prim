@@ -1,0 +1,130 @@
+{
+  "banner": {
+    "name": "PERE PRIM",
+    "description": "GAME DEVELOPER"
+  },
+  "games": {
+    "andara": {
+      "title": "andara",
+      "banner_image": "url",
+      "engine": "engineName",
+      "links": [
+        { "logo": "url", "text": "", "link": "url" },
+        { "logo": "url", "text": "", "link": "url" }
+      ],
+      "sections": [
+        {
+          "sectionTitle": "TRAILER",
+          "sectionContent": [
+            {
+              "video": "url"
+            },
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at rhoncus dui. Curabitur vestibulum nunc id aliquet molestie."
+            }
+          ]
+        },
+        {
+          "sectionTitle": "MY PART IN THE PROJECT",
+          "sectionContent": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at rhoncus dui. Curabitur vestibulum nunc id aliquet molestie."
+            },
+            {
+              "subtitle": ""
+            },
+            {
+              "listItem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            },
+            {
+              "image": "url"
+            },
+            {
+              "subtitle": ""
+            },
+            {
+              "listItem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            },
+            {
+              "image": "url"
+            }
+          ]
+        },
+        {
+          "sectionTitle": "EXTRA VIDEOS",
+          "sectionContent": [
+            {
+              "video": "url"
+            }
+          ]
+        },
+        {
+          "sectionTitle": "TEAM",
+          "sectionContent": [
+            {
+              "image": "url"
+            },
+            {
+              "subtitle": ""
+            },
+            {
+              "list": ["", "", "", ""]
+            },
+            {
+              "subtitle": ""
+            },
+            {
+              "list": ["", "", "", ""]
+            },
+            {
+              "subtitle": ""
+            },
+            {
+              "list": ["", "", "", ""]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "about": {
+    "links": [
+      { "logo": "url", "text": "", "link": "url" },
+      { "logo": "url", "text": "", "link": "url" }
+    ],
+    "sections": [
+      {
+        "sectionTitle": "HELLO WORLD",
+        "sectionContent": [
+          {
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at rhoncus dui. Curabitur vestibulum nunc id aliquet molestie."
+          }
+        ]
+      },
+      {
+        "sectionTitle": "EXPERIENCE",
+        "sectionContent": [
+          {
+            "infoCard": [
+              {
+                "image": "url"
+              },
+              {
+                "subtitle": ""
+              },
+              {
+                "information": ""
+              },
+              {
+                "information": ""
+              },
+              {
+                "text": ""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
