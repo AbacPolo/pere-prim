@@ -3,10 +3,11 @@
     "name": "PERE PRIM",
     "description": "GAME DEVELOPER"
   },
-  "games": {
-    "andara": {
-      "title": "andara",
-      "banner_image": "url",
+  "games": [
+    {
+      "title": "Andara",
+      "bannerImage": "../../images/Andara.JPG",
+      "description": "Info",
       "engine": "engineName",
       "links": [
         { "logo": "url", "text": "", "link": "url" },
@@ -85,8 +86,16 @@
           ]
         }
       ]
+    },
+    {
+      "title": "SpaceShock V2",
+      "bannerImage": "../../images/SpaceShock.JPG"
+    },
+    {
+      "title": "SpaceTurtle",
+      "bannerImage": "../../images/SpacetTurtle.JPG"
     }
-  },
+  ],
   "about": {
     "links": [
       { "logo": "url", "text": "", "link": "url" },

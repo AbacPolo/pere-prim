@@ -1,0 +1,45 @@
+.hidden {
+  display: none;
+  transition: all;
+}
+
+.GameCard_Container {
+  display: block;
+  width: 300px;
+  height: fit-content;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #232730;
+  padding-top: 8px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  box-shadow: 0px 0px 5px 0px #000,
+    inset 0px 0px 2px 0px rgba(255, 255, 255, 0.8);
+}
+
+.Card_Title {
+  padding: 0;
+  padding-bottom: 8px;
+  margin: 0;
+  text-align: center;
+}
+
+.gameImage {
+  border: 1px solid #a3b1be;
+  box-sizing: border-box;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}

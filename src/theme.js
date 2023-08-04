@@ -59,22 +59,34 @@ const theme = createTheme({
       fontWeight: 500,
       letterSpacing: "6px",
       color: "#F5AC10",
-      marginLeft: '10px'
+      marginLeft: '6px'
     },
     h4: {
-      fontSize: "20px",
-      fontWeight: 500,
-      letterSpacing: "5px",
+      fontSize: "1.5rem",
+      fontWeight: 400,
+      letterSpacing: "6px",
       color: "#F5AC10",
-      marginLeft: '10px'
+      marginLeft: '6px'
     },
     h5: {
-      fontSize: "20px",
-      fontWeight: 400,
-      letterSpacing: "5px",
+      fontSize: "1rem",
+      fontWeight: 300,
+      letterSpacing: "4px",
       color: "#F5AC10",
-      marginLeft: '10px'
+      marginLeft: '4px'
     },
+    h6: {
+      fontSize: "1rem",
+      fontWeight: 200,
+      letterSpacing: "4px",
+      color: "#fff",
+      marginLeft: '4px'
+    },
+    caption: {
+      fontSize: "1rem",
+      fontWeight: 300,
+      color: "#fff",
+    }
   },
 });
 
