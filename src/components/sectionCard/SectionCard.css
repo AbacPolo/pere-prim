@@ -23,8 +23,13 @@
 }
 
 .SectionCard_Title,
-.SectionCard_Subtitle {
+.SectionCard_Subtitle,
+.SectionCard_CenteredText {
   text-align: center;
+}
+
+.SectionCard_Image {
+  max-width: 800px;
 }
 
 .VideoPlayer_Wrapper {

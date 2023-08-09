@@ -91,7 +91,7 @@ const theme = createTheme({
       fontSize: "1rem",
       fontWeight: 200,
       color: "#fff",
-    },
+    }
   },
 });
 

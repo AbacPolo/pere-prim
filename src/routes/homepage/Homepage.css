@@ -3,7 +3,6 @@
   height: calc(100% - 59px);
   margin: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 .Homepage_Wrapper {
@@ -11,8 +10,12 @@
   height: 100%;
   margin: 0;
   box-sizing: border-box;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow-y: scroll;
 }

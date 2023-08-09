@@ -21,8 +21,14 @@ function SectionCard({ sectionInfo, game }) {
           switch (Object.keys(block)[0]) {
             case "text":
               return (
-                <Typography key={index} variant="body1">
+                <Typography key={index} variant="body1" >
                   {block.text}
+                </Typography>
+              );
+            case "centeredText":
+              return (
+                <Typography key={index} variant="body1" className="SectionCard_CenteredText">
+                  {block.centeredText}
                 </Typography>
               );
             case "subtitle":
@@ -53,7 +59,7 @@ function SectionCard({ sectionInfo, game }) {
               );
             case "image":
               const image = matchImage(game, block.image);
-              return <img key={index} src={image.src} alt={image.alt}></img>;
+              return <img className='SectionCard_Image' key={index} src={image.src} alt={image.alt}></img>;
             case "video":
               const video = matchVideo(game, block.video);
               return (

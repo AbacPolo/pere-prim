@@ -157,7 +157,7 @@
           ]
         },
         {
-          "sectionTitle": "",
+          "sectionTitle": "Gameplay",
           "sectionContent": [
             {
               "image": "spaceshock_gameplay"
@@ -183,13 +183,13 @@
               "image": "spaceshock_controls"
             },
             {
-              "text": "Move: AWSD & Arrows"
+              "centeredText": "Move: AWSD & Arrows"
             },
             {
-              "text": "Fire: Left Mouse Click"
+              "centeredText": "Fire: Left Mouse Click"
             },
             {
-              "text": "Special: Right Mouse Click"
+              "centeredText": "Special: Right Mouse Click"
             }
           ]
         },
