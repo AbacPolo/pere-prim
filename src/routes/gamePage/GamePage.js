@@ -3,7 +3,7 @@ import "./GamePage.css";
 import { Typography } from "@mui/material";
 import { useLocation } from "react-router";
 import information from "../../data/information.json";
-import images from "../../data/loadImages";
+import { matchImage } from "../../data/loadImages";
 import IndexMenu from "../../components/indexMenu/IndexMenu";
 import SectionCard from "../../components/sectionCard/SectionCard";
 
@@ -31,10 +31,8 @@ function GamePage() {
     setGameSections(sectionsArray);
   }, [location]);
 
-  console.log("gameSectionsName", gameSectionsName);
-  console.log("gameSections", gameSections);
-
   if (gameInfo) {
+    const image = matchImage(gameInfo.title, "BannerImage");
     return (
       <div className="GamePage_Container">
         <div className="GamePage_Wrapper">
@@ -43,11 +41,17 @@ function GamePage() {
           </Typography>
           <img
             className="GamePage_BannerImage"
-            src={images[gameInfo.title].BannerImage.src}
+            src={image.src}
             alt={gameInfo.title}
           ></img>
           <IndexMenu variant="sections" terms={gameSectionsName} />
-          {gameSections.map((section, index) => <SectionCard key={index} sectionInfo={section} game={gameInfo.title}/>)}
+          {gameSections.map((section, index) => (
+            <SectionCard
+              key={index}
+              sectionInfo={section}
+              game={gameInfo.title}
+            />
+          ))}
         </div>
       </div>
     );

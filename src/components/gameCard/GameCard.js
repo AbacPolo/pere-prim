@@ -8,7 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import classNames from "classnames";
-import images from "../../data/loadImages";
+import { matchImage } from "../../data/loadImages";
 import { useNavigate } from "react-router";
 
 function GameCard({ gameInfo, page, index, cardType }) {
@@ -17,6 +17,8 @@ function GameCard({ gameInfo, page, index, cardType }) {
   const handleCardClick = () => {
     navigate(`/Games/${gameInfo.title}`);
   };
+
+  const image = matchImage(gameInfo.title, 'BannerImage')
 
   return (
     <Card
@@ -35,7 +37,7 @@ function GameCard({ gameInfo, page, index, cardType }) {
         <CardMedia
           className="gameImage"
           component="img"
-          src={images[gameInfo.title].BannerImage.src}
+          src={image.src}
           alt={gameInfo.title}
         />
         {cardType !== "compact" &&

@@ -37,10 +37,14 @@
 }
 
 .Socials_Wrapper {
-  height: fit-content;
+  height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
 .Socials_Wrapper > img {
-  height: 42px;
+  height: 32px;
 }

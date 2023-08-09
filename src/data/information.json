@@ -8,16 +8,17 @@
       "title": "Andara",
       "description": "Info",
       "engine": "Unreal Engine",
-      "links": [
-        { "logo": "url", "text": "", "link": "url" },
-        { "logo": "url", "text": "", "link": "url" }
-      ],
       "sections": [
         {
           "sectionTitle": "",
           "sectionContent": [
             {
-              "social": "https://twitter.com/AndaraGame"
+              "social": "https://twitter.com/AndaraGame",
+              "caption": "@AndaraGame"
+            },
+            {
+              "social": "https://store.steampowered.com/app/2432470/ANDARA_RISE_FOR_REBELLION/",
+              "caption": "ANDARA"
             }
           ]
         },
@@ -25,7 +26,7 @@
           "sectionTitle": "TRAILER",
           "sectionContent": [
             {
-              "video": "Andara_Trailer"
+              "youtube": "https://www.youtube.com/watch?v=TCOyx2F5KVM&ab_channel=ESATVALENCIA"
             },
             {
               "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at rhoncus dui. Curabitur vestibulum nunc id aliquet molestie."
@@ -96,6 +97,7 @@
     },
     {
       "title": "SpaceShock V2",
+      "description": "Info",
       "engine": "Unity"
     },
     {

@@ -59,4 +59,8 @@ const images = {
   },
 };
 
+export const matchImage = (gameName, imageName) => {
+  return images[gameName][imageName];
+};
+
 export default images;

@@ -2,7 +2,7 @@ import React from "react";
 import "./SectionCard.css";
 import { Card, CardContent, Typography } from "@mui/material";
 import videos from "../../data/loadVideos";
-import images from "../../data/loadImages";
+import images, { matchImage } from "../../data/loadImages";
 import ReactPlayer from "react-player";
 import { matchSocial } from "../../data/loadSocials";
 
@@ -20,16 +20,16 @@ function SectionCard({ sectionInfo, game }) {
           switch (Object.keys(block)[0]) {
             case "text":
               return (
-                <Typography variant="body1" key={index}>
+                <Typography key={index} variant="body1">
                   {block.text}
                 </Typography>
               );
             case "subtitle":
               return (
                 <Typography
+                  key={index}
                   className="SectionCard_Subtitle"
                   variant="h4"
-                  key={index}
                 >
                   {block.subtitle}
                 </Typography>
@@ -42,7 +42,7 @@ function SectionCard({ sectionInfo, game }) {
               );
             case "unorderedList":
               return (
-                <ul className="List_Container">
+                <ul className="List_Container" key={index}>
                   {block.unorderedList.map((item, index) => (
                     <Typography key={index} variant="body1">
                       <li>{item}</li>
@@ -51,13 +51,8 @@ function SectionCard({ sectionInfo, game }) {
                 </ul>
               );
             case "image":
-              return (
-                <img
-                  key={index}
-                  src={images[game][block.image].src}
-                  alt={images[game][block.image].alt}
-                ></img>
-              );
+              const image = matchImage(game, block.image);
+              return <img key={index} src={image.src} alt={image.alt}></img>;
             case "video":
               return (
                 <div key={index} className="VideoPlayer_Wrapper">
@@ -84,7 +79,12 @@ function SectionCard({ sectionInfo, game }) {
               const social = matchSocial(block.social);
               return (
                 <div key={index} className="Socials_Wrapper">
-                  <img key={index} src={social.logo} alt={social.name}></img>
+                  <img src={social.logo} alt={social.name}></img>
+                  <Typography variant="h5">
+                    <a href={block.social} target="_blank" rel="noreferrer">
+                      {block.caption}
+                    </a>
+                  </Typography>
                 </div>
               );
             default:

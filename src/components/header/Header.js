@@ -9,6 +9,7 @@ import {
   Menu,
   MenuItem,
   Toolbar,
+  Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useLocation, useNavigate } from "react-router";
@@ -71,7 +72,7 @@ function Header() {
               })}
               onClick={() => handleClose("Homepage")}
             >
-              Homepage
+              <Typography variant="h5">Homepage</Typography>
             </MenuItem>
             <MenuItem
               className={classNames("menuItem", {
@@ -79,7 +80,7 @@ function Header() {
               })}
               onClick={() => handleClose("Games")}
             >
-              Games
+              <Typography variant="h5">Games</Typography>
             </MenuItem>
             <MenuItem
               className={classNames("menuItem", {
@@ -87,7 +88,7 @@ function Header() {
               })}
               onClick={() => handleClose("About")}
             >
-              About
+              <Typography variant="h5">About</Typography>
             </MenuItem>
           </Menu>
           <Button variant="outlined" color="secondary">
