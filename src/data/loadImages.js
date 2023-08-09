@@ -7,6 +7,9 @@ import andara_melee_enemies from "../images/andara_melee_enemies.gif"
 import andara_melee_wall from "../images/andara_melee_wall.gif"
 import andara_slowmo from "../images/andara_slowmo.gif"
 import chivito_logo from "../images/chivito_logo.webp"
+import spaceshock_gameplay from "../images/spaceshock_gameplay.gif"
+import spaceshock_gameplay_2 from "../images/spaceshock_gameplay_2.gif"
+import spaceshock_controls from "../images/spaceshock_controls.webp"
 
 const images = {
   Andara: {
@@ -44,6 +47,18 @@ const images = {
       src: SpaceShock_BannerImage,
       alt: "SpaceShock_BannerImage",
     },
+    spaceshock_gameplay: {
+      src: spaceshock_gameplay,
+      alt: "spaceshock gameplay",
+    },
+    spaceshock_gameplay_2: {
+      src: spaceshock_gameplay_2,
+      alt: "spaceshock gameplay 2",
+    },
+    spaceshock_controls: {
+      src: spaceshock_controls,
+      alt: "spaceshock controls",
+    }
   },
   SpaceTurtle: {
     BannerImage: {

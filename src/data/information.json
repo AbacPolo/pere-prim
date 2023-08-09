@@ -6,7 +6,7 @@
   "games": [
     {
       "title": "Andara",
-      "description": "Info",
+      "description": "Game made in Unreal Engine, and uploaded to Steam",
       "engine": "Unreal Engine",
       "sections": [
         {
@@ -29,7 +29,10 @@
               "youtube": "https://www.youtube.com/watch?v=TCOyx2F5KVM&ab_channel=ESATVALENCIA"
             },
             {
-              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at rhoncus dui. Curabitur vestibulum nunc id aliquet molestie."
+              "text": "ANDARA: Rise for Rebellion is a third person shooter based on games like “Rachet & Clank” and “Returnal”, with mechanics that bring speed to the gameplay similar to shooters like “Doom”."
+            },
+            {
+              "text": "The game tells the story of Andara, the heir to the throne of an interplanetary alien race led by her father, Ordon. In her attempt to colonise other planets in search of resources, she discovers her father’s tyranny first hand, as he is willing to do anything to achieve his goal, including killing Andara’s best friend. Andara then begins a revolt to stop her father’s tyrannical invasion and save the planet Hailstone."
             }
           ]
         },
@@ -37,25 +40,43 @@
           "sectionTitle": "MY PART IN THE PROJECT",
           "sectionContent": [
             {
-              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at rhoncus dui. Curabitur vestibulum nunc id aliquet molestie."
+              "text": "I have played a fundamental role in this exciting project, embodying the main character of Andara, our central figure."
             },
             {
-              "subtitle": "Subtitle"
+              "text": "I have been responsible for all the stages of the character, from the fluid movement of him to the implementation of different states and his interaction with the game environment."
             },
             {
-              "bulletPoint": "Lorem ipsum"
+              "subtitle": "Movement"
+            },
+            {
+              "bulletPoint": "Dash"
             },
             {
               "image": "andara_dash"
             },
             {
-              "subtitle": "Subtitle"
+              "subtitle": "Combat"
             },
             {
-              "bulletPoint": "Lorem ipsum"
+              "bulletPoint": "Slowmo"
             },
             {
               "image": "andara_slowmo"
+            },
+            {
+              "bulletPoint": "Melee Attack"
+            },
+            {
+              "image": "andara_melee_wall"
+            },
+            {
+              "image": "andara_melee_enemies"
+            },
+            {
+              "bulletPoint": "Finisher"
+            },
+            {
+              "image": "andara_finisher"
             }
           ]
         },
@@ -74,22 +95,41 @@
               "image": "chivito_logo"
             },
             {
-              "subtitle": "Subtitle"
+              "subtitle": "Programmers:"
             },
             {
-              "unorderedList": ["Name", "Name", "Name", "Name"]
+              "unorderedList": [
+                "Adrian Rivera",
+                "Angel Artigas",
+                "Ivan Fusteros",
+                "Jordi Sans",
+                "Manuel Utrilla",
+                "Miguel Astorga",
+                "Pere Prim"
+              ]
             },
             {
-              "subtitle": "Subtitle"
+              "subtitle": "Artist:"
             },
             {
-              "unorderedList": ["Name", "Name", "Name"]
+              "unorderedList": [
+                "Elena Roig",
+                "Kevin Tarazona",
+                "Maria Cabrera",
+                "Oscar Sanchez",
+                "Paula Tari",
+                "Raul Salguero"
+              ]
             },
             {
-              "subtitle": "Subtitle"
+              "subtitle": "Designers:"
             },
             {
-              "unorderedList": ["Name", "Name", "Name", "Name", "Name", "Name"]
+              "unorderedList": [
+                "Borja Iranzo",
+                "David Espinosa",
+                "Hector Gonzalez"
+              ]
             }
           ]
         }
@@ -97,16 +137,80 @@
     },
     {
       "title": "SpaceShock V2",
-      "description": "Info",
-      "engine": "Unity"
+      "description": "Retro Arcade space Bullet-hell in Unity",
+      "engine": "Unity",
+      "sections": [
+        {
+          "sectionTitle": "",
+          "sectionContent": [
+            {
+              "subtitle": "Retro Arcade space Bullet-hell in Unity"
+            }
+          ]
+        },
+        {
+          "sectionTitle": "Info",
+          "sectionContent": [
+            {
+              "text": "Made as a class project, for the subject of video game design at ESAT where the main thing was to design a mechanic and enemies and finally make a good game feel."
+            }
+          ]
+        },
+        {
+          "sectionTitle": "",
+          "sectionContent": [
+            {
+              "image": "spaceshock_gameplay"
+            },
+            {
+              "text": "Get the highest possible score, or simply manage to survive and advance. (Good look with the imposible lvl) Share and challenge your friends to get the best score."
+            },
+            {
+              "text": "Use your special ability to clean all in screen!"
+            },
+            {
+              "image": "spaceshock_gameplay_2"
+            }
+          ]
+        },
+        {
+          "sectionTitle": "Controls",
+          "sectionContent": [
+            {
+              "text": "Made as a class project, for the subject of video game design at ESAT where the main thing was to design a mechanic and enemies and finally make a good game feel."
+            },
+            {
+              "image": "spaceshock_controls"
+            },
+            {
+              "text": "Move: AWSD & Arrows"
+            },
+            {
+              "text": "Fire: Left Mouse Click"
+            },
+            {
+              "text": "Special: Right Mouse Click"
+            }
+          ]
+        },
+        {
+          "sectionTitle": "Download",
+          "sectionContent": [
+            {
+              "text": "You can download the game and play by yourself."
+            },
+            {
+              "download": "Document"
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "SpaceTurtle",
-      "engine": "Other"
-    },
-    {
-      "title": "Random Game",
-      "engine": "Unity"
+      "description": "My personal Engine from scratch with C++ and OpenGl.",
+      "engine": "Other",
+      "sections": []
     }
   ],
   "about": {

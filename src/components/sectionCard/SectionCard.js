@@ -1,10 +1,11 @@
 import React from "react";
 import "./SectionCard.css";
-import { Card, CardContent, Typography } from "@mui/material";
-import videos from "../../data/loadVideos";
-import images, { matchImage } from "../../data/loadImages";
+import { Button, Card, CardContent, Typography } from "@mui/material";
+import { matchVideo } from "../../data/loadVideos";
+import { matchImage } from "../../data/loadImages";
 import ReactPlayer from "react-player";
 import { matchSocial } from "../../data/loadSocials";
+import { Download } from "@mui/icons-material";
 
 function SectionCard({ sectionInfo, game }) {
   return (
@@ -54,10 +55,11 @@ function SectionCard({ sectionInfo, game }) {
               const image = matchImage(game, block.image);
               return <img key={index} src={image.src} alt={image.alt}></img>;
             case "video":
+              const video = matchVideo(game, block.video);
               return (
                 <div key={index} className="VideoPlayer_Wrapper">
                   <ReactPlayer
-                    url={videos[game][block.video].url}
+                    url={video.url}
                     controls={true}
                     width="100%"
                     height="100%"
@@ -85,6 +87,14 @@ function SectionCard({ sectionInfo, game }) {
                       {block.caption}
                     </a>
                   </Typography>
+                </div>
+              );
+            case "download":
+              return (
+                <div key={index} className="Socials_Wrapper">
+                  <Button startIcon={<Download />} color="secondary">
+                    Download
+                  </Button>
                 </div>
               );
             default:

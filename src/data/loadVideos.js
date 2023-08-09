@@ -9,4 +9,8 @@ const videos = {
   },
 };
 
+export const matchVideo = (gameName, videoName) => {
+  return videos[gameName][videoName];
+};
+
 export default videos;
