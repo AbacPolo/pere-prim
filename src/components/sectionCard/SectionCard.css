@@ -1,0 +1,46 @@
+.SectionCard_Container {
+  width: 100%;
+  height: fit-content;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #232730;
+  box-shadow: 0px 0px 5px 0px #000,
+    inset 0px 0px 2px 0px rgba(255, 255, 255, 0.8);
+}
+
+.SectionCard_Wrapper {
+  height: fit-content;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &.MuiCardContent-root {
+    padding-bottom: 16px;
+  }
+}
+
+.SectionCard_Title,
+.SectionCard_Subtitle {
+  text-align: center;
+}
+
+.VideoPlayer_Wrapper {
+  aspect-ratio: 16 / 9;
+  /* border: 1px solid #a3b1be; */
+}
+
+.List_Container {
+  margin: 0;
+}
+
+.Socials_Wrapper {
+  height: fit-content;
+  width: 100%;
+}
+
+.Socials_Wrapper > img {
+  height: 42px;
+}

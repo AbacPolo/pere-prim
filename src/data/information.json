@@ -6,19 +6,26 @@
   "games": [
     {
       "title": "Andara",
-      "bannerImage": "../../images/Andara.JPG",
       "description": "Info",
-      "engine": "engineName",
+      "engine": "Unreal Engine",
       "links": [
         { "logo": "url", "text": "", "link": "url" },
         { "logo": "url", "text": "", "link": "url" }
       ],
       "sections": [
         {
+          "sectionTitle": "",
+          "sectionContent": [
+            {
+              "social": "https://twitter.com/AndaraGame"
+            }
+          ]
+        },
+        {
           "sectionTitle": "TRAILER",
           "sectionContent": [
             {
-              "video": "url"
+              "video": "Andara_Trailer"
             },
             {
               "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at rhoncus dui. Curabitur vestibulum nunc id aliquet molestie."
@@ -32,22 +39,22 @@
               "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at rhoncus dui. Curabitur vestibulum nunc id aliquet molestie."
             },
             {
-              "subtitle": ""
+              "subtitle": "Subtitle"
             },
             {
-              "listItem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+              "bulletPoint": "Lorem ipsum"
             },
             {
-              "image": "url"
+              "image": "andara_dash"
             },
             {
-              "subtitle": ""
+              "subtitle": "Subtitle"
             },
             {
-              "listItem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+              "bulletPoint": "Lorem ipsum"
             },
             {
-              "image": "url"
+              "image": "andara_slowmo"
             }
           ]
         },
@@ -55,7 +62,7 @@
           "sectionTitle": "EXTRA VIDEOS",
           "sectionContent": [
             {
-              "video": "url"
+              "youtube": "https://www.youtube.com/watch?v=ynQGiR-uUko"
             }
           ]
         },
@@ -63,25 +70,25 @@
           "sectionTitle": "TEAM",
           "sectionContent": [
             {
-              "image": "url"
+              "image": "chivito_logo"
             },
             {
-              "subtitle": ""
+              "subtitle": "Subtitle"
             },
             {
-              "list": ["", "", "", ""]
+              "unorderedList": ["Name", "Name", "Name", "Name"]
             },
             {
-              "subtitle": ""
+              "subtitle": "Subtitle"
             },
             {
-              "list": ["", "", "", ""]
+              "unorderedList": ["Name", "Name", "Name"]
             },
             {
-              "subtitle": ""
+              "subtitle": "Subtitle"
             },
             {
-              "list": ["", "", "", ""]
+              "unorderedList": ["Name", "Name", "Name", "Name", "Name", "Name"]
             }
           ]
         }
@@ -89,11 +96,15 @@
     },
     {
       "title": "SpaceShock V2",
-      "bannerImage": "../../images/SpaceShock.JPG"
+      "engine": "Unity"
     },
     {
       "title": "SpaceTurtle",
-      "bannerImage": "../../images/SpacetTurtle.JPG"
+      "engine": "Other"
+    },
+    {
+      "title": "Random Game",
+      "engine": "Unity"
     }
   ],
   "about": {

@@ -1,6 +1,6 @@
 import React from "react";
 import "./MainBanner.css";
-import profileImage from "../../data/Profile_Image.jpg";
+import profileImage from "../../images/Profile_Image.jpg";
 import information from "../../data/information.json";
 import { IconButton, Typography } from "@mui/material";
 import { Email, GitHub, LinkedIn, Twitter } from "@mui/icons-material";

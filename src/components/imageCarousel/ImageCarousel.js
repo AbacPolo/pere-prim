@@ -7,11 +7,6 @@ import GameCard from "../gameCard/GameCard";
 function ImageCarousel() {
   const [page, setPage] = useState(1);
 
-  const gameInformation = information.games.map((game) => ({
-    title: game.title,
-    description: game.description,
-  }));
-
   const handleChange = (event, value) => {
     setPage(value);
   };
@@ -22,7 +17,7 @@ function ImageCarousel() {
         <div className="Pagination_Container">
           <Typography variant="h6">SOME OF MY WORK</Typography>
           <Pagination
-            count={gameInformation.length}
+            count={information.games.length}
             defaultPage={1}
             page={page}
             onChange={handleChange}
@@ -31,7 +26,7 @@ function ImageCarousel() {
           />
         </div>
         <div className="Cards_Container">
-          {gameInformation.map((gameInfo, index) => (
+          {information.games.map((gameInfo, index) => (
             <GameCard
               key={index}
               gameInfo={gameInfo}

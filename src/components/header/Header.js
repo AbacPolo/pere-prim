@@ -11,16 +11,33 @@ import {
   Toolbar,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useLocation, useNavigate } from "react-router";
+import classNames from "classnames";
 
 function Header() {
   const [anchorEl, setAnchorEl] = useState(null);
+  const navigateTo = useNavigate();
+  const location = useLocation();
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const handleClose = (direction) => {
     setAnchorEl(null);
+    switch (direction) {
+      case "Homepage":
+        navigateTo(`/`);
+        break;
+      case "Games":
+        navigateTo(`/Games`);
+        break;
+      case "About":
+        navigateTo(`/About`);
+        break;
+      default:
+        navigateTo(`/`);
+    }
   };
 
   return (
@@ -48,13 +65,28 @@ function Header() {
             anchorReference="anchorPosition"
             anchorPosition={{ top: 59, left: 0 }}
           >
-            <MenuItem className="menuItem selected" onClick={handleClose}>
+            <MenuItem
+              className={classNames("menuItem", {
+                selected: location.pathname === "/",
+              })}
+              onClick={() => handleClose("Homepage")}
+            >
               Homepage
             </MenuItem>
-            <MenuItem className="menuItem" onClick={handleClose}>
+            <MenuItem
+              className={classNames("menuItem", {
+                selected: location.pathname === "/Games",
+              })}
+              onClick={() => handleClose("Games")}
+            >
               Games
             </MenuItem>
-            <MenuItem className="menuItem" onClick={handleClose}>
+            <MenuItem
+              className={classNames("menuItem", {
+                selected: location.pathname === "/About",
+              })}
+              onClick={() => handleClose("About")}
+            >
               About
             </MenuItem>
           </Menu>

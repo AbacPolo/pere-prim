@@ -5,17 +5,22 @@
 
 .GameCard_Container {
   display: block;
-  width: 300px;
+  width: 100%;
   height: fit-content;
   margin: 0;
   box-sizing: border-box;
   background-color: #232730;
+  box-shadow: 0px 0px 5px 0px #000,
+    inset 0px 0px 2px 0px rgba(255, 255, 255, 0.8);
+}
+
+.CardActionArea {
+  width: 100%;
+  height: 100%;
   padding-top: 8px;
   padding-right: 16px;
   padding-bottom: 16px;
   padding-left: 16px;
-  box-shadow: 0px 0px 5px 0px #000,
-    inset 0px 0px 2px 0px rgba(255, 255, 255, 0.8);
 }
 
 .Card_Title {
@@ -23,6 +28,13 @@
   padding-bottom: 8px;
   margin: 0;
   text-align: center;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+
+.Big_Title {
+  padding-top: 8px;
+  padding-bottom: 16px;
 }
 
 .gameImage {
@@ -42,4 +54,11 @@
   to {
     opacity: 1;
   }
+}
+
+.Card_Description {
+  text-align: center;
+  padding: 0;
+  padding-top: 16px;
+  box-sizing: border-box;
 }
