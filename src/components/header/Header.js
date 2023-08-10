@@ -37,7 +37,7 @@ function Header() {
         navigateTo(`/About`);
         break;
       default:
-        navigateTo(`/`);
+        break;
     }
   };
 

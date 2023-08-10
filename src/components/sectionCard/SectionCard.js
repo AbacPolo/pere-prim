@@ -1,11 +1,11 @@
 import React from "react";
 import "./SectionCard.css";
 import { Button, Card, CardContent, Typography } from "@mui/material";
-import { matchVideo } from "../../data/loadVideos";
 import { matchImage } from "../../data/loadImages";
 import ReactPlayer from "react-player";
 import { matchSocial } from "../../data/loadSocials";
 import { Download } from "@mui/icons-material";
+import InfoCard from "../infoCard/InfoCard";
 
 function SectionCard({ sectionInfo, game }) {
   return (
@@ -21,13 +21,17 @@ function SectionCard({ sectionInfo, game }) {
           switch (Object.keys(block)[0]) {
             case "text":
               return (
-                <Typography key={index} variant="body1" >
+                <Typography key={index} variant="body1">
                   {block.text}
                 </Typography>
               );
             case "centeredText":
               return (
-                <Typography key={index} variant="body1" className="SectionCard_CenteredText">
+                <Typography
+                  key={index}
+                  variant="body1"
+                  className="SectionCard_CenteredText"
+                >
                   {block.centeredText}
                 </Typography>
               );
@@ -59,24 +63,19 @@ function SectionCard({ sectionInfo, game }) {
               );
             case "image":
               const image = matchImage(game, block.image);
-              return <img className='SectionCard_Image' key={index} src={image.src} alt={image.alt}></img>;
-            case "video":
-              const video = matchVideo(game, block.video);
               return (
-                <div key={index} className="VideoPlayer_Wrapper">
-                  <ReactPlayer
-                    url={video.url}
-                    controls={true}
-                    width="100%"
-                    height="100%"
-                  />
-                </div>
+                <img
+                  className="SectionCard_Image"
+                  key={index}
+                  src={image.src}
+                  alt={image.alt}
+                ></img>
               );
-            case "youtube":
+            case "video":
               return (
                 <div key={index} className="VideoPlayer_Wrapper">
                   <ReactPlayer
-                    url={block.youtube}
+                    url={block.video}
                     controls={true}
                     width="100%"
                     height="100%"
@@ -103,6 +102,8 @@ function SectionCard({ sectionInfo, game }) {
                   </Button>
                 </div>
               );
+            case "infoCard":
+              return <InfoCard info={block.infoCard} />;
             default:
               return <div key={index}>ERROR</div>;
           }

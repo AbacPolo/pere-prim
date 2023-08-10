@@ -26,7 +26,7 @@
           "sectionTitle": "TRAILER",
           "sectionContent": [
             {
-              "youtube": "https://www.youtube.com/watch?v=TCOyx2F5KVM&ab_channel=ESATVALENCIA"
+              "video": "https://www.youtube.com/watch?v=TCOyx2F5KVM&ab_channel=ESATVALENCIA"
             },
             {
               "text": "ANDARA: Rise for Rebellion is a third person shooter based on games like “Rachet & Clank” and “Returnal”, with mechanics that bring speed to the gameplay similar to shooters like “Doom”."
@@ -84,7 +84,7 @@
           "sectionTitle": "EXTRA VIDEOS",
           "sectionContent": [
             {
-              "youtube": "https://www.youtube.com/watch?v=ynQGiR-uUko"
+              "video": "https://www.youtube.com/watch?v=ynQGiR-uUko"
             }
           ]
         },
@@ -214,10 +214,6 @@
     }
   ],
   "about": {
-    "links": [
-      { "logo": "url", "text": "", "link": "url" },
-      { "logo": "url", "text": "", "link": "url" }
-    ],
     "sections": [
       {
         "sectionTitle": "HELLO WORLD",
@@ -228,26 +224,25 @@
         ]
       },
       {
-        "sectionTitle": "EXPERIENCE",
+        "sectionTitle": "EDUCATION",
         "sectionContent": [
           {
-            "infoCard": [
-              {
-                "image": "url"
-              },
-              {
-                "subtitle": ""
-              },
-              {
-                "information": ""
-              },
-              {
-                "information": ""
-              },
-              {
-                "text": ""
-              }
-            ]
+            "infoCard": {
+              "image": "",
+              "cardTitle": "HND in Computing (BTEC Level 5)",
+              "cardSubtitle": "ESAT - Escuela Superior de Arte y Tecnología",
+              "date": "Sep 2020 – Present, Valencia",
+              "cardContent": "Growth of my programming knowledge in different languages, such as assembler, C, C++ and Python. Improvement in the use of the Unity, and great learning of the Unreal Engine 4 and 5."
+            }
+          },
+          {
+            "infoCard": {
+              "image": "",
+              "cardTitle": "2D and 3D Animations, Games and Interactive Environments",
+              "cardSubtitle": "Ilerna",
+              "date": "Sep 2016 – Jul 2019, Lleida",
+              "cardContent": "Basic Web ProgrammingDevelopment of a video game, from the creation, modeling and rigging of a character, to its implementation within Unity, with its respective programming.with Gatsby."
+            }
           }
         ]
       }

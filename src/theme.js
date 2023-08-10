@@ -42,54 +42,53 @@ const theme = createTheme({
     fontFamily: '"Nunito Sans", "Arial", sans-serif',
     fontSize: 16,
     h1: {
-      fontSize: "4rem",
-      fontWeight: 500,
+      fontSize: "4rem", //40px
+      fontWeight: 500, //Semi-bold
       letterSpacing: "10px",
       color: "#fff",
       marginLeft: "10px",
     },
     h2: {
-      fontSize: "4rem",
-      fontWeight: 500,
+      fontSize: "4rem", //40px
+      fontWeight: 500, //Semi-bold
       letterSpacing: "10px",
       color: "#fff",
       marginLeft: "10px",
     },
     h3: {
-      fontSize: "2rem",
-      fontWeight: 500,
+      fontSize: "2rem", //24px
+      fontWeight: 500, //Semi-bold
       letterSpacing: "6px",
       color: "#F5AC10",
       marginLeft: "6px",
     },
     h4: {
-      fontSize: "1.5rem",
-      fontWeight: 400,
+      fontSize: "1.5rem", //20px
+      fontWeight: 400, //Regular
       letterSpacing: "6px",
       color: "#F5AC10",
       marginLeft: "6px",
     },
     h5: {
-      fontSize: "1rem",
-      fontWeight: 300,
+      fontSize: "1rem", //16px
+      fontWeight: 300, //Light
       letterSpacing: "4px",
       color: "#fff",
       marginLeft: "4px",
     },
     h6: {
-      fontSize: "1rem",
-      fontWeight: 200,
-      letterSpacing: "4px",
+      fontSize: "1rem", //16px
+      fontWeight: 200, //Extra-Light
       color: "#fff",
       marginLeft: "4px",
     },
     body1: {
-      fontSize: "1rem",
-      fontWeight: 300,
+      fontSize: "1rem", //16px
+      fontWeight: 300, //Light
     },
     caption: {
-      fontSize: "1rem",
-      fontWeight: 200,
+      fontSize: "1rem", //16px
+      fontWeight: 200, //Extra-Light
       color: "#fff",
     }
   },
