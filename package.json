@@ -8,6 +8,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.3",
     "@mui/material": "^5.14.3",
+    "@portabletext/react": "^3.0.4",
     "@reduxjs/toolkit": "^1.9.5",
     "@sanity/client": "^6.4.5",
     "@testing-library/jest-dom": "^5.17.0",

@@ -4,14 +4,44 @@ export const fetchAllGames = createAsyncThunk(
   "controlPanel/fetchAllGames",
   async () => {
     const query = encodeURIComponent(`*[_type == "game"]{
-        name,
-        bannerImage{
+      name,
+      description,
+      engine,
+      bannerImage{
+          asset->{
+            _id,
+            url
+           }
+         },
+      socials[]{
+        content[]{
+          ...,
+          logo{
             asset->{
-              _id,
-              url
-             }
-           },
-        body
+            _id,
+            url
+            }
+          }
+        }
+      },
+      "cards": body[]{
+        name,
+        content[]{
+          ...,
+          image{
+            asset->{
+            _id,
+            url
+            }
+          },
+          file{
+            asset->{
+            _id,
+            url
+            }
+          },
+        }
+      }
     }`);
     const data = await fetch(
       `https://h2rv99ub.api.sanity.io/v2021-10-21/data/query/production?query=${query}`
@@ -24,7 +54,8 @@ export const fetchAllGames = createAsyncThunk(
 export const gamesSlice = createSlice({
   name: "games",
   initialState: {
-    allGames: {},
+    allGames: [],
+    gamesAreLoaded: false,
     isLoadingGames: false,
     loadingGamesHasError: false,
   },
@@ -38,16 +69,18 @@ export const gamesSlice = createSlice({
       .addCase(fetchAllGames.fulfilled, (state, action) => {
         state.isLoadingGames = false;
         state.loadingGamesHasError = false;
-        state.allGames = action.payload;
+        state.gamesAreLoaded = true;
+        state.allGames = action.payload.result;
       })
       .addCase(fetchAllGames.rejected, (state) => {
         state.isLoadingGames = false;
         state.loadingGamesHasError = true;
-        state.allGames = {};
+        state.allGames = [];
       });
   },
 });
 
 export const getAllGames = (state) => state.games.allGames;
+export const getgamesAreLoaded = (state) => state.games.gamesAreLoaded;
 //export const {reducer names} = {__Slice}.actions;
 export default gamesSlice.reducer;

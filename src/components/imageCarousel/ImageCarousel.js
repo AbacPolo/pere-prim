@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "./ImageCarousel.css";
 import { Pagination, Typography } from "@mui/material";
-import information from "../../data/information.json";
 import GameCard from "../gameCard/GameCard";
+import { useSelector } from "react-redux";
+import { getAllGames } from "../../routes/gamePage/gamePageSlice";
 
 function ImageCarousel() {
   const [page, setPage] = useState(1);
+  const allGames = useSelector(getAllGames);
 
   const handleChange = (event, value) => {
     setPage(value);
@@ -17,7 +19,7 @@ function ImageCarousel() {
         <div className="Pagination_Container">
           <Typography variant="h6">SOME OF MY WORK</Typography>
           <Pagination
-            count={information.games.length}
+            count={allGames.length}
             defaultPage={1}
             page={page}
             onChange={handleChange}
@@ -26,7 +28,7 @@ function ImageCarousel() {
           />
         </div>
         <div className="Cards_Container">
-          {information.games.map((gameInfo, index) => (
+          {allGames.map((gameInfo, index) => (
             <GameCard
               key={index}
               gameInfo={gameInfo}

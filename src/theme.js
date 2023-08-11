@@ -47,6 +47,7 @@ const theme = createTheme({
       letterSpacing: "10px",
       color: "#fff",
       marginLeft: "10px",
+      textTransform: 'uppercase'
     },
     h2: {
       fontSize: "4rem", //40px
@@ -54,6 +55,7 @@ const theme = createTheme({
       letterSpacing: "10px",
       color: "#fff",
       marginLeft: "10px",
+      textTransform: 'uppercase'
     },
     h3: {
       fontSize: "2rem", //24px
@@ -61,6 +63,7 @@ const theme = createTheme({
       letterSpacing: "6px",
       color: "#F5AC10",
       marginLeft: "6px",
+      textTransform: 'uppercase'
     },
     h4: {
       fontSize: "1.5rem", //20px

@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import "./GamesSection.css";
 import { Typography } from "@mui/material";
-import information from "../../data/information.json";
 import GameCard from "../../components/gameCard/GameCard";
 import IndexMenu from "../../components/indexMenu/IndexMenu";
+import { useSelector } from "react-redux";
+import { getAllGames } from "../gamePage/gamePageSlice";
 
 function GamesSection() {
   const [activeCategory, setActiveCategory] = useState("");
+  const allGames = useSelector(getAllGames);
 
-  const categoriesArray = information.games.map((game) => game.engine);
+  const categoriesArray = allGames.map((game) => game.engine);
   const filteredCategoriesArray = [...new Set(categoriesArray)];
 
   return (
@@ -25,7 +27,7 @@ function GamesSection() {
         />
         <div className="GamesSectionCard_Container">
           <div className="GamesSectionCard_Wrapper">
-            {information.games.map((gameInfo, index) => {
+            {allGames.map((gameInfo, index) => {
               if (activeCategory === "") {
                 return <GameCard key={index} gameInfo={gameInfo} />;
               } else if (activeCategory === gameInfo.engine) {

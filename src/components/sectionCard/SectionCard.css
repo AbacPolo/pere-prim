@@ -40,16 +40,3 @@
 .List_Container {
   margin: 0;
 }
-
-.Socials_Wrapper {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
-
-.Socials_Wrapper > img {
-  height: 32px;
-}

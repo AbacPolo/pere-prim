@@ -21,12 +21,27 @@ body {
   box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+ol,
+li,
+em,
+b {
+  margin: 0;
+}
+
 a {
   color: #fff;
-  text-decoration: none;
 }
 
 a:hover {
-  color: #F5AC10;
+  color: #f5ac10;
   text-decoration: underline;
 }

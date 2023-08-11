@@ -2,59 +2,59 @@ import React, { useEffect, useState } from "react";
 import "./GamePage.css";
 import { Typography } from "@mui/material";
 import { useLocation } from "react-router";
-import information from "../../data/information.json";
-import { matchImage } from "../../data/loadImages";
 import IndexMenu from "../../components/indexMenu/IndexMenu";
 import SectionCard from "../../components/sectionCard/SectionCard";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchAllGames, getAllGames } from "./gamePageSlice";
+import { useSelector } from "react-redux";
+import { getAllGames } from "./gamePageSlice";
+import SocialsCard from "../../components/socialsCard/SocialsCard";
 
 function GamePage() {
   const location = useLocation();
   const [gameInfo, setGameInfo] = useState(null);
   const [gameSectionsName, setGameSectionsName] = useState([]);
   const [gameSections, setGameSections] = useState([]);
-
   const allGames = useSelector(getAllGames);
-  console.log('allGames',allGames);
 
   useEffect(() => {
-    const gameTitle = location.pathname
-      .replace("/Games/", "")
-      .replace("%20", " ");
-    const gameInfoFilter = information.games.filter(
-      (game) => game.title === gameTitle
-    )[0];
-    const sectionsNameArray = gameInfoFilter.sections
-      ? gameInfoFilter.sections.map((section) => section.sectionTitle)
-      : [];
-    const sectionsArray = gameInfoFilter.sections
-      ? gameInfoFilter.sections.map((section) => section)
-      : [];
-    setGameInfo(gameInfoFilter);
-    setGameSectionsName(sectionsNameArray);
-    setGameSections(sectionsArray);
-  }, [location]);
+    if (allGames.length > 0) {
+      const gameName = location.pathname
+        .replace("/Games/", "")
+        .replace("%20", " ");
+      const gameInfoFilter = allGames.filter(
+        (game) => game.name === gameName
+      )[0];
+      const sectionsNameArray = gameInfoFilter.cards
+        ? gameInfoFilter.cards.map((card) => card.name)
+        : [];
+      const sectionsArray = gameInfoFilter.cards
+        ? gameInfoFilter.cards.map((card) => card)
+        : [];
+      setGameInfo(gameInfoFilter);
+      setGameSectionsName(sectionsNameArray);
+      setGameSections(sectionsArray);
+    }
+  }, [location, allGames]);
 
-  if (allGames !== undefined && gameInfo) {
-    const image = matchImage(gameInfo.title, "BannerImage");
+console.log('gameSections',gameSections);
+  if (gameInfo) {
     return (
       <div className="GamePage_Container">
         <div className="GamePage_Wrapper">
           <Typography className="Page_Title" variant="h2">
-            {allGames.result[0].name}
+            {gameInfo.name}
           </Typography>
           <img
             className="GamePage_BannerImage"
-            src={image.src}
-            alt={gameInfo.title}
+            src={gameInfo.bannerImage.asset.url}
+            alt={gameInfo.name}
           ></img>
           <IndexMenu variant="sections" terms={gameSectionsName} />
+          {gameInfo.socials && <SocialsCard socialsInfo={gameInfo.socials}
+            />}
           {gameSections.map((section, index) => (
             <SectionCard
               key={index}
               sectionInfo={section}
-              game={gameInfo.title}
             />
           ))}
         </div>
