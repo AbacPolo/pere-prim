@@ -6,12 +6,17 @@ import information from "../../data/information.json";
 import { matchImage } from "../../data/loadImages";
 import IndexMenu from "../../components/indexMenu/IndexMenu";
 import SectionCard from "../../components/sectionCard/SectionCard";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAllGames, getAllGames } from "./gamePageSlice";
 
 function GamePage() {
   const location = useLocation();
   const [gameInfo, setGameInfo] = useState(null);
   const [gameSectionsName, setGameSectionsName] = useState([]);
   const [gameSections, setGameSections] = useState([]);
+
+  const allGames = useSelector(getAllGames);
+  console.log('allGames',allGames);
 
   useEffect(() => {
     const gameTitle = location.pathname
@@ -31,13 +36,13 @@ function GamePage() {
     setGameSections(sectionsArray);
   }, [location]);
 
-  if (gameInfo) {
+  if (allGames !== undefined && gameInfo) {
     const image = matchImage(gameInfo.title, "BannerImage");
     return (
       <div className="GamePage_Container">
         <div className="GamePage_Wrapper">
           <Typography className="Page_Title" variant="h2">
-            {gameInfo.title}
+            {allGames.result[0].name}
           </Typography>
           <img
             className="GamePage_BannerImage"
