@@ -4,15 +4,30 @@ export default {
   type: 'object',
   fields: [
     {
-      title: 'Logo',
-      name: 'logo',
-      type: 'image',
+      title: 'Social Icon',
+      name: 'socialIcon',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Mail', value: 'Mail'},
+          {title: 'LinkedIn', value: 'LinkedIn'},
+          {title: 'GitHub', value: 'GitHub'},
+          {title: 'Twitter', value: 'Twitter'},
+          {title: 'Facebook', value: 'Facebook'},
+          {title: 'Itch.io', value: 'Itch.io'},
+          {title: 'Steam', value: 'Steam'},
+        ],
+      },
     },
     {
-      title: 'Name',
-      name: 'name',
-      type: 'array',
-      of: [{type: 'block'}],
+      title: 'Link',
+      name: 'link',
+      type: 'url',
+    },
+    {
+      title: 'Link Lable',
+      name: 'linkLable',
+      type: 'string',
     },
   ],
 }

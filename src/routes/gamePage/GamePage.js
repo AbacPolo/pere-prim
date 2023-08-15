@@ -4,8 +4,8 @@ import { Typography } from "@mui/material";
 import { useLocation } from "react-router";
 import IndexMenu from "../../components/indexMenu/IndexMenu";
 import SectionCard from "../../components/sectionCard/SectionCard";
-import { useSelector } from "react-redux";
-import { getAllGames } from "./gamePageSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAllGames, getAllGames, getgamesAreLoaded } from "./gamePageSlice";
 import SocialsCard from "../../components/socialsCard/SocialsCard";
 
 function GamePage() {
@@ -14,6 +14,13 @@ function GamePage() {
   const [gameSectionsName, setGameSectionsName] = useState([]);
   const [gameSections, setGameSections] = useState([]);
   const allGames = useSelector(getAllGames);
+
+  const dispatch = useDispatch();
+  const gamesAreLoaded = useSelector(getgamesAreLoaded);
+
+  useEffect(() => {
+    !gamesAreLoaded && dispatch(fetchAllGames());
+  }, [gamesAreLoaded, dispatch]);
 
   useEffect(() => {
     if (allGames.length > 0) {

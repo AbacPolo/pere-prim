@@ -1,8 +1,14 @@
 import React from "react";
 import "./SocialsCard.css";
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
-import { PortableText } from "@portabletext/react";
-import components from "../../portableTextComponents";
+import { Card, CardContent, Typography } from "@mui/material";
+import {
+  Email,
+  Facebook,
+  GitHub,
+  LinkedIn,
+  Public,
+  Twitter,
+} from "@mui/icons-material";
 
 function SocialsCard({ socialsInfo }) {
   console.log("socialsInfo", socialsInfo);
@@ -12,13 +18,12 @@ function SocialsCard({ socialsInfo }) {
         {socialsInfo.map((card) =>
           card.content.map((social, index) => (
             <div key={index} className="Socials_Container">
-              <CardMedia
-                className="Socials_Logo"
-                component="img"
-                src={social.logo.asset.url}
-                alt="Social Logo"
-              />
-              <PortableText value={social.name} components={components} />
+              {IconSelector(social.socialIcon)}
+              <Typography variant="body1" sx={{ fontWeight: "500" }}>
+                <a href={social.link} target="_blank" rel="noreferrer">
+                  {social.linkLable}
+                </a>
+              </Typography>
             </div>
           ))
         )}
@@ -28,3 +33,24 @@ function SocialsCard({ socialsInfo }) {
 }
 
 export default SocialsCard;
+
+export const IconSelector = (socialIcon) => {
+  switch (socialIcon) {
+    case "Email":
+      return <Email className="Socials_Logo"/>;
+    case "LinkedIn":
+      return <LinkedIn className="Socials_Logo"/>;
+    case "GitHub":
+      return <GitHub className="Socials_Logo"/>;
+    case "Twitter":
+      return <Twitter className="Socials_Logo"/>;
+    case "Facebook":
+      return <Facebook className="Socials_Logo"/>;
+    case "Itch.io":
+      return <i className="fa-brands fa-itch-io Socials_Logo"></i>;
+    case "Steam":
+      return <i className="fa-brands fa-steam Socials_Logo"></i>;
+    default:
+      return <Public />;
+  }
+};
