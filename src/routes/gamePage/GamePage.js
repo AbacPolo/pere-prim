@@ -42,7 +42,6 @@ function GamePage() {
     }
   }, [location, allGames]);
 
-console.log('gameSections',gameSections);
   if (gameInfo) {
     return (
       <div className="GamePage_Container">

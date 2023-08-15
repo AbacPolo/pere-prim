@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import "./ImageCarousel.css";
-import { Pagination, Typography } from "@mui/material";
+import { Pagination, Skeleton, Typography } from "@mui/material";
 import GameCard from "../gameCard/GameCard";
 import { useSelector } from "react-redux";
-import { getAllGames } from "../../routes/gamePage/gamePageSlice";
+import {
+  getAllGames,
+  getgamesAreLoaded,
+} from "../../routes/gamePage/gamePageSlice";
 
 function ImageCarousel() {
   const [page, setPage] = useState(1);
   const allGames = useSelector(getAllGames);
+  const gamesAreLoaded = useSelector(getgamesAreLoaded);
 
   const handleChange = (event, value) => {
     setPage(value);
@@ -27,17 +31,23 @@ function ImageCarousel() {
             className="Pagination_Menu"
           />
         </div>
-        <div className="Cards_Container">
-          {allGames.map((gameInfo, index) => (
-            <GameCard
-              key={index}
-              gameInfo={gameInfo}
-              page={page}
-              index={index + 1}
-              cardType="compact"
-            />
-          ))}
-        </div>
+        {gamesAreLoaded === false ? (
+          <div className="Cards_Container">
+            <Skeleton variant="rectangular" width={250} height={190} />
+          </div>
+        ) : (
+          <div className="Cards_Container">
+            {allGames.map((gameInfo, index) => (
+              <GameCard
+                key={index}
+                gameInfo={gameInfo}
+                page={page}
+                index={index + 1}
+                cardType="compact"
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

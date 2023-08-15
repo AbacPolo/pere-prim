@@ -36,7 +36,7 @@ export default SocialsCard;
 
 export const IconSelector = (socialIcon) => {
   switch (socialIcon) {
-    case "Email":
+    case "Mail":
       return <Email className="Socials_Logo"/>;
     case "LinkedIn":
       return <LinkedIn className="Socials_Logo"/>;

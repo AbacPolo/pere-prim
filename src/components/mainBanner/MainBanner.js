@@ -1,38 +1,69 @@
 import React from "react";
 import "./MainBanner.css";
-import profileImage from "../../images/Profile_Image.jpg";
-import information from "../../data/information.json";
-import { IconButton, Typography } from "@mui/material";
-import { Email, GitHub, LinkedIn, Twitter } from "@mui/icons-material";
+import { IconButton, Skeleton, Typography } from "@mui/material";
+import { useSelector } from "react-redux";
+import { getBannerIsLoaded, getMainBanner } from "./mainBannerSlice";
+import { IconSelector } from "../socialsCard/SocialsCard";
 
 function MainBanner() {
-  return (
-    <div className="MainBanner_Container">
-      <div className="MainBanner_Wrapper">
-        <img className="profile_Image" src={profileImage} alt="Profile"></img>
-        <div className="Text_Container">
-          <Typography variant="h1">
-            {information.banner.name}
-          </Typography>
-          <Typography variant="h3">GAME DEVELOPER</Typography>
-          <div className="Socials_Container">
-            <IconButton color="secondary" aria-label="LinkedIn">
-              <LinkedIn />
-            </IconButton>
-            <IconButton color="secondary" aria-label="Email">
-              <Email />
-            </IconButton>
-            <IconButton color="secondary" aria-label="GitHub">
-              <GitHub />
-            </IconButton>
-            <IconButton color="secondary" aria-label="Twitter">
-              <Twitter />
-            </IconButton>
+  const pageBanner = useSelector(getMainBanner);
+  const bannerIsLoaded = useSelector(getBannerIsLoaded);
+
+  if (bannerIsLoaded === false) {
+    return (
+      <div className="MainBanner_Container">
+        <div className="MainBanner_Wrapper">
+          <Skeleton variant="rectangular" width='80%' height={280} />
+          <div className="Text_Container">
+            <Skeleton variant="rectangular" width='100%' height={45} />
+            <Skeleton variant="rectangular" width='100%' height={28} />
+            <div className="Socials_Container">
+              <Skeleton variant="circular" width={32} height={32} />
+              <Skeleton variant="circular" width={32} height={32} />
+              <Skeleton variant="circular" width={32} height={32} />
+              <Skeleton variant="circular" width={32} height={32} />
+              <Skeleton variant="circular" width={32} height={32} />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
+
+  if (pageBanner) {
+    return (
+      <div className="MainBanner_Container">
+        <div className="MainBanner_Wrapper">
+          <img
+            className="profile_Image"
+            src={pageBanner.bannerImage.asset.url}
+            alt="Profile"
+          ></img>
+          <div className="Text_Container">
+            <Typography variant="h1">{pageBanner.mainTitle}</Typography>
+            <Typography variant="h3">{pageBanner.subtitle}</Typography>
+            <div className="Socials_Container">
+              {pageBanner.socials.map((card) =>
+                card.content.map((social, index) => (
+                  <div key={index} className="Socials_Container">
+                    <IconButton
+                      color="secondary"
+                      aria-label={social.linkLable}
+                      href={social.link}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {IconSelector(social.socialIcon)}
+                    </IconButton>
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default MainBanner;
