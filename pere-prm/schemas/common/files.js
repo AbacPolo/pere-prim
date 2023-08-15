@@ -15,4 +15,15 @@ export default {
       storeOriginalFilename: 'true'
     },
   ],
+  preview: {
+    select: {
+      title: 'fileName',
+    },
+    prepare(selection) {
+      return {
+        title: 'File',
+        subtitle: selection.title,
+      }
+    },
+  },
 }

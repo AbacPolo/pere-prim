@@ -41,3 +41,8 @@
     width: auto;
     display: block;
   }
+
+  .SocialsCard_Container a:hover {
+    color: #f5ac10;
+    text-decoration: underline;
+  }

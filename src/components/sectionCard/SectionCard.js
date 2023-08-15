@@ -10,6 +10,8 @@ import {
 import ReactPlayer from "react-player";
 import { PortableText } from "@portabletext/react";
 import components from "../../portableTextComponents";
+import { Download } from "@mui/icons-material";
+import classNames from "classnames";
 
 function SectionCard({ sectionInfo }) {
   console.log("sectionInfo", sectionInfo);
@@ -38,18 +40,39 @@ function SectionCard({ sectionInfo }) {
               );
             case "richText":
               return (
-                <PortableText
-                  value={contentBlock.contentText}
-                  components={components}
-                />
+                <div
+                  key={index}
+                  className={classNames("SectionCard_LeftText", {
+                    SectionCard_CenteredText:
+                      contentBlock.contentAlignment === "center",
+                  })}
+                >
+                  <PortableText
+                    value={contentBlock.contentText}
+                    components={components}
+                  />
+                </div>
               );
             case "media":
               return (
                 <CardMedia
+                  key={index}
                   component="img"
                   src={contentBlock.image.asset.url}
                   alt="Social Logo"
                 />
+              );
+            case "files":
+              return (
+                <Button
+                  key={index}
+                  href={contentBlock.file.asset.url}
+                  variant="contained"
+                  startIcon={<Download />}
+                  color="secondary"
+                >
+                  {contentBlock.fileName}
+                </Button>
               );
             default:
               return <div key={index}>ERROR</div>;

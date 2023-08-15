@@ -5,8 +5,7 @@ import { PortableText } from "@portabletext/react";
 import components from "../../portableTextComponents";
 
 function SocialsCard({ socialsInfo }) {
-
-  console.log('socialsInfo',socialsInfo);
+  console.log("socialsInfo", socialsInfo);
   return (
     <Card className="SocialsCard_Container">
       <CardContent className="SocialsCard_Wrapper">
@@ -19,9 +18,7 @@ function SocialsCard({ socialsInfo }) {
                 src={social.logo.asset.url}
                 alt="Social Logo"
               />
-              <Typography variant="body1" sx={{fontWeight: 500}}>
-                <PortableText value={social.name} components={components} />
-              </Typography>
+              <PortableText value={social.name} components={components} />
             </div>
           ))
         )}
