@@ -63,5 +63,6 @@ export const mainBannerSlice = createSlice({
 
 export const getMainBanner = (state) => state.mainBanner.pageBanner[0];
 export const getBannerIsLoaded = (state) => state.mainBanner.bannerIsLoaded;
+export const getBannerIsLoading = (state) => state.mainBanner.isLoadingBanner;
 //export const {reducer names} = {__Slice}.actions;
 export default mainBannerSlice.reducer;

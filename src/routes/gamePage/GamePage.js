@@ -5,7 +5,7 @@ import { useLocation } from "react-router";
 import IndexMenu from "../../components/indexMenu/IndexMenu";
 import SectionCard from "../../components/sectionCard/SectionCard";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAllGames, getAllGames, getgamesAreLoaded } from "./gamePageSlice";
+import { fetchAllGames, getAllGames, getgamesAreLoaded, getgamesAreLoading } from "./gamePageSlice";
 import SocialsCard from "../../components/socialsCard/SocialsCard";
 
 function GamePage() {
@@ -17,10 +17,12 @@ function GamePage() {
 
   const dispatch = useDispatch();
   const gamesAreLoaded = useSelector(getgamesAreLoaded);
+  const gamesAreLoading = useSelector(getgamesAreLoading);
+  
 
   useEffect(() => {
-    !gamesAreLoaded && dispatch(fetchAllGames());
-  }, [gamesAreLoaded, dispatch]);
+    !gamesAreLoaded && !gamesAreLoading && dispatch(fetchAllGames());
+  }, [gamesAreLoaded, gamesAreLoading, dispatch]);
 
   useEffect(() => {
     if (allGames.length > 0) {

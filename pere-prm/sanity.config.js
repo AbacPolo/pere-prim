@@ -23,6 +23,10 @@ export default defineConfig({
             S.listItem()
               .title('Games')
               .child(S.documentList().title('Game').filter('_type == "game"')),
+            S.divider(),
+            S.listItem()
+              .title('About Page')
+              .child(S.document().title('About Page').schemaType('about').documentId('about')),
           ])
       },
     }),

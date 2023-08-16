@@ -5,16 +5,19 @@ import ImageCarousel from "../../components/imageCarousel/ImageCarousel";
 import { fetchAllGames, getgamesAreLoaded } from "../gamePage/gamePageSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMainBanner, getBannerIsLoaded } from "../../components/mainBanner/mainBannerSlice";
+import { fetchAbout, getAboutIsLoaded } from "../aboutPage/aboutPageSlice";
 
 function Homepage() {
   const dispatch = useDispatch();
   const gamesAreLoaded = useSelector(getgamesAreLoaded);
   const bannerIsLoaded = useSelector(getBannerIsLoaded);
+  const aboutIsLoaded = useSelector(getAboutIsLoaded);
 
   useEffect(() => {
     !gamesAreLoaded && dispatch(fetchAllGames());
     !bannerIsLoaded && dispatch(fetchMainBanner())
-  }, [gamesAreLoaded,bannerIsLoaded, dispatch]);
+    !aboutIsLoaded && dispatch(fetchAbout())
+  }, [gamesAreLoaded,bannerIsLoaded, aboutIsLoaded, dispatch]);
 
   return (
     <div className="Homepage_Container">

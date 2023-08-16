@@ -82,5 +82,6 @@ export const gamesSlice = createSlice({
 
 export const getAllGames = (state) => state.games.allGames;
 export const getgamesAreLoaded = (state) => state.games.gamesAreLoaded;
+export const getgamesAreLoading = (state) => state.games.isLoadingGames;
 //export const {reducer names} = {__Slice}.actions;
 export default gamesSlice.reducer;

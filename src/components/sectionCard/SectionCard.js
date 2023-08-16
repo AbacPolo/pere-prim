@@ -12,6 +12,7 @@ import { PortableText } from "@portabletext/react";
 import components from "../../portableTextComponents";
 import { Download } from "@mui/icons-material";
 import classNames from "classnames";
+import DataCard from "../dataCard/DataCard";
 
 function SectionCard({ sectionInfo }) {
   console.log("sectionInfo", sectionInfo);
@@ -74,6 +75,8 @@ function SectionCard({ sectionInfo }) {
                   {contentBlock.fileName}
                 </Button>
               );
+            case "businessCard":
+              return <DataCard key={index} data={contentBlock}/>;
             default:
               return <div key={index}>ERROR</div>;
           }

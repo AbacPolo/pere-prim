@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./GamesSection.css";
 import { Typography } from "@mui/material";
 import GameCard from "../../components/gameCard/GameCard";
 import IndexMenu from "../../components/indexMenu/IndexMenu";
-import { useSelector } from "react-redux";
-import { getAllGames } from "../gamePage/gamePageSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAllGames, getAllGames, getgamesAreLoaded, getgamesAreLoading } from "../gamePage/gamePageSlice";
 
 function GamesSection() {
   const [activeCategory, setActiveCategory] = useState("");
   const allGames = useSelector(getAllGames);
+
+  const dispatch = useDispatch();
+  const gamesAreLoaded = useSelector(getgamesAreLoaded);
+  const gamesAreLoading = useSelector(getgamesAreLoading);
+  
+  useEffect(() => {
+    !gamesAreLoaded && !gamesAreLoading && dispatch(fetchAllGames());
+  }, [gamesAreLoaded, gamesAreLoading, dispatch]);
 
   const categoriesArray = allGames.map((game) => game.engine);
   const filteredCategoriesArray = [...new Set(categoriesArray)];

@@ -1,5 +1,5 @@
 export default {
-  title: 'Card',
+  title: 'Section Card',
   name: 'card',
   type: 'object',
   fields: [
@@ -12,7 +12,7 @@ export default {
       title: 'Content',
       name: 'content',
       type: 'array',
-      of: [{type: 'richText'}, {type: 'media'}, {type: 'video'}, {type: 'files'}],
+      of: [{type: 'richText'}, {type: 'media'}, {type: 'video'}, {type: 'files'}, {type: 'businessCard'}],
     },
   ],
   preview: {
@@ -21,7 +21,7 @@ export default {
     },
     prepare(selection) {
       return {
-        title: 'Card',
+        title: 'Section',
         subtitle: selection.title,
       }
     },
