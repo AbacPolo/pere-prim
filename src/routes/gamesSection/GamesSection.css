@@ -22,7 +22,7 @@
 }
 
 .Section_Title {
-  height: 48px;
+  height: fit-content;
   text-transform: uppercase;
 }
 

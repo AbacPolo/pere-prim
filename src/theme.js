@@ -83,7 +83,6 @@ const theme = createTheme({
       fontSize: "1rem", //16px
       fontWeight: 200, //Extra-Light
       color: "#fff",
-      marginLeft: "4px",
     },
     body1: {
       fontSize: "1rem", //16px

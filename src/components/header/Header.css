@@ -6,7 +6,8 @@
 }
 
 .Header {
-  padding-left: 0;
+  padding-right: 0;
+  padding-left: 12px;
   justify-content: space-between;
   box-sizing: border-box;
 }
@@ -53,4 +54,9 @@
 .selected {
   background-color: #15161b;
   color: #fff;
+}
+
+.wasdIcon {
+  height: 52px;
+  width: 52px;
 }

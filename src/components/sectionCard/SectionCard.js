@@ -71,6 +71,7 @@ function SectionCard({ sectionInfo }) {
                   variant="contained"
                   startIcon={<Download />}
                   color="secondary"
+                  target="_blank"
                 >
                   {contentBlock.fileName}
                 </Button>
