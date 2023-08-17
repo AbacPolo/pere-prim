@@ -5,31 +5,55 @@ import { useLocation } from "react-router";
 import IndexMenu from "../../components/indexMenu/IndexMenu";
 import SectionCard from "../../components/sectionCard/SectionCard";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAllGames, getAllGames, getgamesAreLoaded, getgamesAreLoading } from "./gamePageSlice";
+import {
+  fetchAllGames,
+  getAllGames,
+  getgamesAreLoaded,
+  getgamesAreLoading,
+} from "./gamePageSlice";
 import SocialsCard from "../../components/socialsCard/SocialsCard";
+import {
+  fetchAllEngines,
+  getAllEngines,
+  getEnginesAreLoaded,
+  getEnginesAreLoading,
+} from "../enginesSection/enginePageSlice";
 
 function GamePage() {
   const location = useLocation();
   const [gameInfo, setGameInfo] = useState(null);
   const [gameSectionsName, setGameSectionsName] = useState([]);
   const [gameSections, setGameSections] = useState([]);
+
   const allGames = useSelector(getAllGames);
+  const allEngines = useSelector(getAllEngines);
+
+  const allData = location.pathname.includes("/Games/") ? allGames : allEngines;
 
   const dispatch = useDispatch();
   const gamesAreLoaded = useSelector(getgamesAreLoaded);
   const gamesAreLoading = useSelector(getgamesAreLoading);
-  
+  const enginesAreLoaded = useSelector(getEnginesAreLoaded);
+  const enginesAreLoading = useSelector(getEnginesAreLoading);
 
   useEffect(() => {
     !gamesAreLoaded && !gamesAreLoading && dispatch(fetchAllGames());
-  }, [gamesAreLoaded, gamesAreLoading, dispatch]);
+    !enginesAreLoaded && !enginesAreLoading && dispatch(fetchAllEngines());
+  }, [
+    gamesAreLoaded,
+    gamesAreLoading,
+    enginesAreLoaded,
+    enginesAreLoading,
+    dispatch,
+  ]);
 
   useEffect(() => {
-    if (allGames.length > 0) {
+    if (allData.length > 0) {
       const gameName = location.pathname
         .replace("/Games/", "")
+        .replace("/Engines/", "")
         .replace("%20", " ");
-      const gameInfoFilter = allGames.filter(
+      const gameInfoFilter = allData.filter(
         (game) => game.name === gameName
       )[0];
       const sectionsNameArray = gameInfoFilter.cards
@@ -42,7 +66,7 @@ function GamePage() {
       setGameSectionsName(sectionsNameArray);
       setGameSections(sectionsArray);
     }
-  }, [location, allGames]);
+  }, [location, allData]);
 
   if (gameInfo) {
     return (
@@ -54,16 +78,12 @@ function GamePage() {
           <img
             className="GamePage_BannerImage"
             src={gameInfo.bannerImage.asset.url}
-            alt={gameInfo.name}
+            alt={`${gameInfo.name} Banner`}
           ></img>
           <IndexMenu variant="sections" terms={gameSectionsName} />
-          {gameInfo.socials && <SocialsCard socialsInfo={gameInfo.socials}
-            />}
+          {gameInfo.socials && <SocialsCard socialsInfo={gameInfo.socials} />}
           {gameSections.map((section, index) => (
-            <SectionCard
-              key={index}
-              sectionInfo={section}
-            />
+            <SectionCard key={index} sectionInfo={section} />
           ))}
         </div>
       </div>

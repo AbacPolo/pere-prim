@@ -15,8 +15,6 @@ import classNames from "classnames";
 import DataCard from "../dataCard/DataCard";
 
 function SectionCard({ sectionInfo }) {
-  console.log("sectionInfo", sectionInfo);
-
   return (
     <Card id={sectionInfo.name} className="SectionCard_Container">
       <CardContent className="SectionCard_Wrapper">
@@ -60,7 +58,7 @@ function SectionCard({ sectionInfo }) {
                   key={index}
                   component="img"
                   src={contentBlock.image.asset.url}
-                  alt="Social Logo"
+                  alt={contentBlock.alt}
                 />
               );
             case "files":

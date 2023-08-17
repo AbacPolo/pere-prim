@@ -1,7 +1,10 @@
+import {UserIcon} from '@sanity/icons'
+
 export default {
   title: 'Social Profile',
   name: 'socialProfile',
   type: 'object',
+  icon: UserIcon,
   fields: [
     {
       title: 'Social Icon',
@@ -18,16 +21,19 @@ export default {
           {title: 'Steam', value: 'Steam'},
         ],
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Link',
       name: 'link',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Link Lable',
       name: 'linkLable',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     },
   ],
 }

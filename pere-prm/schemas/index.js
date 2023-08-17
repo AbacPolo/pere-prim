@@ -1,5 +1,7 @@
 import homepage from './homepage'
+import carousel from './carousel'
 import game from './game'
+import engine from './engine'
 import about from './about'
 import sectionCard from './components/card'
 import socials from './components/socials'
@@ -10,4 +12,4 @@ import files from './common/files'
 import socialProfile from './common/socialProfile'
 import businessCard from './common/businessCard'
 
-export const schemaTypes = [homepage, game, about, sectionCard, socials, richText, media, video, files, socialProfile, businessCard]
+export const schemaTypes = [homepage,carousel, game, engine, about, sectionCard, socials, richText, media, video, files, socialProfile, businessCard]

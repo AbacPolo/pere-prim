@@ -1,10 +1,10 @@
-import {RobotIcon} from '@sanity/icons'
+import {CogIcon} from '@sanity/icons'
 
 export default {
-  name: 'game',
+  name: 'engine',
   type: 'document',
-  title: 'Game',
-  icon: RobotIcon,
+  title: 'Engine',
+  icon: CogIcon,
   fields: [
     {
       type: 'string',
@@ -22,14 +22,7 @@ export default {
       type: 'string',
       name: 'description',
       title: 'Description',
-      description: 'Short description of the game',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      type: 'string',
-      name: 'engine',
-      title: 'Engine',
-      description: 'Engine names have to be written equelly throughout games',
+      description: 'Short description of the engine',
       validation: (Rule) => Rule.required(),
     },
     {

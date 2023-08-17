@@ -7,11 +7,34 @@ import {
   getAllGames,
   getgamesAreLoaded,
 } from "../../routes/gamePage/gamePageSlice";
+import {
+  getAllEngines,
+  getEnginesAreLoaded,
+} from "../../routes/enginesSection/enginePageSlice";
+import { getCarousel } from "./imageCarouselSlice";
+import { useEffect } from "react";
 
 function ImageCarousel() {
   const [page, setPage] = useState(1);
   const allGames = useSelector(getAllGames);
+  const allEngines = useSelector(getAllEngines);
+  const carousel = useSelector(getCarousel);
   const gamesAreLoaded = useSelector(getgamesAreLoaded);
+  const enginesAreLoaded = useSelector(getEnginesAreLoaded);
+  const [carouselInfo, setCarouselInfo] = useState([]);
+
+  useEffect(() => {
+    if (carousel) {
+      const carouselCards = carousel.preview.map((card) => {
+        if (card._type === "game") {
+          return allGames.filter((game) => game.name === card.name)[0];
+        } else {
+          return allEngines.filter((engine) => engine.name === card.name)[0];
+        }
+      });
+      setCarouselInfo(carouselCards);
+    }
+  }, [carousel, allGames, allEngines]);
 
   const handleChange = (event, value) => {
     setPage(value);
@@ -23,7 +46,7 @@ function ImageCarousel() {
         <div className="Pagination_Container">
           <Typography variant="h6">SOME OF MY WORK</Typography>
           <Pagination
-            count={allGames.length}
+            count={carouselInfo.length}
             defaultPage={1}
             page={page}
             onChange={handleChange}
@@ -31,13 +54,13 @@ function ImageCarousel() {
             className="Pagination_Menu"
           />
         </div>
-        {gamesAreLoaded === false ? (
+        {!gamesAreLoaded || !enginesAreLoaded ? (
           <div className="Cards_Container">
             <Skeleton variant="rectangular" width={250} height={190} />
           </div>
         ) : (
           <div className="Cards_Container">
-            {allGames.map((gameInfo, index) => (
+            {carouselInfo.map((gameInfo, index) => (
               <GameCard
                 key={index}
                 gameInfo={gameInfo}

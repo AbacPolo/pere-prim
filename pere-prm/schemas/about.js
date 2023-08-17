@@ -8,6 +8,7 @@ export default {
       name: 'body',
       title: 'Body',
       of: [{type: 'card'}],
+      validation: (Rule) => Rule.required(),
     },
   ],
 }

@@ -3,28 +3,22 @@ import "./Header.css";
 import {
   AppBar,
   Box,
-  Button,
   Fade,
   IconButton,
   Menu,
   MenuItem,
-  SvgIcon,
   Toolbar,
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useLocation, useNavigate } from "react-router";
 import classNames from "classnames";
-import { useSelector } from "react-redux";
-import { getMainBanner } from "../mainBanner/mainBannerSlice";
 import WasdIcon from "../../icons/WasdIcon";
 
 function Header() {
   const [anchorEl, setAnchorEl] = useState(null);
   const navigateTo = useNavigate();
   const location = useLocation();
-  const pageBanner = useSelector(getMainBanner);
-  console.log("pageBanner", pageBanner);
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -39,6 +33,9 @@ function Header() {
       case "Games":
         navigateTo(`/Games`);
         break;
+      case "Engines":
+        navigateTo(`/Engines`);
+        break;
       case "About":
         navigateTo(`/About`);
         break;
@@ -51,7 +48,18 @@ function Header() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" color="primary" className="appBar">
         <Toolbar className="Header">
-          <WasdIcon className="wasdIcon"/>
+          <IconButton
+            size="large"
+            aria-label="menu-button"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={() => navigateTo(`/`)}
+            color="inherit"
+            sx={{padding: '0'}}
+          >
+            <WasdIcon className="wasdIcon"/>
+          </IconButton>
+
           <IconButton
             size="large"
             aria-label="menu-button"
@@ -91,6 +99,14 @@ function Header() {
             </MenuItem>
             <MenuItem
               className={classNames("menuItem", {
+                selected: location.pathname === "/Engines",
+              })}
+              onClick={() => handleClose("Engines")}
+            >
+              <Typography variant="h5">Engines</Typography>
+            </MenuItem>
+            <MenuItem
+              className={classNames("menuItem", {
                 selected: location.pathname === "/About",
               })}
               onClick={() => handleClose("About")}
@@ -98,15 +114,6 @@ function Header() {
               <Typography variant="h5">About</Typography>
             </MenuItem>
           </Menu>
-          {/* <Button
-            variant="outlined"
-            color="secondary"
-            onClick={(e) => {
-              window.open('mailto:PerePrimCarol@gmail.com');
-            }}
-          >
-            HIRE ME
-          </Button> */}
         </Toolbar>
       </AppBar>
     </Box>

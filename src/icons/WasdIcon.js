@@ -12,16 +12,16 @@ const WasdIcon = (props) => (
         <rect
           width={194.17}
           height={203.416}
-          x={260.915}
+          x={220}
           y={464.654}
           ry={39.296}
           style={{
             opacity: 1,
-            fill: "none",
-            fillOpacity: 1,
+            fill: "#F5AC10",
+            fillOpacity: 0.5,
             fillRule: "nonzero",
             stroke: "#F5AC10",
-            strokeWidth: 19.45054436,
+            strokeWidth: 20,
             strokeLinecap: "round",
             strokeLinejoin: "round",
             strokeMiterlimit: 4,
@@ -42,7 +42,7 @@ const WasdIcon = (props) => (
             fillOpacity: 1,
             fillRule: "nonzero",
             stroke: "#F5AC10",
-            strokeWidth: 19.45054436,
+            strokeWidth: 20,
             strokeLinecap: "round",
             strokeLinejoin: "round",
             strokeMiterlimit: 4,
@@ -63,7 +63,7 @@ const WasdIcon = (props) => (
             fillOpacity: 1,
             fillRule: "nonzero",
             stroke: "#F5AC10",
-            strokeWidth: 19.45054436,
+            strokeWidth: 20,
             strokeLinecap: "round",
             strokeLinejoin: "round",
             strokeMiterlimit: 4,
@@ -84,7 +84,7 @@ const WasdIcon = (props) => (
             fillOpacity: 1,
             fillRule: "nonzero",
             stroke: "#F5AC10",
-            strokeWidth: 19.45054436,
+            strokeWidth: 20,
             strokeLinecap: "round",
             strokeLinejoin: "round",
             strokeMiterlimit: 4,

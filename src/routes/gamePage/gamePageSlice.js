@@ -7,6 +7,7 @@ export const fetchAllGames = createAsyncThunk(
       name,
       description,
       engine,
+      _type,
       bannerImage{
           asset->{
             _id,

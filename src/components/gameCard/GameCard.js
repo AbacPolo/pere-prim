@@ -14,7 +14,11 @@ function GameCard({ gameInfo, page, index, cardType }) {
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    navigate(`/Games/${gameInfo.name}`);
+    if (gameInfo._type === "game") {
+      navigate(`/Games/${gameInfo.name}`);
+    } else if (gameInfo._type === "engine") {
+      navigate(`/Engines/${gameInfo.name}`);
+    }
   };
 
   return (
@@ -35,7 +39,7 @@ function GameCard({ gameInfo, page, index, cardType }) {
           className="gameImage"
           component="img"
           src={gameInfo.bannerImage.asset.url}
-          alt={gameInfo.name}
+          alt={`${gameInfo.name} Banner`}
         />
         {cardType !== "compact" &&
         gameInfo.description !== "" &&

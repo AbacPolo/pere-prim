@@ -11,7 +11,6 @@ import {
 } from "@mui/icons-material";
 
 function SocialsCard({ socialsInfo }) {
-  console.log("socialsInfo", socialsInfo);
   return (
     <Card className="SocialsCard_Container">
       <CardContent className="SocialsCard_Wrapper">

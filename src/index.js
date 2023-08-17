@@ -10,6 +10,7 @@ import Homepage from "./routes/homepage/Homepage";
 import GamesSection from "./routes/gamesSection/GamesSection";
 import GamePage from "./routes/gamePage/GamePage";
 import AboutPage from "./routes/aboutPage/AboutPage";
+import EnginesSection from "./routes/enginesSection/EnginesSection";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -24,6 +25,8 @@ root.render(
           <Route exact path="/" element={<Homepage />} />
           <Route exact path="/Games" element={<GamesSection />}/>
           <Route exact path="/Games/:gameName" element={<GamePage />}/>
+          <Route exact path="/Engines" element={<EnginesSection />}/>
+          <Route exact path="/Engines/:engineName" element={<GamePage />}/>
           <Route exact path="/About" element={<AboutPage />} />
         </Route>
       </Routes>

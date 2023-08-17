@@ -15,7 +15,7 @@ function DataCard({ data }) {
             src={data.logo.asset.url}
             alt={data.name}
           />
-          <div>
+          <div className="DataCard_HeaderText">
             <Typography
               variant="h4"
               sx={{ marginLeft: "0px", letterSpacing: "0px" }}

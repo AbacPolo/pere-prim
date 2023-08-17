@@ -1,7 +1,10 @@
+import {BlockContentIcon} from '@sanity/icons'
+
 export default {
   title: 'RichText',
   name: 'richText',
   type: 'object',
+  icon: BlockContentIcon,
   fields: [
     {
       title: 'Content Alignment',
@@ -22,6 +25,7 @@ export default {
       name: 'contentText',
       type: 'array',
       of: [{type: 'block'}],
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {
