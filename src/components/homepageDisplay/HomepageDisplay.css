@@ -1,4 +1,4 @@
-.ImageCarousel_Container {
+.HomepageDisplay_Container {
   width: 100%;
   height: fit-content;
   margin: 0;
@@ -6,7 +6,7 @@
   padding-top: 1rem;
 }
 
-.ImageCarousel_Wrapper {
+.HomepageDisplay_Wrapper {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -14,26 +14,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 8px;
 }
 
-.Pagination_Container {
+.HomepageDisplayCards_Container {
   width: 100%;
-  height: fit-content;
-  margin: 0 auto;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.Pagination_Menu {
-  display: flex;
-  justify-content: center;
-}
-
-.Cards_Container {
-  width: 100%;
-  max-width: 400px;
   height: fit-content;
   margin: 0;
   padding-top: 8px;
@@ -41,11 +26,17 @@
   padding-left: 3rem;
   box-sizing: border-box;
   display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
+  gap: 1rem;
 }
 
-@media only screen and (min-width: 1240px) {
-  .ImageCarousel_Container {
+.HomepageDisplayCards_Container .GameCard_Container {
+  max-width: 400px;
+}
+
+@media only screen and (max-width: 1239px) {
+  .HomepageDisplay_Container {
     display: none;
   }
 }

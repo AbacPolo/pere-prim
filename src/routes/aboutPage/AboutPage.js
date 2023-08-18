@@ -43,10 +43,12 @@ function AboutPage() {
       <div className="AboutPage_Container">
         <div className="AboutPage_Wrapper">
           <MainBanner />
-          <IndexMenu variant="sections" terms={sectionsNameArray} />
-          {aboutInfo.cards.map((section, index) => (
-            <SectionCard key={index} sectionInfo={section} />
-          ))}
+          <div className="AboutPageSections_Wrapper">
+            <IndexMenu variant="sections" terms={sectionsNameArray} />
+            {aboutInfo.cards.map((section, index) => (
+              <SectionCard key={index} sectionInfo={section} />
+            ))}
+          </div>
         </div>
       </div>
     );

@@ -6,12 +6,29 @@
 .GameCard_Container {
   display: block;
   width: 100%;
-  height: fit-content;
+  max-width: 400px;
+  min-width: 270px;
+  /* height: 100%; */
   margin: 0;
   box-sizing: border-box;
   background-color: #232730;
   box-shadow: 0px 0px 5px 0px #000,
     inset 0px 0px 2px 0px rgba(255, 255, 255, 0.8);
+  color: transparent;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, outline 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.GameCard_Container:hover {
+  outline: 1px solid #f5ac10;
+  background-color: #15161b;
+  box-shadow: none;
+}
+
+
+@media only screen and (min-width: 600px) and (max-width: 904px) {
+  .GameCard_Container {
+    max-width: 300px;
+  }
 }
 
 .CardActionArea {
@@ -21,6 +38,16 @@
   padding-right: 16px;
   padding-bottom: 16px;
   padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 16px;
+  margin-bottom: auto;
+  box-sizing: border-box;
+}
+
+.Card_Header {
+  height: fit-content;
 }
 
 .Card_Title {
@@ -59,6 +86,12 @@
 .Card_Description {
   text-align: center;
   padding: 0;
-  padding-top: 16px;
+  /* padding-top: 16px; */
   box-sizing: border-box;
+}
+
+@media only screen and (min-width: 2130px) {
+  .GameCard_Container {
+    max-width: 500px;
+  }
 }

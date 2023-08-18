@@ -1,7 +1,8 @@
 .appBar {
   /* border-bottom: 1px solid rgb(163, 177, 190, 0.3); */
   box-sizing: border-box;
-  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5), inset 0px -1px 2px 0px rgba(255,255,255,0.5);
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5),
+    inset 0px -1px 2px 0px rgba(255, 255, 255, 0.5);
   height: 59px;
 }
 
@@ -10,6 +11,12 @@
   padding-left: 12px;
   justify-content: space-between;
   box-sizing: border-box;
+  height: 100%;
+  min-height: auto;
+}
+
+.OpenMenu_Button {
+  display: inline-flex;
 }
 
 .Menu {
@@ -22,7 +29,7 @@
     box-sizing: border-box;
     border-radius: 0;
     z-index: 1;
-    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.7);
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.7);
   }
 
   & > .MuiMenu-paper > .MuiList-root {
@@ -36,11 +43,13 @@
   }
 }
 
+.Desktop_Menu {
+  display: none;
+}
+
 .menuItem {
   justify-content: center;
   width: 100%;
-  color: #a3b1be;
-  font-weight: 600;
   border-radius: 6px;
   padding-top: 14px;
   padding-bottom: 14px;
@@ -53,10 +62,41 @@
 
 .selected {
   background-color: #15161b;
-  color: #fff;
 }
 
 .wasdIcon {
   height: 52px;
   width: 52px;
+}
+
+@media only screen and (min-width: 768px) {
+  .Header {
+    padding-right: 12px;
+  }
+
+  .OpenMenu_Button {
+    display: none;
+  }
+
+  .Desktop_Menu {
+    display: flex;
+    gap: 12px;
+  }
+
+  .menuItem {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: auto;
+    text-transform: lowercase;
+  }
+
+  .menuItem > h5::first-letter {
+    text-transform: capitalize;
+  }
+
+  .selected {
+    background-color: #15161b;
+    box-shadow: 0px 0px 5px 0px #000;
+    border: 1px solid #F5AC10;
+  }
 }

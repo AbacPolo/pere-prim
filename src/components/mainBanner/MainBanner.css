@@ -41,3 +41,37 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+
+@media only screen and (min-width: 1240px) {
+  .MainBanner_Wrapper {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .Text_Container {
+    align-items: flex-start;
+  }
+  
+
+  .profile_Image {
+    max-width: 400px;
+  }
+}
+
+
+@media only screen and (min-width: 1921px) {
+  .profile_Image {
+    max-width: 500px;
+  }
+
+  .MainTitle_xl {
+    font-size: 6rem;
+  }
+
+  .Subtitle_xl {
+    font-size: 3rem;
+  }
+}
+
+

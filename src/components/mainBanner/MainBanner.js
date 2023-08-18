@@ -38,22 +38,25 @@ function MainBanner() {
             alt="Profile"
           ></img>
           <div className="Text_Container">
-            <Typography variant="h1">{pageBanner.mainTitle}</Typography>
-            <Typography variant="h3">{pageBanner.subtitle}</Typography>
+            <Typography variant="h1" className="MainTitle_xl">
+              {pageBanner.mainTitle}
+            </Typography>
+            <Typography variant="h3" className="Subtitle_xl">
+              {pageBanner.subtitle}
+            </Typography>
             <div className="Socials_Container">
               {pageBanner.socials.map((card) =>
                 card.content.map((social, index) => (
-                  <div key={index} className="Socials_Container">
-                    <IconButton
-                      color="secondary"
-                      aria-label={social.linkLable}
-                      href={social.link}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {IconSelector(social.socialIcon)}
-                    </IconButton>
-                  </div>
+                  <IconButton
+                    key={index}
+                    color="secondary"
+                    aria-label={social.linkLable}
+                    href={social.link}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {IconSelector(social.socialIcon)}
+                  </IconButton>
                 ))
               )}
             </div>

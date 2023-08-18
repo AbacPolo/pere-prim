@@ -21,36 +21,41 @@ function GameCard({ gameInfo, page, index, cardType }) {
     }
   };
 
-  return (
-    <Card
-      className={classNames("hidden fade", {
-        GameCard_Container: page === index,
-      })}
-    >
-      <CardActionArea className="CardActionArea" onClick={handleCardClick}>
-        <CardContent
-          className={classNames("Card_Title", {
-            Big_Title: cardType !== "compact",
-          })}
-        >
-          <Typography variant="h4">{gameInfo.name}</Typography>
-        </CardContent>
-        <CardMedia
-          className="gameImage"
-          component="img"
-          src={gameInfo.bannerImage.asset.url}
-          alt={`${gameInfo.name} Banner`}
-        />
-        {cardType !== "compact" &&
-        gameInfo.description !== "" &&
-        gameInfo.description !== undefined ? (
-          <CardContent className="Card_Description">
-            <Typography variant="caption">{gameInfo.description}</Typography>
-          </CardContent>
-        ) : null}
-      </CardActionArea>
-    </Card>
-  );
+  if (gameInfo) {
+    return (
+      <Card
+        className={classNames("hidden fade", {
+          GameCard_Container: page === index,
+        })}
+      >
+        <CardActionArea className="CardActionArea" onClick={handleCardClick}>
+          <div className="Card_Header">
+            <Typography
+              variant="h4"
+              className={classNames("Card_Title", {
+                Big_Title: cardType !== "compact",
+              })}
+            >
+              {gameInfo.name}
+            </Typography>
+            <CardMedia
+              className="gameImage"
+              component="img"
+              src={gameInfo.bannerImage.asset.url}
+              alt={`${gameInfo.name} Banner`}
+            />
+          </div>
+          {cardType !== "compact" &&
+          gameInfo.description !== "" &&
+          gameInfo.description !== undefined ? (
+            <CardContent className="Card_Description">
+              <Typography variant="caption">{gameInfo.description}</Typography>
+            </CardContent>
+          ) : null}
+        </CardActionArea>
+      </Card>
+    );
+  }
 }
 
 export default GameCard;

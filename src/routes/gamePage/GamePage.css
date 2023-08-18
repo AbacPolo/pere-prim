@@ -6,10 +6,13 @@
   padding-left: 1rem;
   padding-right: 1rem;
   overflow: scroll;
+  display: flex;
+  justify-content: center;
 }
 
 .GamePage_Wrapper {
   width: 100%;
+  max-width: 768px;
   height: fit-content;
   margin: 0;
   box-sizing: border-box;
@@ -33,4 +36,14 @@
   border-top: 1px solid #a3b1be;
   border-bottom: 1px solid #a3b1be;
   box-shadow: 0px 0px 5px 0px #000;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .GamePage_BannerImage {
+    width: 100%;
+    border-left: 1px solid #a3b1be;
+    border-right: 1px solid #a3b1be;
+    border-radius: 4px;
+  }
 }

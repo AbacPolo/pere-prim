@@ -35,8 +35,10 @@
   text-align: center;
 }
 
-.SectionCard_Image {
-  max-width: 800px;
+.SectionCard_Image,
+.SectionCard_Button {
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .VideoPlayer_Wrapper {

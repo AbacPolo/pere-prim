@@ -30,6 +30,7 @@
 .DataCard_Logo {
   height: 52px;
   width: 52px;
+  border: 1px solid #a3b1be;
 }
 
 .DataCard_HeaderText {

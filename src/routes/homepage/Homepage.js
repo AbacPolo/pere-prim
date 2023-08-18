@@ -23,8 +23,12 @@ import {
   getEnginesAreLoaded,
   getEnginesAreLoading,
 } from "../enginesSection/enginePageSlice";
-import { fetchImageCarousel, getCarouselIsLoaded, getCarouselIsLoading } from "../../components/imageCarousel/imageCarouselSlice";
-
+import {
+  fetchImageCarousel,
+  getCarouselIsLoaded,
+  getCarouselIsLoading,
+} from "../../components/imageCarousel/imageCarouselSlice";
+import HomepageDisplay from "../../components/homepageDisplay/HomepageDisplay";
 
 function Homepage() {
   const dispatch = useDispatch();
@@ -38,8 +42,6 @@ function Homepage() {
   const enginesAreLoading = useSelector(getEnginesAreLoading);
   const carouselIsLoaded = useSelector(getCarouselIsLoaded);
   const carouselIsLoading = useSelector(getCarouselIsLoading);
-
-
 
   useEffect(() => {
     !gamesAreLoaded && !gamesAreLoading && dispatch(fetchAllGames());
@@ -66,6 +68,7 @@ function Homepage() {
       <div className="Homepage_Wrapper">
         <MainBanner />
         <ImageCarousel />
+        <HomepageDisplay />
       </div>
     </div>
   );

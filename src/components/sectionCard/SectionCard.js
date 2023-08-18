@@ -59,6 +59,7 @@ function SectionCard({ sectionInfo }) {
                   component="img"
                   src={contentBlock.image.asset.url}
                   alt={contentBlock.alt}
+                  className="SectionCard_Image"
                 />
               );
             case "files":
@@ -70,6 +71,7 @@ function SectionCard({ sectionInfo }) {
                   startIcon={<Download />}
                   color="secondary"
                   target="_blank"
+                  className="SectionCard_Button"
                 >
                   {contentBlock.fileName}
                 </Button>

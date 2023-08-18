@@ -3,6 +3,7 @@ import "./Header.css";
 import {
   AppBar,
   Box,
+  Button,
   Fade,
   IconButton,
   Menu,
@@ -55,11 +56,10 @@ function Header() {
             aria-haspopup="true"
             onClick={() => navigateTo(`/`)}
             color="inherit"
-            sx={{padding: '0'}}
+            sx={{ padding: "0" }}
           >
-            <WasdIcon className="wasdIcon"/>
+            <WasdIcon className="wasdIcon" />
           </IconButton>
-
           <IconButton
             size="large"
             aria-label="menu-button"
@@ -67,6 +67,7 @@ function Header() {
             aria-haspopup="true"
             onClick={handleMenu}
             color="inherit"
+            className="OpenMenu_Button"
           >
             <MenuIcon fontSize="large" />
           </IconButton>
@@ -114,6 +115,40 @@ function Header() {
               <Typography variant="h5">About</Typography>
             </MenuItem>
           </Menu>
+          <div className="Desktop_Menu">
+            <Button variant="outlined"
+              className={classNames("menuItem", {
+                selected: location.pathname === "/",
+              })}
+              onClick={() => handleClose("Homepage")}
+            >
+              <Typography variant="h5">Homepage</Typography>
+            </Button>
+            <Button variant="outlined"
+              className={classNames("menuItem", {
+                selected: location.pathname === "/Games",
+              })}
+              onClick={() => handleClose("Games")}
+            >
+              <Typography variant="h5">Games</Typography>
+            </Button>
+            <Button variant="outlined"
+              className={classNames("menuItem", {
+                selected: location.pathname === "/Engines",
+              })}
+              onClick={() => handleClose("Engines")}
+            >
+              <Typography variant="h5">Engines</Typography>
+            </Button>
+            <Button variant="outlined"
+              className={classNames("menuItem", {
+                selected: location.pathname === "/About",
+              })}
+              onClick={() => handleClose("About")}
+            >
+              <Typography variant="h5">About</Typography>
+            </Button>
+          </div>
         </Toolbar>
       </AppBar>
     </Box>
