@@ -15,12 +15,8 @@
 }
 
 .CategoryMenu_Button > p {
-  margin: 0;
-}
-
-
-.CategoryMenu_Button > p::first-letter {
   text-transform: capitalize;
+  margin: 0;
 }
 
 .ActiveCategory {
