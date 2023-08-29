@@ -6,6 +6,7 @@ import theme from "./theme";
 import { ThemeProvider } from "@mui/material";
 import createCache from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
+import Footer from "./components/footer/Footer";
 
 export const muiCache = createCache({
   key: "mui",
@@ -20,6 +21,7 @@ function App() {
           <div className="App_Wrapper">
             <Header />
             <Outlet />
+            <Footer />
           </div>
         </div>
       </ThemeProvider>

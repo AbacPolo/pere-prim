@@ -29,6 +29,7 @@ import {
   getCarouselIsLoading,
 } from "../../components/imageCarousel/imageCarouselSlice";
 import HomepageDisplay from "../../components/homepageDisplay/HomepageDisplay";
+import Footer from "../../components/footer/Footer";
 
 function Homepage() {
   const dispatch = useDispatch();
