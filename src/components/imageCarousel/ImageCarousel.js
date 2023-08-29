@@ -76,6 +76,7 @@ function ImageCarousel() {
             <IconButton
               aria-label="Go Left"
               color="secondary"
+              className="Carousel_Button"
               onClick={() => handleManual("left")}
             >
               <ChevronLeft />
@@ -92,6 +93,7 @@ function ImageCarousel() {
             <IconButton
               aria-label="Go Right"
               color="secondary"
+              className="Carousel_Button"
               onClick={() => handleManual("right")}
             >
               <ChevronRight />
