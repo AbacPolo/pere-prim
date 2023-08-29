@@ -99,3 +99,8 @@
     max-width: 500px;
   }
 }
+
+.Popover_Container {
+  margin-left: 6px;
+  background: none;
+}

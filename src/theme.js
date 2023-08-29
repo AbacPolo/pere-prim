@@ -37,6 +37,11 @@ const theme = createTheme({
         },
       },
     },
+    MuiPopover: {
+      styleOverrides: {
+        pointerEvents: "auto",
+      },
+    },
   },
   typography: {
     fontFamily: '"Nunito Sans", "Arial", sans-serif',
@@ -47,7 +52,7 @@ const theme = createTheme({
       letterSpacing: "10px",
       color: "#fff",
       marginLeft: "10px",
-      textTransform: 'uppercase'
+      textTransform: "uppercase",
     },
     h2: {
       fontSize: "4rem", //40px
@@ -55,7 +60,7 @@ const theme = createTheme({
       letterSpacing: "10px",
       color: "#fff",
       marginLeft: "10px",
-      textTransform: 'uppercase'
+      textTransform: "uppercase",
     },
     h3: {
       fontSize: "2rem", //24px
@@ -63,7 +68,7 @@ const theme = createTheme({
       letterSpacing: "6px",
       color: "#F5AC10",
       marginLeft: "6px",
-      textTransform: 'uppercase'
+      textTransform: "uppercase",
     },
     h4: {
       fontSize: "1.5rem", //20px
@@ -92,7 +97,7 @@ const theme = createTheme({
       fontSize: "1rem", //16px
       fontWeight: 200, //Extra-Light
       color: "#fff",
-    }
+    },
   },
 });
 

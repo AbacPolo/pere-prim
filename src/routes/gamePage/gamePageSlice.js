@@ -14,6 +14,15 @@ export const fetchAllGames = createAsyncThunk(
             url
            }
          },
+      preview[]{
+        ...,
+        image{
+          asset->{
+          _id,
+          url
+          }
+        },
+      },
       socials[]{
         content[]{
           ...,

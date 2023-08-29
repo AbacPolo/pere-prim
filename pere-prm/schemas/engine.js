@@ -26,6 +26,12 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Preview',
+      name: 'preview',
+      type: 'array',
+      of: [{type: 'richText'}, {type: 'media'}],
+    },
+    {
       type: 'array',
       name: 'socials',
       title: 'Socials',
