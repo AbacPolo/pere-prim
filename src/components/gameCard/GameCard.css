@@ -15,7 +15,9 @@
   box-shadow: 0px 0px 5px 0px #000,
     inset 0px 0px 2px 0px rgba(255, 255, 255, 0.8);
   color: transparent;
-  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, outline 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    outline 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
 .GameCard_Container:hover {
@@ -23,7 +25,6 @@
   background-color: #15161b;
   box-shadow: none;
 }
-
 
 @media only screen and (min-width: 600px) and (max-width: 904px) {
   .GameCard_Container {
@@ -48,6 +49,7 @@
 
 .Card_Header {
   height: fit-content;
+  width: 100%;
 }
 
 .Card_Title {
@@ -57,6 +59,7 @@
   text-align: center;
   text-transform: uppercase;
   box-sizing: border-box;
+  overflow-wrap: normal;
 }
 
 .Big_Title {
@@ -67,16 +70,17 @@
 .gameImage {
   border: 1px solid #a3b1be;
   box-sizing: border-box;
+  max-width: 100%;
 }
 
-.fade {
+.fadeIn {
   animation-name: fade;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
 }
 
 @keyframes fade {
   from {
-    opacity: 0.4;
+    opacity: 0.5;
   }
   to {
     opacity: 1;

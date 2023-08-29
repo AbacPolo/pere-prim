@@ -24,7 +24,7 @@ function GameCard({ gameInfo, page, index, cardType }) {
   if (gameInfo) {
     return (
       <Card
-        className={classNames("hidden fade", {
+        className={classNames("hidden fadeIn", {
           GameCard_Container: page === index,
         })}
       >
