@@ -24,7 +24,7 @@ function Footer() {
           <IconButton
             color="footer"
             aria-label="LinkedIn Link Abac Polo"
-            href="https://github.com/AbacPolo"
+            href="https://www.linkedin.com/in/abac-polo-p%C3%A9rez-23398212a/"
             target="_blank"
             rel="noreferrer"
             size="small"
