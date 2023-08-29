@@ -1,6 +1,6 @@
 .AboutPage_Container {
   width: 100%;
-  height: calc(100% - 59px);
+  height: calc(100% - 59px - 30px);
   margin: 0;
   box-sizing: border-box;
   padding-left: 1rem;

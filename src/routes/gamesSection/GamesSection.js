@@ -5,6 +5,7 @@ import GameCard from "../../components/gameCard/GameCard";
 import IndexMenu from "../../components/indexMenu/IndexMenu";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllGames, getAllGames, getgamesAreLoaded, getgamesAreLoading } from "../gamePage/gamePageSlice";
+import Footer from "../../components/footer/Footer";
 
 function GamesSection() {
   const [activeCategory, setActiveCategory] = useState("");

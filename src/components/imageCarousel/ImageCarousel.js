@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ImageCarousel.css";
-import { Pagination, Skeleton, Typography } from "@mui/material";
+import { IconButton, Skeleton, Typography } from "@mui/material";
 import GameCard from "../gameCard/GameCard";
 import { useSelector } from "react-redux";
 import {
@@ -13,9 +13,11 @@ import {
 } from "../../routes/enginesSection/enginePageSlice";
 import { getCarousel } from "./imageCarouselSlice";
 import { useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 
 function ImageCarousel() {
   const [page, setPage] = useState(1);
+  const [manualNav, setManualNav] = useState(false);
   const allGames = useSelector(getAllGames);
   const allEngines = useSelector(getAllEngines);
   const carousel = useSelector(getCarousel);
@@ -36,30 +38,49 @@ function ImageCarousel() {
     }
   }, [carousel, allGames, allEngines]);
 
-  const handleChange = (event, value) => {
-    setPage(value);
+  let nextPage;
+  if (manualNav === false) {
+    nextPage = setTimeout(() => {
+      if (page < carouselInfo.length) {
+        setPage(page + 1);
+      } else if (page === carouselInfo.length) {
+        setPage(1);
+      }
+    }, "5000");
+  }
+
+  const handleManual = (direction) => {
+    setManualNav(true);
+    clearTimeout(nextPage);
+    if (direction === "left" && page > 1) {
+      setPage(page - 1);
+    } else if (direction === "left" && page === 1) {
+      setPage(carouselInfo.length);
+    } else if (direction === "right" && page < carouselInfo.length) {
+      setPage(page + 1);
+    } else if (direction === "right" && page === carouselInfo.length) {
+      setPage(1);
+    }
   };
 
   return (
     <div className="ImageCarousel_Container">
       <div className="ImageCarousel_Wrapper">
-        <div className="Pagination_Container">
-          <Typography variant="h6">SOME OF MY WORK</Typography>
-          <Pagination
-            count={carouselInfo.length}
-            defaultPage={1}
-            page={page}
-            onChange={handleChange}
-            color="secondary"
-            className="Pagination_Menu"
-          />
-        </div>
+        <Typography variant="h6">SOME OF MY WORK</Typography>
         {!gamesAreLoaded || !enginesAreLoaded ? (
           <div className="Cards_Container">
             <Skeleton variant="rectangular" width={250} height={190} />
           </div>
         ) : (
           <div className="Cards_Container">
+            <IconButton
+              aria-label="Go Left"
+              color="secondary"
+              className="Carousel_Button"
+              onClick={() => handleManual("left")}
+            >
+              <ChevronLeft />
+            </IconButton>
             {carouselInfo.map((gameInfo, index) => (
               <GameCard
                 key={index}
@@ -69,6 +90,14 @@ function ImageCarousel() {
                 cardType="compact"
               />
             ))}
+            <IconButton
+              aria-label="Go Right"
+              color="secondary"
+              className="Carousel_Button"
+              onClick={() => handleManual("right")}
+            >
+              <ChevronRight />
+            </IconButton>
           </div>
         )}
       </div>

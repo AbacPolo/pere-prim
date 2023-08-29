@@ -24,6 +24,15 @@ export const fetchAllEngines = createAsyncThunk(
           }
         }
       },
+      preview[]{
+        ...,
+        image{
+          asset->{
+          _id,
+          url
+          }
+        },
+      },
       "cards": body[]{
         name,
         content[]{
