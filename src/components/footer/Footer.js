@@ -7,10 +7,19 @@ function Footer() {
   return (
     <div className="Footer_Container">
       <div className="Footer_Wrapper">
-        <Typography variant="caption" sx={{fontSize: "12px", lineHeight: "12px"}}>
-          Created by <b>Àbac Polo</b>
+        <Typography
+          variant="caption"
+          sx={{ fontSize: "12px", lineHeight: "12px" }}
+        >
+          &copy; 2023 Pere Prim
         </Typography>
         <div>
+          <Typography
+            variant="caption"
+            sx={{ fontSize: "12px", lineHeight: "12px", paddingRight: "8px" }}
+          >
+            Created by <b>Àbac Polo</b>
+          </Typography>
           <IconButton
             color="footer"
             aria-label="GitHub Link Abac Polo"
