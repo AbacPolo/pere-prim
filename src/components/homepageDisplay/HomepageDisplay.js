@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Skeleton, Typography } from "@mui/material";
-import "./HomepageDisplay.css"
+import { Button, Skeleton, Typography } from "@mui/material";
+import "./HomepageDisplay.css";
 import GameCard from "../gameCard/GameCard";
 import { useSelector } from "react-redux";
 import {
@@ -13,6 +13,7 @@ import {
 } from "../../routes/enginesSection/enginePageSlice";
 import { getCarousel } from "../imageCarousel/imageCarouselSlice";
 import { useEffect } from "react";
+import { useNavigate } from "react-router";
 
 function HomepageDisplay() {
   const allGames = useSelector(getAllGames);
@@ -21,6 +22,7 @@ function HomepageDisplay() {
   const gamesAreLoaded = useSelector(getgamesAreLoaded);
   const enginesAreLoaded = useSelector(getEnginesAreLoaded);
   const [carouselInfo, setCarouselInfo] = useState([]);
+  const navigateTo = useNavigate();
 
   useEffect(() => {
     if (carousel) {
@@ -38,21 +40,31 @@ function HomepageDisplay() {
   return (
     <div className="HomepageDisplay_Container">
       <div className="HomepageDisplay_Wrapper">
-        <Typography variant="h4" sx={{color: "#fff"}}>SOME OF MY WORK</Typography>
+        <div className="ImageCarousel_TitleContainer">
+          <Typography variant="h4" sx={{ color: "#fff" }}>
+            FEATURED PROJECTS
+          </Typography>
+          <Button
+            variant="text"
+            sx={{ textTransform: "lowercase" }}
+            onClick={() => navigateTo("/Games")}
+          >
+            <Typography variant="body1" color="secondary">
+              + more
+            </Typography>
+          </Button>
+        </div>
         {!gamesAreLoaded || !enginesAreLoaded ? (
           <div className="HomepageDisplayCards_Container">
             <Skeleton variant="rectangular" width={250} height={190} />
           </div>
         ) : (
           <div className="HomepageDisplayCards_Container">
-            {carouselInfo.map((gameInfo, index) => (
-              index < 4 ?
-              <GameCard
-                key={index}
-                gameInfo={gameInfo}
-                cardType="compact"
-              /> : null
-            ))}
+            {carouselInfo.map((gameInfo, index) =>
+              index < 4 ? (
+                <GameCard key={index} gameInfo={gameInfo} cardType="compact" />
+              ) : null
+            )}
           </div>
         )}
       </div>

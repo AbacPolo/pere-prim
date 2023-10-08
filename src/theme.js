@@ -91,6 +91,7 @@ const theme = createTheme({
     },
     h6: {
       fontSize: "1rem", //16px
+      lineHeight: "1rem",
       fontWeight: 200, //Extra-Light
       color: "#fff",
     },

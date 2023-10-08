@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ImageCarousel.css";
-import { IconButton, Skeleton, Typography } from "@mui/material";
+import { Button, IconButton, Skeleton, Typography } from "@mui/material";
 import GameCard from "../gameCard/GameCard";
 import { useSelector } from "react-redux";
 import {
@@ -14,6 +14,7 @@ import {
 import { getCarousel } from "./imageCarouselSlice";
 import { useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
+import { useNavigate } from "react-router";
 
 function ImageCarousel() {
   const [page, setPage] = useState(1);
@@ -24,6 +25,7 @@ function ImageCarousel() {
   const gamesAreLoaded = useSelector(getgamesAreLoaded);
   const enginesAreLoaded = useSelector(getEnginesAreLoaded);
   const [carouselInfo, setCarouselInfo] = useState([]);
+  const navigateTo = useNavigate();
 
   useEffect(() => {
     if (carousel) {
@@ -66,7 +68,18 @@ function ImageCarousel() {
   return (
     <div className="ImageCarousel_Container">
       <div className="ImageCarousel_Wrapper">
-        <Typography variant="h6">SOME OF MY WORK</Typography>
+        <div className="ImageCarousel_TitleContainer">
+          <Typography variant="h6">FEATURED PROJECTS</Typography>
+          <Button
+            variant="text"
+            sx={{ textTransform: "lowercase" }}
+            onClick={() => navigateTo("/Games")}
+          >
+            <Typography variant="body1" color="secondary">
+              + more
+            </Typography>
+          </Button>
+        </div>
         {!gamesAreLoaded || !enginesAreLoaded ? (
           <div className="Cards_Container">
             <Skeleton variant="rectangular" width={250} height={190} />
