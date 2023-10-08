@@ -12,12 +12,12 @@ import {
   getgamesAreLoading,
 } from "./gamePageSlice";
 import SocialsCard from "../../components/socialsCard/SocialsCard";
-import {
-  fetchAllEngines,
-  getAllEngines,
-  getEnginesAreLoaded,
-  getEnginesAreLoading,
-} from "../enginesSection/enginePageSlice";
+// import {
+//   fetchAllEngines,
+//   getAllEngines,
+//   getEnginesAreLoaded,
+//   getEnginesAreLoading,
+// } from "../enginesSection/enginePageSlice";
 
 function GamePage() {
   const location = useLocation();
@@ -26,32 +26,31 @@ function GamePage() {
   const [gameSections, setGameSections] = useState([]);
 
   const allGames = useSelector(getAllGames);
-  const allEngines = useSelector(getAllEngines);
+  // const allEngines = useSelector(getAllEngines);
 
-  const allData = location.pathname.includes("/Games/") ? allGames : allEngines;
+  const allData = location.pathname.includes("/Projects/") && allGames ;
 
   const dispatch = useDispatch();
   const gamesAreLoaded = useSelector(getgamesAreLoaded);
   const gamesAreLoading = useSelector(getgamesAreLoading);
-  const enginesAreLoaded = useSelector(getEnginesAreLoaded);
-  const enginesAreLoading = useSelector(getEnginesAreLoading);
+  // const enginesAreLoaded = useSelector(getEnginesAreLoaded);
+  // const enginesAreLoading = useSelector(getEnginesAreLoading);
 
   useEffect(() => {
     !gamesAreLoaded && !gamesAreLoading && dispatch(fetchAllGames());
-    !enginesAreLoaded && !enginesAreLoading && dispatch(fetchAllEngines());
+    // !enginesAreLoaded && !enginesAreLoading && dispatch(fetchAllEngines());
   }, [
     gamesAreLoaded,
     gamesAreLoading,
-    enginesAreLoaded,
-    enginesAreLoading,
+    // enginesAreLoaded,
+    // enginesAreLoading,
     dispatch,
   ]);
 
   useEffect(() => {
     if (allData.length > 0) {
       const gameName = location.pathname
-        .replace("/Games/", "")
-        .replace("/Engines/", "")
+        .replace("/Projects/", "")
         .replace("%20", " ");
       const gameInfoFilter = allData.filter(
         (game) => game.name === gameName

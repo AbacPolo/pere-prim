@@ -7,35 +7,36 @@ import {
   getAllGames,
   getgamesAreLoaded,
 } from "../../routes/gamePage/gamePageSlice";
-import {
-  getAllEngines,
-  getEnginesAreLoaded,
-} from "../../routes/enginesSection/enginePageSlice";
+// import {
+//   getAllEngines,
+//   getEnginesAreLoaded,
+// } from "../../routes/enginesSection/enginePageSlice";
 import { getCarousel } from "../imageCarousel/imageCarouselSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
 
 function HomepageDisplay() {
   const allGames = useSelector(getAllGames);
-  const allEngines = useSelector(getAllEngines);
+  // const allEngines = useSelector(getAllEngines);
   const carousel = useSelector(getCarousel);
   const gamesAreLoaded = useSelector(getgamesAreLoaded);
-  const enginesAreLoaded = useSelector(getEnginesAreLoaded);
+  // const enginesAreLoaded = useSelector(getEnginesAreLoaded);
   const [carouselInfo, setCarouselInfo] = useState([]);
   const navigateTo = useNavigate();
 
   useEffect(() => {
     if (carousel) {
       const carouselCards = carousel.preview.map((card) => {
-        if (card._type === "game") {
-          return allGames.filter((game) => game.name === card.name)[0];
-        } else {
-          return allEngines.filter((engine) => engine.name === card.name)[0];
-        }
+        return allGames.filter((game) => game.name === card.name)[0];
+        // if (card._type === "game") {
+        //   return allGames.filter((game) => game.name === card.name)[0];
+        // } else {
+        //   return allEngines.filter((engine) => engine.name === card.name)[0];
+        // }
       });
       setCarouselInfo(carouselCards);
     }
-  }, [carousel, allGames, allEngines]);
+  }, [carousel, allGames]);
 
   return (
     <div className="HomepageDisplay_Container">
@@ -47,14 +48,14 @@ function HomepageDisplay() {
           <Button
             variant="text"
             sx={{ textTransform: "lowercase" }}
-            onClick={() => navigateTo("/Games")}
+            onClick={() => navigateTo("/Projects")}
           >
             <Typography variant="body1" color="secondary">
               + more
             </Typography>
           </Button>
         </div>
-        {!gamesAreLoaded || !enginesAreLoaded ? (
+        {!gamesAreLoaded ? (
           <div className="HomepageDisplayCards_Container">
             <Skeleton variant="rectangular" width={250} height={190} />
           </div>

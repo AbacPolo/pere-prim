@@ -18,18 +18,17 @@ import {
   getAboutIsLoaded,
   getAboutIsLoading,
 } from "../aboutPage/aboutPageSlice";
-import {
-  fetchAllEngines,
-  getEnginesAreLoaded,
-  getEnginesAreLoading,
-} from "../enginesSection/enginePageSlice";
+// import {
+//   fetchAllEngines,
+//   getEnginesAreLoaded,
+//   getEnginesAreLoading,
+// } from "../enginesSection/enginePageSlice";
 import {
   fetchImageCarousel,
   getCarouselIsLoaded,
   getCarouselIsLoading,
 } from "../../components/imageCarousel/imageCarouselSlice";
 import HomepageDisplay from "../../components/homepageDisplay/HomepageDisplay";
-import Footer from "../../components/footer/Footer";
 
 function Homepage() {
   const dispatch = useDispatch();
@@ -39,22 +38,22 @@ function Homepage() {
   const bannerIsLoading = useSelector(getBannerIsLoading);
   const aboutIsLoaded = useSelector(getAboutIsLoaded);
   const aboutIsLoading = useSelector(getAboutIsLoading);
-  const enginesAreLoaded = useSelector(getEnginesAreLoaded);
-  const enginesAreLoading = useSelector(getEnginesAreLoading);
+  // const enginesAreLoaded = useSelector(getEnginesAreLoaded);
+  // const enginesAreLoading = useSelector(getEnginesAreLoading);
   const carouselIsLoaded = useSelector(getCarouselIsLoaded);
   const carouselIsLoading = useSelector(getCarouselIsLoading);
 
   useEffect(() => {
     !gamesAreLoaded && !gamesAreLoading && dispatch(fetchAllGames());
-    !enginesAreLoaded && !enginesAreLoading && dispatch(fetchAllEngines());
+    // !enginesAreLoaded && !enginesAreLoading && dispatch(fetchAllEngines());
     !bannerIsLoaded && !bannerIsLoading && dispatch(fetchMainBanner());
     !carouselIsLoaded && !carouselIsLoading && dispatch(fetchImageCarousel());
     !aboutIsLoaded && !aboutIsLoading && dispatch(fetchAbout());
   }, [
     gamesAreLoaded,
     gamesAreLoading,
-    enginesAreLoaded,
-    enginesAreLoading,
+    // enginesAreLoaded,
+    // enginesAreLoading,
     bannerIsLoaded,
     bannerIsLoading,
     aboutIsLoaded,

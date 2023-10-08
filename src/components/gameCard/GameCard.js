@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import "./GameCard.css";
 import {
   Card,
@@ -11,21 +11,21 @@ import classNames from "classnames";
 import { useNavigate } from "react-router";
 import PopupState, { bindPopover, bindHover } from "material-ui-popup-state";
 import HoverPopover from "material-ui-popup-state/HoverPopover";
-import SectionCard from "../sectionCard/SectionCard";
 import PreviewCard from "../previewCard/PreviewCard";
 
 function GameCard({ gameInfo, page, index, cardType }) {
   const navigate = useNavigate();
 
   const handleCardClick = () => {
-    if (gameInfo._type === "game") {
-      navigate(`/Games/${gameInfo.name}`);
-    } else if (gameInfo._type === "engine") {
-      navigate(`/Engines/${gameInfo.name}`);
-    }
+    navigate(`/Projects/${gameInfo.name}`);
+    // if (gameInfo._type === "game") {
+    //   navigate(`/Projects/${gameInfo.name}`);
+    // } else if (gameInfo._type === "engine") {
+    //   navigate(`/Engines/${gameInfo.name}`);
+    // }
   };
 
-  console.log("gameInfo", gameInfo);
+  // console.log("gameInfo", gameInfo);
 
   if (gameInfo) {
     return (

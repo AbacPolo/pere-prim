@@ -31,12 +31,12 @@ function Header() {
       case "Homepage":
         navigateTo(`/`);
         break;
-      case "Games":
-        navigateTo(`/Games`);
+      case "Projects":
+        navigateTo(`/Projects`);
         break;
-      case "Engines":
-        navigateTo(`/Engines`);
-        break;
+      // case "Engines":
+      //   navigateTo(`/Engines`);
+      //   break;
       case "About":
         navigateTo(`/About`);
         break;
@@ -92,20 +92,20 @@ function Header() {
             </MenuItem>
             <MenuItem
               className={classNames("menuItem", {
-                selected: location.pathname === "/Games",
+                selected: location.pathname === "/Projects",
               })}
-              onClick={() => handleClose("Games")}
+              onClick={() => handleClose("Projects")}
             >
-              <Typography variant="h5">Games</Typography>
+              <Typography variant="h5">Projects</Typography>
             </MenuItem>
-            <MenuItem
+            {/* <MenuItem
               className={classNames("menuItem", {
                 selected: location.pathname === "/Engines",
               })}
               onClick={() => handleClose("Engines")}
             >
               <Typography variant="h5">Engines</Typography>
-            </MenuItem>
+            </MenuItem> */}
             <MenuItem
               className={classNames("menuItem", {
                 selected: location.pathname === "/About",
@@ -126,20 +126,20 @@ function Header() {
             </Button>
             <Button variant="outlined"
               className={classNames("menuItem", {
-                selected: location.pathname === "/Games",
+                selected: location.pathname === "/Projects",
               })}
-              onClick={() => handleClose("Games")}
+              onClick={() => handleClose("Projects")}
             >
-              <Typography variant="h5">Games</Typography>
+              <Typography variant="h5">Projects</Typography>
             </Button>
-            <Button variant="outlined"
+            {/* <Button variant="outlined"
               className={classNames("menuItem", {
                 selected: location.pathname === "/Engines",
               })}
               onClick={() => handleClose("Engines")}
             >
               <Typography variant="h5">Engines</Typography>
-            </Button>
+            </Button> */}
             <Button variant="outlined"
               className={classNames("menuItem", {
                 selected: location.pathname === "/About",
