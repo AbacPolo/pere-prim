@@ -15,7 +15,7 @@ export default {
           options: {
             disableNew: true
           },
-          to: [{type: 'game'}, {type: 'engine'}],
+          to: [{type: 'game'}],
         },
       ],
     },
