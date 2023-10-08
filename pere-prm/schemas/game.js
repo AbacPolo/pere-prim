@@ -3,7 +3,7 @@ import {RobotIcon} from '@sanity/icons'
 export default {
   name: 'game',
   type: 'document',
-  title: 'Game',
+  title: 'Project',
   icon: RobotIcon,
   fields: [
     {

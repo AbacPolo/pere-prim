@@ -1,42 +1,45 @@
 import React, { useState } from "react";
 import "./ImageCarousel.css";
-import { IconButton, Skeleton, Typography } from "@mui/material";
+import { Button, IconButton, Skeleton, Typography } from "@mui/material";
 import GameCard from "../gameCard/GameCard";
 import { useSelector } from "react-redux";
 import {
   getAllGames,
   getgamesAreLoaded,
 } from "../../routes/gamePage/gamePageSlice";
-import {
-  getAllEngines,
-  getEnginesAreLoaded,
-} from "../../routes/enginesSection/enginePageSlice";
+// import {
+//   getAllEngines,
+//   getEnginesAreLoaded,
+// } from "../../routes/enginesSection/enginePageSlice";
 import { getCarousel } from "./imageCarouselSlice";
 import { useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
+import { useNavigate } from "react-router";
 
 function ImageCarousel() {
   const [page, setPage] = useState(1);
   const [manualNav, setManualNav] = useState(false);
   const allGames = useSelector(getAllGames);
-  const allEngines = useSelector(getAllEngines);
+  // const allEngines = useSelector(getAllEngines);
   const carousel = useSelector(getCarousel);
   const gamesAreLoaded = useSelector(getgamesAreLoaded);
-  const enginesAreLoaded = useSelector(getEnginesAreLoaded);
+  // const enginesAreLoaded = useSelector(getEnginesAreLoaded);
   const [carouselInfo, setCarouselInfo] = useState([]);
+  const navigateTo = useNavigate();
 
   useEffect(() => {
     if (carousel) {
       const carouselCards = carousel.preview.map((card) => {
-        if (card._type === "game") {
-          return allGames.filter((game) => game.name === card.name)[0];
-        } else {
-          return allEngines.filter((engine) => engine.name === card.name)[0];
-        }
+        return allGames.filter((game) => game.name === card.name)[0];
+        // if (card._type === "game") {
+        //   return allGames.filter((game) => game.name === card.name)[0];
+        // } else {
+        //   return allEngines.filter((engine) => engine.name === card.name)[0];
+        // }
       });
       setCarouselInfo(carouselCards);
     }
-  }, [carousel, allGames, allEngines]);
+  }, [carousel, allGames]);
 
   let nextPage;
   if (manualNav === false) {
@@ -66,8 +69,19 @@ function ImageCarousel() {
   return (
     <div className="ImageCarousel_Container">
       <div className="ImageCarousel_Wrapper">
-        <Typography variant="h6">SOME OF MY WORK</Typography>
-        {!gamesAreLoaded || !enginesAreLoaded ? (
+        <div className="ImageCarousel_TitleContainer">
+          <Typography variant="h6">FEATURED PROJECTS</Typography>
+          <Button
+            variant="text"
+            sx={{ textTransform: "lowercase" }}
+            onClick={() => navigateTo("/Projects")}
+          >
+            <Typography variant="body1" color="secondary">
+              + more
+            </Typography>
+          </Button>
+        </div>
+        {!gamesAreLoaded ? (
           <div className="Cards_Container">
             <Skeleton variant="rectangular" width={250} height={190} />
           </div>

@@ -31,13 +31,13 @@ export default defineConfig({
               .child(S.document().title('Carousel').schemaType('carousel').documentId('carousel')),
             S.divider(),
             S.listItem()
-              .title('Games')
+              .title('Projects')
               .icon(JoystickIcon)
-              .child(S.documentList().title('Game').filter('_type == "game"')),
-            S.listItem()
-              .title('Engines')
-              .icon(RocketIcon)
-              .child(S.documentList().title('Engine').filter('_type == "engine"')),
+              .child(S.documentList().title('Project').filter('_type == "game"')),
+            // S.listItem()
+            //   .title('Engines')
+            //   .icon(RocketIcon)
+            //   .child(S.documentList().title('Engine').filter('_type == "engine"')),
             S.divider(),
             S.listItem()
               .title('About Page')

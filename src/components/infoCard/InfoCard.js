@@ -4,7 +4,7 @@ import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { Skeleton } from "@mui/material";
 
 function InfoCard({ info }) {
-  console.log("info", info);
+  // console.log("info", info);
   return (
     <Card className="InfoCard_Container">
       <CardContent className="InfoCard_Wrapper">

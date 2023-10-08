@@ -5,7 +5,6 @@ import GameCard from "../../components/gameCard/GameCard";
 import IndexMenu from "../../components/indexMenu/IndexMenu";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllGames, getAllGames, getgamesAreLoaded, getgamesAreLoading } from "../gamePage/gamePageSlice";
-import Footer from "../../components/footer/Footer";
 
 function GamesSection() {
   const [activeCategory, setActiveCategory] = useState("");
@@ -26,7 +25,7 @@ function GamesSection() {
     <div className="GamesSection_Container">
       <div className="GamesSection_Wrapper">
         <Typography className="Section_Title" variant="h2">
-          GAMES
+          PROJECTS
         </Typography>
         <IndexMenu
           variant="categories"
