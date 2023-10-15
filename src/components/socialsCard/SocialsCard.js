@@ -42,7 +42,7 @@ export const IconSelector = (socialIcon) => {
     case "GitHub":
       return <GitHub className="Socials_Logo"/>;
     case "Twitter":
-      return <i class="fa-brands fa-x-twitter Socials_Logo"></i>
+      return <i className="fa-brands fa-x-twitter Socials_Logo"></i>
     case "Facebook":
       return <Facebook className="Socials_Logo"/>;
     case "Itch.io":

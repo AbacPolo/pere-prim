@@ -26,6 +26,13 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      type: 'number',
+      name: 'priority',
+      title: 'Priority',
+      description: 'Position in the games section',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: 'Preview',
       name: 'preview',
       type: 'array',
@@ -52,4 +59,7 @@ export default {
       validation: (Rule) => Rule.required(),
     },
   ],
+  initialValue: {
+    priority: 0,
+  },
 }

@@ -6,6 +6,7 @@ export const fetchAllGames = createAsyncThunk(
     const query = encodeURIComponent(`*[_type == "game"]{
       name,
       description,
+      priority,
       engine,
       _type,
       bannerImage{
@@ -52,7 +53,7 @@ export const fetchAllGames = createAsyncThunk(
           },
         }
       }
-    }`);
+    }  | order(priority desc)`);
     const data = await fetch(
       `https://h2rv99ub.api.sanity.io/v2021-10-21/data/query/production?query=${query}`
     );
