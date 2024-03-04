@@ -51,7 +51,7 @@ function GamePage() {
     if (allData.length > 0) {
       const gameName = location.pathname
         .replace("/Projects/", "")
-        .replace("%20", " ");
+        .replaceAll("%20", " ");
       const gameInfoFilter = allData.filter(
         (game) => game.name === gameName
       )[0];
