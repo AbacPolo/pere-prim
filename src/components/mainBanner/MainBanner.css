@@ -54,24 +54,24 @@
   }
   
 
-  .profile_Image {
+/*.profile_Image {
     max-width: 150px;
-  }
+  }*/
 }
 
 
 @media only screen and (min-width: 1921px) {
-  .profile_Image {
+  /*.profile_Image {
     max-width: 500px;
-  }
+  }*/
 
-  .MainTitle_xl {
+/*  .MainTitle_xl {
     font-size: 6rem;
   }
 
   .Subtitle_xl {
     font-size: 3rem;
-  }
+  }*/
 }
 
 
