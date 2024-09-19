@@ -1,102 +1,100 @@
 .appBar {
-  /* border-bottom: 1px solid rgb(163, 177, 190, 0.3); */
-  box-sizing: border-box;
-  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5),
-    inset 0px -1px 2px 0px rgba(255, 255, 255, 0.5);
-  height: 59px;
+    /* border-bottom: 1px solid rgb(163, 177, 190, 0.3); */
+    box-sizing: border-box;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5), inset 0px -1px 2px 0px rgba(255, 255, 255, 0.5);
+    height: 59px;
 }
 
 .Header {
-  padding-right: 0;
-  padding-left: 12px;
-  justify-content: space-between;
-  box-sizing: border-box;
-  height: 100%;
-  min-height: auto;
+    padding-right: 0;
+    padding-left: 12px;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 100%;
+    min-height: auto;
 }
 
 .OpenMenu_Button {
-  display: inline-flex;
+    display: inline-flex;
 }
 
 .Menu {
-  z-index: 1;
-  & > .MuiMenu-paper {
-    width: 100%;
-    max-width: 100%;
-    background-color: #20232a;
-    padding: 16px;
-    box-sizing: border-box;
-    border-radius: 0;
     z-index: 1;
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.7);
-  }
 
-  & > .MuiMenu-paper > .MuiList-root {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    max-width: 100%;
-    padding: 0;
-  }
+    & > .MuiMenu-paper {
+        width: 100%;
+        max-width: 100%;
+        background-color: #20232a;
+        padding: 16px;
+        box-sizing: border-box;
+        border-radius: 0;
+        z-index: 1;
+        box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.7);
+    } & > .MuiMenu-paper > .MuiList-root {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
 }
 
 .Desktop_Menu {
-  display: none;
+    display: none;
 }
 
 .menuItem {
-  justify-content: center;
-  width: 100%;
-  border-radius: 6px;
-  padding-top: 14px;
-  padding-bottom: 14px;
-  box-sizing: border-box;
+    justify-content: center;
+    width: 100%;
+    border-radius: 6px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    box-sizing: border-box;
 }
 
 .menuItem:hover {
-  background-color: #15161b;
+    background-color: #15161b;
 }
 
 .selected {
-  background-color: #15161b;
+    background-color: #15161b;
 }
 
 .wasdIcon {
-  height: 52px;
-  width: 52px;
+    height: 52px;
+    width: 52px;
 }
 
 @media only screen and (min-width: 768px) {
-  .Header {
-    padding-right: 12px;
-  }
+    .Header {
+        padding-right: 12px;
+    }
 
-  .OpenMenu_Button {
-    display: none;
-  }
+    .OpenMenu_Button {
+        display: none;
+    }
 
-  .Desktop_Menu {
-    display: flex;
-    gap: 12px;
-  }
+    .Desktop_Menu {
+        display: flex;
+        gap: 12px;
+    }
 
-  .menuItem {
-    padding-top: 8px;
-    padding-bottom: 8px;
-    width: auto;
-    text-transform: lowercase;
-  }
+    .menuItem {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        width: auto;
+        text-transform: lowercase;
+    }
 
-  .menuItem > h5::first-letter {
-    text-transform: capitalize;
-  }
+    .menuItem > h5::first-letter {
+        text-transform: capitalize;
+    }
 
-  .selected {
-    background-color: #15161b;
-    box-shadow: 0px 0px 5px 0px #000;
-    border: 1px solid #F5AC10;
-  }
+    .selected {
+        background-color: #15161b;
+        box-shadow: 0px 0px 5px 0px #000;
+        border: 1px solid #F5AC10;
+    }
 }

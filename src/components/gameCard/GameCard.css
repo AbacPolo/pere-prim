@@ -1,107 +1,105 @@
 .hidden {
-  display: none;
-  transition: all;
+    display: none;
+    transition: all;
 }
 
 .GameCard_Container {
-  display: block;
-  width: 100%;
-  max-width: 400px;
-  min-width: 270px;
-  /* height: 100%; */
-  margin: 0;
-  box-sizing: border-box;
-  background-color: #232730;
-  box-shadow: 0px 0px 5px 0px #000,
-    inset 0px 0px 2px 0px rgba(255, 255, 255, 0.8);
-  color: transparent;
-  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-    outline 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-    box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    min-width: 270px;
+    /* height: 100%; */
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #232730;
+    box-shadow: 0px 0px 5px 0px #000, inset 0px 0px 2px 0px rgba(255, 255, 255, 0.8);
+    color: transparent;
+    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, outline 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
-.GameCard_Container:hover {
-  outline: 1px solid #f5ac10;
-  background-color: #15161b;
-  box-shadow: none;
-}
+    .GameCard_Container:hover {
+        outline: 1px solid #f5ac10;
+        background-color: #15161b;
+        box-shadow: none;
+    }
 
 @media only screen and (min-width: 600px) and (max-width: 904px) {
-  .GameCard_Container {
-    max-width: 300px;
-  }
+    .GameCard_Container {
+        max-width: 300px;
+    }
 }
 
 .CardActionArea {
-  width: 100%;
-  height: 100%;
-  padding-top: 8px;
-  padding-right: 16px;
-  padding-bottom: 16px;
-  padding-left: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 16px;
-  margin-bottom: auto;
-  box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding-top: 8px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+    margin-bottom: auto;
+    box-sizing: border-box;
 }
 
 .Card_Header {
-  height: fit-content;
-  width: 100%;
+    height: fit-content;
+    width: 100%;
 }
 
 .Card_Title {
-  padding: 0;
-  padding-bottom: 8px;
-  margin: 0;
-  text-align: center;
-  text-transform: uppercase;
-  box-sizing: border-box;
-  overflow-wrap: normal;
+    padding: 0;
+    padding-bottom: 8px;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    overflow-wrap: normal;
 }
 
 .Big_Title {
-  padding-top: 8px;
-  padding-bottom: 16px;
+    padding-top: 8px;
+    padding-bottom: 16px;
 }
 
 .gameImage {
-  border: 1px solid #a3b1be;
-  box-sizing: border-box;
-  width: 100%;
-  aspect-ratio: 1.75 / 1;
+    border: 1px solid #a3b1be;
+    box-sizing: border-box;
+    width: 100%;
+    aspect-ratio: 1.75 / 1;
 }
 
 .fadeIn {
-  animation-name: fade;
-  animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
 
 @keyframes fade {
-  from {
-    opacity: 0.5;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .Card_Description {
-  text-align: center;
-  padding: 0;
-  /* padding-top: 16px; */
-  box-sizing: border-box;
+    text-align: center;
+    padding: 0;
+    /* padding-top: 16px; */
+    box-sizing: border-box;
 }
 
 @media only screen and (min-width: 2130px) {
-  .GameCard_Container {
-    max-width: 500px;
-  }
+    .GameCard_Container {
+        max-width: 500px;
+    }
 }
 
 .Popover_Container {
-  margin-left: 6px;
-  background: none;
+    margin-left: 6px;
+    background: none;
 }

@@ -6,7 +6,7 @@
   /* padding-bottom: 1rem; */
   display: flex;
   align-items: center;
-  flex-grow: 2;
+  /*flex-grow: 2;*/
 }
 
 .MainBanner_Wrapper {
@@ -22,7 +22,7 @@
 
 .profile_Image {
   width: 80%;
-  max-width: 300px;
+  max-width: 150px;
   aspect-ratio: 1 / 1;
   border: 2px solid #f5ac10;
   box-shadow: 0px 0px 5px 0px #000;
@@ -55,7 +55,7 @@
   
 
   .profile_Image {
-    max-width: 400px;
+    max-width: 150px;
   }
 }
 
