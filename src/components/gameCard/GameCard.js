@@ -56,6 +56,9 @@ function GameCard({ gameInfo, page, index, cardType }) {
                                     src={gameInfo.bannerImage.asset.url}
                                     alt={`${gameInfo.name} Banner`}
                                 />
+                                <span className="Card_Date">
+                                    {gameInfo.project_Date}
+                                </span>
                             </div>
                             {cardType !== "compact" &&
                                 gameInfo.description !== "" &&

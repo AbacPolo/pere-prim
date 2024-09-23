@@ -8,7 +8,7 @@
     width: 100%;
     max-width: 400px;
     min-width: 270px;
-    height: 180%;
+    /*height: 180%;*/
     margin: 0;
     box-sizing: border-box;
     background-color: #232730;
@@ -47,6 +47,7 @@
 .Card_Header {
     height: fit-content;
     width: 100%;
+    padding-bottom: 8px;
 }
 
 .Card_Title {
@@ -64,6 +65,13 @@
 .Big_Title {
     padding-top: 8px;
     padding-bottom: 16px;
+}
+
+.Card_Date {
+    color: gray;
+    position: absolute;
+    padding-top: 4px;
+    right: 15px;
 }
 
 .gameImage {
