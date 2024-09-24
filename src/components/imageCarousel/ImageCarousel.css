@@ -1,69 +1,71 @@
 .ImageCarousel_Container {
-  width: 100%;
-  height: fit-content;
-  margin: 0;
-  box-sizing: border-box;
-  padding-top: 1rem;
+    width: 100%;
+    height: fit-content;
+    margin: 0;
+    box-sizing: border-box;
+    padding-top: 1rem;
+    margin-top: 10px;
 }
 
 .ImageCarousel_Wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .ImageCarousel_TitleContainer {
-  width: 100%;
-  height: fit-content;
-  margin: 0 auto;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
+    width: 100%;
+    height: fit-content;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .Pagination_Container {
-  width: 100%;
-  height: fit-content;
-  margin: 0 auto;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    width: 100%;
+    height: fit-content;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .Pagination_Menu {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .Cards_Container {
-  width: 100%;
-  max-width: 400px;
-  height: fit-content;
-  margin: 0;
-  padding-top: 8px;
-  padding-right: 3rem;
-  padding-left: 3rem;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    /*max-width: 400px;*/
+    max-width: 55%;
+    height: fit-content;
+    margin: 0;
+    padding-top: 8px;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .Carousel_Button {
-  width: 43px;
-  height: 43px;
+    width: 43px;
+    height: 43px;
 }
 
 @media only screen and (min-width: 1240px) {
-  .ImageCarousel_Container {
-    display: none;
-  }
+    .ImageCarousel_Container {
+        display: none;
+    }
 }

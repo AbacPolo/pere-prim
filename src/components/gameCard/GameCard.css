@@ -7,8 +7,8 @@
     display: block;
     width: 100%;
     max-width: 400px;
-    min-width: 270px;
-    /*height: 180%;*/
+    min-width: 200px;
+    /*height: 400px;*/
     margin: 0;
     box-sizing: border-box;
     background-color: #232730;
@@ -23,9 +23,16 @@
     box-shadow: none;
 }
 
-@media only screen and (min-width: 600px) and (max-width: 904px) {
+/*@media only screen and (min-width: 600px) and (max-width: 904px) {
     .GameCard_Container {
         max-width: 300px;
+    }
+}*/
+
+@media only screen and (max-width: 1240px) {
+    .GameCard_Container {
+        /*height: 100%;*/
+        min-width: 320px;
     }
 }
 
@@ -72,6 +79,7 @@
     position: absolute;
     padding-top: 4px;
     right: 15px;
+    bottom: 5px;
 }
 
 .gameImage {
@@ -101,6 +109,7 @@
     padding: 0;
     /* padding-top: 16px; */
     box-sizing: border-box;
+    margin-bottom: 15px;
 }
 
 @media only screen and (min-width: 2130px) {
