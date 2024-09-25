@@ -18,6 +18,7 @@ function GamesSection() {
         !gamesAreLoaded && !gamesAreLoading && dispatch(fetchAllGames());
     }, [gamesAreLoaded, gamesAreLoading, dispatch]);
 
+    // Get unique list of tags.
     const categoriesArray = allGames.map((game) => game.game_Tags);
     const allTags = categoriesArray.flat();
     const keys = allTags.map(tag => tag._key);
