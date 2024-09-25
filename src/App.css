@@ -17,6 +17,7 @@
 /* -------- Scrollbar -------- */
 ::-webkit-scrollbar {
     width: 10px;
+    height: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -30,3 +31,10 @@
     ::-webkit-scrollbar-thumb:hover {
         background: #A77914;
     }
+
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+}
