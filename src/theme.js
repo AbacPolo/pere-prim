@@ -30,7 +30,7 @@ const theme = createTheme({
           fontSize: "16px",
           lineHeight: "18px",
           padding: "8px 16px",
-          border: 0,
+          /*border: 0,*/
           boxShadow:
             "0px 0px 5px 0px #000, inset 0px 0px 2px 0px rgba(255,255,255,0.8)",
           borderRadius: "12px",

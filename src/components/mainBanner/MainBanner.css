@@ -6,7 +6,7 @@
   /* padding-bottom: 1rem; */
   display: flex;
   align-items: center;
-  flex-grow: 2;
+  /*flex-grow: 2;*/
 }
 
 .MainBanner_Wrapper {
@@ -22,7 +22,7 @@
 
 .profile_Image {
   width: 80%;
-  max-width: 300px;
+  max-width: 150px;
   aspect-ratio: 1 / 1;
   border: 2px solid #f5ac10;
   box-shadow: 0px 0px 5px 0px #000;
@@ -36,12 +36,46 @@
   gap: 10px;
 }
 
+    .Text_Container h1 {
+        margin-left: 8px;
+        font-size: 3.0rem;
+        white-space: nowrap;
+    }
+
+    .Text_Container h3 {
+        margin-left: 8px;
+        white-space: nowrap;
+    }
+
 .Socials_Container {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
 }
 
+/* ----- Movile ----- */
+@media only screen and (max-width: 704px) {
+    .Text_Container h1 {
+        margin-left: 8px;
+        font-size: 2.5rem;
+        white-space: nowrap;
+    }
+
+    .profile_Image {
+        /*width: 80%;
+        max-width: 120px;
+        aspect-ratio: 1 / 1;
+        border: 2px solid #f5ac10;
+        box-shadow: 0px 0px 5px 0px #000;
+        box-sizing: border-box;*/
+    }
+}
+
+@media only screen and (max-width: 1240px) {
+    .profile_Image {
+        display: none;
+    }
+}
 
 @media only screen and (min-width: 1240px) {
   .MainBanner_Wrapper {
@@ -52,26 +86,25 @@
   .Text_Container {
     align-items: flex-start;
   }
-  
 
-  .profile_Image {
-    max-width: 400px;
-  }
+    .Text_Container h1 {
+        font-size: 4.0rem;
+    }
 }
 
 
 @media only screen and (min-width: 1921px) {
-  .profile_Image {
+  /*.profile_Image {
     max-width: 500px;
-  }
+  }*/
 
-  .MainTitle_xl {
+  /*.MainTitle_xl {
     font-size: 6rem;
   }
 
   .Subtitle_xl {
     font-size: 3rem;
-  }
+  }*/
 }
 
 
