@@ -44,7 +44,8 @@
     }
 
     .GameCard_Container_Featured {
-        height: 300px;
+        /*height: 300px;*/
+        height: 100%;
     }
 }
 
