@@ -57,9 +57,9 @@ In the base directory
 
 In the Sanity directory (pere-prm)
 1. npm install
-2. sanity start
-In case ask something
-3. Y (and enter)
+2. npm install -g @sanity/cli
+3. sanity init
+4. sanity start
 
 To Publish the sanity changes
 1. sanity login (if you are not logged)
