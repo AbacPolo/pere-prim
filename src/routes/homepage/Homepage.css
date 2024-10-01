@@ -6,18 +6,19 @@
 }
 
 .Homepage_Wrapper {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  box-sizing: border-box;
-  padding-top: 2rem;
-  padding-bottom: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  /*justify-content: space-between;*/
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+/*    padding-left: 1rem;
+    padding-right: 1rem;*/
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-between;*/
 }
 
 @media only screen and (min-width: 1240px) {

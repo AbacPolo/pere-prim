@@ -16,6 +16,14 @@ import { useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import { useNavigate } from "react-router";
 
+// ------------------ Swiper ------------------
+import { Swiper, SwiperSlide } from "swiper/react";
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+
+import { EffectCards } from 'swiper/modules';
+
+
 function ImageCarousel() {
   const [page, setPage] = useState(1);
   const [manualNav, setManualNav] = useState(false);
@@ -31,89 +39,90 @@ function ImageCarousel() {
     if (carousel) {
       const carouselCards = carousel.preview.map((card) => {
         return allGames.filter((game) => game.name === card.name)[0];
-        // if (card._type === "game") {
-        //   return allGames.filter((game) => game.name === card.name)[0];
-        // } else {
-        //   return allEngines.filter((engine) => engine.name === card.name)[0];
-        // }
       });
       setCarouselInfo(carouselCards);
     }
   }, [carousel, allGames]);
 
-  let nextPage;
-  if (manualNav === false) {
-    nextPage = setTimeout(() => {
-      if (page < carouselInfo.length) {
-        setPage(page + 1);
-      } else if (page === carouselInfo.length) {
-        setPage(1);
-      }
-    }, "5000");
-  }
-
-  const handleManual = (direction) => {
-    setManualNav(true);
-    clearTimeout(nextPage);
-    if (direction === "left" && page > 1) {
-      setPage(page - 1);
-    } else if (direction === "left" && page === 1) {
-      setPage(carouselInfo.length);
-    } else if (direction === "right" && page < carouselInfo.length) {
-      setPage(page + 1);
-    } else if (direction === "right" && page === carouselInfo.length) {
-      setPage(1);
-    }
-  };
-
   return (
     <div className="ImageCarousel_Container">
       <div className="ImageCarousel_Wrapper">
-        <div className="ImageCarousel_TitleContainer">
-          <Typography variant="h6">FEATURED PROJECTS</Typography>
-          <Button
-            variant="text"
-            sx={{ textTransform: "lowercase" }}
-            onClick={() => navigateTo("/Projects")}
-          >
-            <Typography variant="body1" color="secondary">
-              + more
-            </Typography>
-          </Button>
-        </div>
-        {!gamesAreLoaded ? (
-          <div className="Cards_Container">
-            <Skeleton variant="rectangular" width={250} height={190} />
-          </div>
-        ) : (
-          <div className="Cards_Container">
-            <IconButton
-              aria-label="Go Left"
-              color="secondary"
-              className="Carousel_Button"
-              onClick={() => handleManual("left")}
-            >
-              <ChevronLeft />
-            </IconButton>
-            {carouselInfo.map((gameInfo, index) => (
-              <GameCard
-                key={index}
-                gameInfo={gameInfo}
-                page={page}
-                index={index + 1}
-                cardType="compact"
-              />
-            ))}
-            <IconButton
-              aria-label="Go Right"
-              color="secondary"
-              className="Carousel_Button"
-              onClick={() => handleManual("right")}
-            >
-              <ChevronRight />
-            </IconButton>
-          </div>
-        )}
+        {/*<div className="ImageCarousel_TitleContainer">*/}
+        {/*  <Typography variant="h6">FEATURED PROJECTS</Typography>*/}
+        {/*  <Button*/}
+        {/*    variant="text"*/}
+        {/*    sx={{ textTransform: "lowercase" }}*/}
+        {/*    onClick={() => navigateTo("/Projects")}*/}
+        {/*  >*/}
+        {/*    <Typography variant="body1" color="secondary">*/}
+        {/*      + more*/}
+        {/*    </Typography>*/}
+        {/*  </Button>*/}
+        {/*</div>*/}
+        {/*{!gamesAreLoaded ? (*/}
+        {/*  <div className="Cards_Container">*/}
+        {/*    <Skeleton variant="rectangular" width={250} height={190} />*/}
+        {/*  </div>*/}
+        {/*) : (*/}
+        {/*  <div className="Cards_Container">*/}
+        {/*    <IconButton*/}
+        {/*      aria-label="Go Left"*/}
+        {/*      color="secondary"*/}
+        {/*      className="Carousel_Button"*/}
+        {/*      onClick={() => handleManual("left")}*/}
+        {/*    >*/}
+        {/*      <ChevronLeft />*/}
+        {/*    </IconButton>*/}
+        {/*    {carouselInfo.map((gameInfo, index) => (*/}
+        {/*      <GameCard*/}
+        {/*        key={index}*/}
+        {/*        gameInfo={gameInfo}*/}
+        {/*        page={page}*/}
+        {/*        index={index + 1}*/}
+        {/*        cardType="compact"*/}
+        {/*      />*/}
+        {/*    ))}*/}
+        {/*    <IconButton*/}
+        {/*      aria-label="Go Right"*/}
+        {/*      color="secondary"*/}
+        {/*      className="Carousel_Button"*/}
+        {/*      onClick={() => handleManual("right")}*/}
+        {/*    >*/}
+        {/*      <ChevronRight />*/}
+        {/*    </IconButton>*/}
+        {/*  </div>*/}
+              {/*)}*/}
+
+              <div>
+                  <Typography variant="h5">FEATURED PROJECTS</Typography>
+              </div>
+              <br></br>
+              <>
+                  <Swiper
+                      effect={"cards"}
+                      grabCursor={true}
+                      modules={[EffectCards]}
+                      className="mySwiper"
+                  >
+
+                    {carouselInfo.map((gameInfo, index) => (
+                        <SwiperSlide>{gameInfo.name}</SwiperSlide>
+                    ))}
+                  </Swiper>
+              </>
+
+              <div className="ImageCarousel_TitleContainer">
+                <Button
+                  variant="text"
+                  sx={{ textTransform: "lowercase" }}
+                  onClick={() => navigateTo("/Projects")}
+                >
+                  <Typography variant="body1" color="secondary">
+                    + more
+                  </Typography>
+                </Button>
+              </div>
+
       </div>
     </div>
   );
