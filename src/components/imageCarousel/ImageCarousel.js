@@ -25,8 +25,8 @@ import { EffectCards } from 'swiper/modules';
 
 
 function ImageCarousel() {
-  const [page, setPage] = useState(1);
-  const [manualNav, setManualNav] = useState(false);
+  //const [page, setPage] = useState(1);
+  //const [manualNav, setManualNav] = useState(false);
   const allGames = useSelector(getAllGames);
   // const allEngines = useSelector(getAllEngines);
   const carousel = useSelector(getCarousel);
@@ -119,10 +119,13 @@ function ImageCarousel() {
                         <CardMedia className="swiper-image" component="img"
                             src={gameInfo.bannerImage.asset.url}
                             alt={`${gameInfo.name} Banner`}>
+
                         </CardMedia>
-                        {/*<div className="swiper-card-content">*/}
-                        {/*    <div className="swiper-card-title">{gameInfo.name}</div>*/}
-                        {/*</div>*/}
+
+                        <div className="swiper-card-content">
+                            <div className="swiper-card-title">{gameInfo.name}</div>
+                        </div>
+                        
                     </SwiperSlide>
                 ))}
             </Swiper>
