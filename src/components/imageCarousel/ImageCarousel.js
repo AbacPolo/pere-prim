@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./ImageCarousel.css";
-import { Button, IconButton, Skeleton, Typography } from "@mui/material";
-import GameCard from "../gameCard/GameCard";
+import { Button, Skeleton, Typography, CardMedia } from "@mui/material";
 import { useSelector } from "react-redux";
 import {
   getAllGames,
@@ -13,10 +12,11 @@ import {
 // } from "../../routes/enginesSection/enginePageSlice";
 import { getCarousel } from "./imageCarouselSlice";
 import { useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import { useNavigate } from "react-router";
 
 // ------------------ Swiper ------------------
+// https://codesandbox.io/p/devbox/swiper-effect-cards-react-forked-q76sfq?file=%2Fsrc%2FApp.jsx%3A18%2C18-18%2C23&workspaceId=13a61986-69b2-41b5-80a1-47a9155617f7
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
 import 'swiper/css/effect-cards';
@@ -43,6 +43,10 @@ function ImageCarousel() {
       setCarouselInfo(carouselCards);
     }
   }, [carousel, allGames]);
+
+  //const handleCardClick = () => {
+  //      navigateTo(`/Projects/${gameInfo.name}`);
+  //  };
 
   return (
     <div className="ImageCarousel_Container">
@@ -93,35 +97,48 @@ function ImageCarousel() {
         {/*  </div>*/}
               {/*)}*/}
 
-              <div>
-                  <Typography variant="h5">FEATURED PROJECTS</Typography>
-              </div>
-              <br></br>
-              <>
-                  <Swiper
-                      effect={"cards"}
-                      grabCursor={true}
-                      modules={[EffectCards]}
-                      className="mySwiper"
-                  >
-
-                    {carouselInfo.map((gameInfo, index) => (
-                        <SwiperSlide>{gameInfo.name}</SwiperSlide>
-                    ))}
-                  </Swiper>
-              </>
-
-              <div className="ImageCarousel_TitleContainer">
-                <Button
-                  variant="text"
-                  sx={{ textTransform: "lowercase" }}
-                  onClick={() => navigateTo("/Projects")}
-                >
-                  <Typography variant="body1" color="secondary">
-                    + more
-                  </Typography>
-                </Button>
-              </div>
+        <div>
+            <Typography variant="h5">FEATURED PROJECTS</Typography>
+        </div>
+        <br></br>
+              
+        {!gamesAreLoaded ?
+        (
+            <Skeleton variant="rectangular" width={250} height={190} />   
+        )
+        :
+        (
+            <Swiper
+                effect={"cards"}
+                grabCursor={true}
+                modules={[EffectCards]}
+                className="swiper"
+            >
+                {carouselInfo.map((gameInfo) => (
+                    <SwiperSlide className="swiper-card">
+                        <CardMedia className="swiper-image" component="img"
+                            src={gameInfo.bannerImage.asset.url}
+                            alt={`${gameInfo.name} Banner`}>
+                        </CardMedia>
+                        {/*<div className="swiper-card-content">*/}
+                        {/*    <div className="swiper-card-title">{gameInfo.name}</div>*/}
+                        {/*</div>*/}
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        )}
+              
+        <div className="ImageCarousel_TitleContainer">
+        <Button
+            variant="text"
+            sx={{ textTransform: "lowercase" }}
+            onClick={() => navigateTo("/Projects")}
+        >
+            <Typography variant="body1" color="secondary">
+            + more
+            </Typography>
+        </Button>
+        </div>
 
       </div>
     </div>
