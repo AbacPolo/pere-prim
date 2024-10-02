@@ -44,9 +44,9 @@ function ImageCarousel() {
     }
   }, [carousel, allGames]);
 
-  //const handleCardClick = () => {
-  //      navigateTo(`/Projects/${gameInfo.name}`);
-  //  };
+  //const handleCardClick = (page) => {
+  //  navigateTo(`/Projects/${page}`);
+  //};
 
   return (
     <div className="ImageCarousel_Container">
@@ -115,14 +115,14 @@ function ImageCarousel() {
                 className="swiper"
             >
                 {carouselInfo.map((gameInfo) => (
-                    <SwiperSlide className="swiper-card">
+                    <SwiperSlide className="swiper-card" >
                         <CardMedia className="swiper-image" component="img"
                             src={gameInfo.bannerImage.asset.url}
                             alt={`${gameInfo.name} Banner`}>
 
                         </CardMedia>
 
-                        <div className="swiper-card-content">
+                        <div className="swiper-card-content" onClick={() => navigateTo(`/Projects/${gameInfo.name}`)}>
                             <div className="swiper-card-title">{gameInfo.name}</div>
                         </div>
                         
