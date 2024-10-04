@@ -114,9 +114,9 @@ function ImageCarousel() {
                                 modules={[EffectCards]}
                                 className="swiper" >
 
-                                {carouselInfo.map((gameInfo) => (
+                                {carouselInfo.map((gameInfo, index) => (
 
-                                    <SwiperSlide className="swiper-card" >
+                                    <SwiperSlide key={index} className="swiper-card" >
                                         {gameInfo.bannerImage?.asset?.url ? (
                                             <CardMedia className="swiper-image" component="img"
                                                 src={gameInfo.bannerImage.asset.url}
