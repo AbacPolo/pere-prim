@@ -47,105 +47,136 @@ function ImageCarousel() {
   //const handleCardClick = (page) => {
   //  navigateTo(`/Projects/${page}`);
   //};
+    try {
+        return (
+            <div className="ImageCarousel_Container">
+                <div className="ImageCarousel_Wrapper">
+                    {/*<div className="ImageCarousel_TitleContainer">*/}
+                    {/*  <Typography variant="h6">FEATURED PROJECTS</Typography>*/}
+                    {/*  <Button*/}
+                    {/*    variant="text"*/}
+                    {/*    sx={{ textTransform: "lowercase" }}*/}
+                    {/*    onClick={() => navigateTo("/Projects")}*/}
+                    {/*  >*/}
+                    {/*    <Typography variant="body1" color="secondary">*/}
+                    {/*      + more*/}
+                    {/*    </Typography>*/}
+                    {/*  </Button>*/}
+                    {/*</div>*/}
+                    {/*{!gamesAreLoaded ? (*/}
+                    {/*  <div className="Cards_Container">*/}
+                    {/*    <Skeleton variant="rectangular" width={250} height={190} />*/}
+                    {/*  </div>*/}
+                    {/*) : (*/}
+                    {/*  <div className="Cards_Container">*/}
+                    {/*    <IconButton*/}
+                    {/*      aria-label="Go Left"*/}
+                    {/*      color="secondary"*/}
+                    {/*      className="Carousel_Button"*/}
+                    {/*      onClick={() => handleManual("left")}*/}
+                    {/*    >*/}
+                    {/*      <ChevronLeft />*/}
+                    {/*    </IconButton>*/}
+                    {/*    {carouselInfo.map((gameInfo, index) => (*/}
+                    {/*      <GameCard*/}
+                    {/*        key={index}*/}
+                    {/*        gameInfo={gameInfo}*/}
+                    {/*        page={page}*/}
+                    {/*        index={index + 1}*/}
+                    {/*        cardType="compact"*/}
+                    {/*      />*/}
+                    {/*    ))}*/}
+                    {/*    <IconButton*/}
+                    {/*      aria-label="Go Right"*/}
+                    {/*      color="secondary"*/}
+                    {/*      className="Carousel_Button"*/}
+                    {/*      onClick={() => handleManual("right")}*/}
+                    {/*    >*/}
+                    {/*      <ChevronRight />*/}
+                    {/*    </IconButton>*/}
+                    {/*  </div>*/}
+                    {/*)}*/}
 
-  return (
-    <div className="ImageCarousel_Container">
-      <div className="ImageCarousel_Wrapper">
-        {/*<div className="ImageCarousel_TitleContainer">*/}
-        {/*  <Typography variant="h6">FEATURED PROJECTS</Typography>*/}
-        {/*  <Button*/}
-        {/*    variant="text"*/}
-        {/*    sx={{ textTransform: "lowercase" }}*/}
-        {/*    onClick={() => navigateTo("/Projects")}*/}
-        {/*  >*/}
-        {/*    <Typography variant="body1" color="secondary">*/}
-        {/*      + more*/}
-        {/*    </Typography>*/}
-        {/*  </Button>*/}
-        {/*</div>*/}
-        {/*{!gamesAreLoaded ? (*/}
-        {/*  <div className="Cards_Container">*/}
-        {/*    <Skeleton variant="rectangular" width={250} height={190} />*/}
-        {/*  </div>*/}
-        {/*) : (*/}
-        {/*  <div className="Cards_Container">*/}
-        {/*    <IconButton*/}
-        {/*      aria-label="Go Left"*/}
-        {/*      color="secondary"*/}
-        {/*      className="Carousel_Button"*/}
-        {/*      onClick={() => handleManual("left")}*/}
-        {/*    >*/}
-        {/*      <ChevronLeft />*/}
-        {/*    </IconButton>*/}
-        {/*    {carouselInfo.map((gameInfo, index) => (*/}
-        {/*      <GameCard*/}
-        {/*        key={index}*/}
-        {/*        gameInfo={gameInfo}*/}
-        {/*        page={page}*/}
-        {/*        index={index + 1}*/}
-        {/*        cardType="compact"*/}
-        {/*      />*/}
-        {/*    ))}*/}
-        {/*    <IconButton*/}
-        {/*      aria-label="Go Right"*/}
-        {/*      color="secondary"*/}
-        {/*      className="Carousel_Button"*/}
-        {/*      onClick={() => handleManual("right")}*/}
-        {/*    >*/}
-        {/*      <ChevronRight />*/}
-        {/*    </IconButton>*/}
-        {/*  </div>*/}
-              {/*)}*/}
+                    <div>
+                        <Typography variant="h5">FEATURED PROJECTS</Typography>
+                    </div>
+                    <br></br>
 
-        <div>
-            <Typography variant="h5">FEATURED PROJECTS</Typography>
+                    {!gamesAreLoaded ?
+                        (
+                            <Skeleton variant="rectangular" width={250} height={190} />
+                        )
+                        :
+                        (
+                            <Swiper
+                                effect={"cards"}
+                                grabCursor={true}
+                                modules={[EffectCards]}
+                                className="swiper" >
+
+                                {carouselInfo.map((gameInfo) => (
+
+                                    <SwiperSlide className="swiper-card" >
+                                        {gameInfo.bannerImage?.asset?.url ? (
+                                            <CardMedia className="swiper-image" component="img"
+                                                src={gameInfo.bannerImage.asset.url}
+                                                alt={`${gameInfo.name} Banner`}>
+                                            </CardMedia>
+                                        ) : (
+                                            <div className="swiper-card"></div>
+                                        )}
+
+                                        <div className="swiper-card-content" onClick={() => navigateTo(`/Projects/${gameInfo.name}`)}>
+                                            <div className="swiper-card-title">
+                                                <h3>{gameInfo.name}</h3>
+                                            </div>
+                                        </div>
+
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+                        )}
+
+                    <div className="ImageCarousel_TitleContainer">
+                        <Button
+                            variant="text"
+                            sx={{ textTransform: "lowercase" }}
+                            onClick={() => navigateTo("/Projects")}
+                        >
+                            <Typography variant="body1" color="secondary">
+                                + more
+                            </Typography>
+                        </Button>
+                    </div>
+
+                </div>
+            </div>
+        );
+    } catch (error) {
+        /*console.error("Some error rendering gameInfo at index:", error);*/
+
+        <div className="ImageCarousel_Container">
+            <div className="ImageCarousel_Wrapper">
+                <div>
+                    <Typography variant="h5">Se All projects</Typography>
+                    <br></br>
+                    <div className="ImageCarousel_TitleContainer">
+                        <Button
+                            variant="text"
+                            sx={{ textTransform: "lowercase" }}
+                            onClick={() => navigateTo("/Projects")}
+                        >
+                            <Typography variant="body1" color="secondary">
+                                + here
+                            </Typography>
+                        </Button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <br></br>
-              
-        {!gamesAreLoaded ?
-        (
-            <Skeleton variant="rectangular" width={250} height={190} />   
-        )
-        :
-        (
-            <Swiper
-                effect={"cards"}
-                grabCursor={true}
-                modules={[EffectCards]}
-                className="swiper"
-            >
-                {carouselInfo.map((gameInfo) => (
-                    <SwiperSlide className="swiper-card" >
-                        <CardMedia className="swiper-image" component="img"
-                            src={gameInfo.bannerImage.asset.url}
-                            alt={`${gameInfo.name} Banner`}>
 
-                        </CardMedia>
-
-                        <div className="swiper-card-content" onClick={() => navigateTo(`/Projects/${gameInfo.name}`)}>
-                            <div className="swiper-card-title">{gameInfo.name}</div>
-                        </div>
-                        
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-        )}
-              
-        <div className="ImageCarousel_TitleContainer">
-        <Button
-            variant="text"
-            sx={{ textTransform: "lowercase" }}
-            onClick={() => navigateTo("/Projects")}
-        >
-            <Typography variant="body1" color="secondary">
-            + more
-            </Typography>
-        </Button>
-        </div>
-
-      </div>
-    </div>
-  );
+        return null;
+    }
 }
 
 export default ImageCarousel;
