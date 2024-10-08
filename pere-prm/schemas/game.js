@@ -19,6 +19,12 @@ export default {
             validation: (Rule) => Rule.required(),
         },
         {
+            type: 'image',
+            name: 'cardImage',
+            title: 'Card Image',
+            description: 'The image to be displayed in letter format (3:5)(1080 x 1800)',
+        },
+        {
             type: 'string',
             name: 'description',
             title: 'Description',
@@ -34,19 +40,6 @@ export default {
                 dateFormat: 'DD-MM-YYYY', // Formato de la fecha
                 calendarTodayLabel: 'Today' // Etiqueta para el día actual
             },
-            validation: (Rule) => Rule.required(),
-        },
-        {
-            title: 'Preview',
-            name: 'preview',
-            type: 'array',
-            of: [{ type: 'richText' }, { type: 'media' }],
-        },
-        {
-            type: 'string',
-            name: 'engine',
-            title: 'Engine',
-            description: 'Engine names have to be written equelly throughout games',
             validation: (Rule) => Rule.required(),
         },
         {
