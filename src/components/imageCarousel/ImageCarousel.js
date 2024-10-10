@@ -46,11 +46,22 @@ function ImageCarousel() {
         return (
             <div className="ImageCarousel_Container">
                 <div className="ImageCarousel_Wrapper">
+                    <br></br> 
                     <div>
                         <Typography variant="h5">FEATURED PROJECTS</Typography>
+                        <div className="ImageCarousel_TitleContainer">
+                            <Button
+                                variant="text"
+                                sx={{ textTransform: "lowercase" }}
+                                onClick={() => navigateTo("/Projects")}
+                            >
+                                <Typography variant="body1" color="secondary">
+                                    + more
+                                </Typography>
+                            </Button>
+                        </div>
                     </div>
-                    <br></br>
-
+                    
                     {!gamesAreLoaded ?
                         (
                             <Skeleton variant="rectangular" width={250} height={190} />
@@ -85,9 +96,6 @@ function ImageCarousel() {
                                         )}
 
                                         <div className="swiper-card-content" onClick={() => handleCardClick(gameInfo.name)}>
-                                            {/*<div className="swiper-card-title">*/}
-                                            {/*    <h3>{gameInfo.name}</h3>*/}
-                                            {/*</div>*/}
                                             <span className="Card_Date">
                                                 {gameInfo.project_Date}
                                             </span>
@@ -97,28 +105,15 @@ function ImageCarousel() {
                                 ))}
                             </Swiper>
                         )}
-
-                    <div className="ImageCarousel_TitleContainer">
-                        <Button
-                            variant="text"
-                            sx={{ textTransform: "lowercase" }}
-                            onClick={() => navigateTo("/Projects")}
-                        >
-                            <Typography variant="body1" color="secondary">
-                                + more
-                            </Typography>
-                        </Button>
-                    </div>
-
                 </div>
             </div>
         );
     } catch (error) {
         <div className="ImageCarousel_Container">
             <div className="ImageCarousel_Wrapper">
+                <br></br>
                 <div>
                     <Typography variant="h5">Se All projects</Typography>
-                    <br></br>
                     <div className="ImageCarousel_TitleContainer">
                         <Button
                             variant="text"

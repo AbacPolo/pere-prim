@@ -79,15 +79,10 @@
 
 /* ------------- Swiper -------------- */
 .swiper {
-    /*max-height: 50%;
-    max-width: 350px;
-    min-width: 250px;*/
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
-    /*height: 70%;*/
-    width: 50%;
-    /*max-height: 70%;*/
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 60%;
     aspect-ratio: 3/5;
 
     /* Transition ? */
@@ -134,17 +129,17 @@
     background-image: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(9,9,121,0) 20%, rgba(0,212,255,0) 100%);
 }
 
-.swiper-card-title {
+/*.swiper-card-title {
     width: 100%;
     text-align: center;
     color: white;
     position: absolute;
     bottom: 10px;
-}
+}*/
 
 .Card_Date {
-    font-size: 15px;
-    color: gray;
+    font-size: 4vw;
+    color: whitesmoke;
     position: absolute;
     padding-top: 4px;
     right: 15px;
