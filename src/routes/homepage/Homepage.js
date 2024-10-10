@@ -30,6 +30,8 @@ import {
 } from "../../components/imageCarousel/imageCarouselSlice";
 import HomepageDisplay from "../../components/homepageDisplay/HomepageDisplay";
 
+import ReactGA from 'react-ga4';
+
 function Homepage() {
   const dispatch = useDispatch();
   const gamesAreLoaded = useSelector(getgamesAreLoaded);
@@ -62,6 +64,8 @@ function Homepage() {
     carouselIsLoading,
     dispatch,
   ]);
+
+  ReactGA.send({hitType: "pageview", page: "/", title:"Home",});
 
   return (
     <div className="Homepage_Container">

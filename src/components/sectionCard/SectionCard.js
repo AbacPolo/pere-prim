@@ -7,7 +7,7 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/youtube";
 import { PortableText } from "@portabletext/react";
 import components from "../../portableTextComponents";
 import { Download } from "@mui/icons-material";

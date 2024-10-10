@@ -18,6 +18,7 @@ import SocialsCard from "../../components/socialsCard/SocialsCard";
 //   getEnginesAreLoaded,
 //   getEnginesAreLoading,
 // } from "../enginesSection/enginePageSlice";
+import ReactGA from 'react-ga4';
 
 function GamePage() {
   const location = useLocation();
@@ -67,7 +68,10 @@ function GamePage() {
     }
   }, [location, allData]);
 
+
   if (gameInfo) {
+      ReactGA.send({ hitType: "pageview", page: "/Projects/" + gameInfo.name, title: gameInfo.name, });
+
     return (
       <div className="GamePage_Container">
         <div className="GamePage_Wrapper">

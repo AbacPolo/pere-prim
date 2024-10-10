@@ -8,12 +8,15 @@ import createCache from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
 import Footer from "./components/footer/Footer";
 
+import ReactGA from 'react-ga4';
+
 export const muiCache = createCache({
   key: "mui",
   prepend: true,
 });
-
 function App() {
+    ReactGA.initialize('G-WE3T1RSH7L');
+
   return (
     <CacheProvider value={muiCache}>
       <ThemeProvider theme={theme}>
