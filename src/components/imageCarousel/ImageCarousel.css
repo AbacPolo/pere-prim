@@ -66,14 +66,22 @@
     max-height: 400px;
 }
 
-.Carousel_Button {
-    width: 43px;
-    height: 43px;
+.Card_Date {
+    font-size: 3vw;
+    color: darkgray !important;
+    position: absolute;
+    padding-top: 4px;
+    right: 15px;
+    bottom: 5px;
 }
 
 @media only screen and (min-width: 1241px) {
     .ImageCarousel_Container {
         display: none;
+    }
+
+    .Card_Date {
+        font-size: 20px;
     }
 }
 
@@ -137,12 +145,5 @@
     bottom: 10px;
 }*/
 
-.Card_Date {
-    font-size: 4vw;
-    color: whitesmoke;
-    position: absolute;
-    padding-top: 4px;
-    right: 15px;
-    bottom: 5px;
-}
+
 

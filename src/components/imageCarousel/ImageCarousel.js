@@ -81,14 +81,14 @@ function ImageCarousel() {
                                         {gameInfo.cardImage?.asset?.url ? (
                                             <CardMedia className="swiper-image" component="img"
                                                 src={gameInfo.cardImage.asset.url}
-                                                alt={`${gameInfo.name} Banner`}>
+                                                alt={`${gameInfo.name} Vertical`}>
                                             </CardMedia>
                                         ) : (
                                             /*Else Try to load banner Image*/
                                             gameInfo.bannerImage?.asset?.url ? (
                                                 <CardMedia className="swiper-image" component="img"
                                                     src={gameInfo.bannerImage.asset.url}
-                                                    alt={`${gameInfo.name} Banner`}>
+                                                    alt={`${gameInfo.name} Vertical`}>
                                                 </CardMedia>
                                             ) : (
                                                 <div className="swiper-card"></div>
