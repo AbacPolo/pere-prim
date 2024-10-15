@@ -68,8 +68,8 @@ function GameCard({ gameInfo, page, index, cardType }) {
             
 
             <Card className={classNames({
-                        GameCard_Container: page === index,
-                    })}>
+                GameCard_Container: page === index
+            },{ GameCard_Container_OnGallery: cardType !== "featured", })}>
 
                 {/*{cardType === "featured" ? (*/}
                 {/*    <div></div>*/}
@@ -79,14 +79,16 @@ function GameCard({ gameInfo, page, index, cardType }) {
                     <CardMedia className={classNames("hidden fadeIn", "CardBodyImage")}
                         component="img"
                         src={gameInfo.cardImage.asset.url}
-                        alt={`${gameInfo.name} Vertical`}>
+                        alt={`${gameInfo.name} Vertical`}
+                        onClick={handleCardClick}>
                     </CardMedia>
                 ) : (
                     /*Else Try to load banner Image*/
                     gameInfo.bannerImage?.asset?.url ? (
                         <CardMedia className={classNames("hidden fadeIn", "CardBodyImage")} component="img"
                             src={gameInfo.bannerImage.asset.url}
-                            alt={`${gameInfo.name} Vertical`}>
+                            alt={`${gameInfo.name} Vertical`}
+                            onClick={handleCardClick}>
                         </CardMedia>
                     ) : (
                         <div className="CardBodyImage"></div>

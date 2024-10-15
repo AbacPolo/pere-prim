@@ -14,7 +14,7 @@
 .GameCard_Container {
     display: block;
     width: 100%;
-    max-width: 400px;
+    max-width: 325px;
     min-width: 50px;
     border-radius: 18px;
     /*height: 400px;*/
@@ -25,6 +25,12 @@
     box-shadow: 0px 0px 5px 0px #000, inset 0px 0px 2px 0px rgba(255, 255, 255, 0.8);
     color: transparent;
     transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, outline 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;*/
+    transition: all 0.2s linear;
+}
+
+.GameCard_Container_OnGallery {
+    max-width: 300px;
+    aspect-ratio: 3 / 5;
 }
 
 .GameCard_Container_Featured {
@@ -32,7 +38,7 @@
 }
 
 .GameCard_Container:hover {
-    outline: 1px solid #f5ac10;
+    outline: 4px solid #f5ac10;
     background-color: #15161b;
     box-shadow: none;
 }
