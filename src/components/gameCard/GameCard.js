@@ -81,6 +81,7 @@ function GameCard({ gameInfo, page, index, cardType }) {
                         src={gameInfo.cardImage.asset.url}
                         alt={`${gameInfo.name} Vertical`}
                         onClick={handleCardClick}>
+                        
                     </CardMedia>
                 ) : (
                     /*Else Try to load banner Image*/
@@ -89,11 +90,15 @@ function GameCard({ gameInfo, page, index, cardType }) {
                             src={gameInfo.bannerImage.asset.url}
                             alt={`${gameInfo.name} Vertical`}
                             onClick={handleCardClick}>
+                            
                         </CardMedia>
                     ) : (
                         <div className="CardBodyImage"></div>
                     )
                 )}
+                {/*<span className="Card_Date">*/}
+                {/*    {gameInfo.project_Date}*/}
+                {/*</span>*/}
             </Card>
         );
     }

@@ -142,9 +142,9 @@
 }
 
 @media only screen and (min-width: 2130px) {
-    .GameCard_Container {
+    /*.GameCard_Container {
         max-width: 500px;
-    }
+    }*/
 }
 
 .Popover_Container {

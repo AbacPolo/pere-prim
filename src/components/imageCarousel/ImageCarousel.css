@@ -66,7 +66,7 @@
     max-height: 400px;
 }
 
-.Card_Date {
+.CardCarousel_Date {
     font-size: 3vw;
     color: darkgray !important;
     position: absolute;
@@ -80,7 +80,7 @@
         display: none;
     }
 
-    .Card_Date {
+    .CardCarousel_Date {
         font-size: 20px;
     }
 }

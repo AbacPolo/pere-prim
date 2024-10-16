@@ -96,7 +96,7 @@ function ImageCarousel() {
                                         )}
 
                                         <div className="swiper-card-content" onClick={() => handleCardClick(gameInfo.name)}>
-                                            <span className="Card_Date">
+                                            <span className="CardCarousel_Date">
                                                 {gameInfo.project_Date}
                                             </span>
                                         </div>
