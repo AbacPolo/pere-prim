@@ -122,9 +122,9 @@ function GameCard({ gameInfo, page, index, cardType }) {
                     )}
 
                     <div className="Card_Content" onClick={handleCardClick}>
-                        <span className="Card_Date">
-                            {gameInfo.project_Date}
-                        </span>
+                        {/*<span className="Card_Date">*/}
+                        {/*    {gameInfo.project_Date}*/}
+                        {/*</span>*/}
                     </div>
                 </div>
             </Card>
