@@ -68,7 +68,7 @@
 
 .CardCarousel_Date {
     font-size: 3vw;
-    color: darkgray !important;
+    color: rgb(225, 225, 225);
     position: absolute;
     padding-top: 4px;
     right: 15px;

@@ -65,41 +65,70 @@ function GameCard({ gameInfo, page, index, cardType }) {
             //    </CardActionArea>
             //</Card>
 
-            
+
+
+            //<Card className={classNames({
+            //    GameCard_Container: page === index
+            //},{ GameCard_Container_OnGallery: cardType !== "featured", })}>
+
+            //    {/*{cardType === "featured" ? (*/}
+            //    {/*    <div></div>*/}
+            //    {/*): null}*/}
+
+            //    {gameInfo.cardImage?.asset?.url ? (
+            //        <CardMedia className={classNames("hidden fadeIn", "CardBodyImage")}
+            //            component="img"
+            //            src={gameInfo.cardImage.asset.url}
+            //            alt={`${gameInfo.name} Vertical`}
+            //            onClick={handleCardClick}>
+
+            //        </CardMedia>
+            //    ) : (
+            //        /*Else Try to load banner Image*/
+            //        gameInfo.bannerImage?.asset?.url ? (
+            //            <CardMedia className={classNames("hidden fadeIn", "CardBodyImage")} component="img"
+            //                src={gameInfo.bannerImage.asset.url}
+            //                alt={`${gameInfo.name} Vertical`}
+            //                onClick={handleCardClick}>
+
+            //            </CardMedia>
+            //        ) : (
+            //            <div className="CardBodyImage"></div>
+            //        )
+            //    )}
+            //</Card>
+
 
             <Card className={classNames({
                 GameCard_Container: page === index
-            },{ GameCard_Container_OnGallery: cardType !== "featured", })}>
-
-                {/*{cardType === "featured" ? (*/}
-                {/*    <div></div>*/}
-                {/*): null}*/}
-
-                {gameInfo.cardImage?.asset?.url ? (
-                    <CardMedia className={classNames("hidden fadeIn", "CardBodyImage")}
-                        component="img"
-                        src={gameInfo.cardImage.asset.url}
-                        alt={`${gameInfo.name} Vertical`}
-                        onClick={handleCardClick}>
-                        
-                    </CardMedia>
-                ) : (
-                    /*Else Try to load banner Image*/
-                    gameInfo.bannerImage?.asset?.url ? (
-                        <CardMedia className={classNames("hidden fadeIn", "CardBodyImage")} component="img"
-                            src={gameInfo.bannerImage.asset.url}
-                            alt={`${gameInfo.name} Vertical`}
-                            onClick={handleCardClick}>
-                            
+            }, { GameCard_Container_OnGallery: cardType !== "featured", })}>
+                <div className="Card_Bordy">
+                    {gameInfo.cardImage?.asset?.url ? (
+                        <CardMedia className={classNames("hidden fadeIn", "CardBodyImage")}
+                            component="img"
+                            src={gameInfo.cardImage.asset.url}
+                            alt={`${gameInfo.name} Vertical`}>
                         </CardMedia>
                     ) : (
-                        <div className="CardBodyImage"></div>
-                    )
-                )}
-                {/*<span className="Card_Date">*/}
-                {/*    {gameInfo.project_Date}*/}
-                {/*</span>*/}
+                        /*Else Try to load banner Image*/
+                        gameInfo.bannerImage?.asset?.url ? (
+                            <CardMedia className={classNames("hidden fadeIn", "CardBodyImage")} component="img"
+                                src={gameInfo.bannerImage.asset.url}
+                                alt={`${gameInfo.name} Vertical`}>
+                            </CardMedia>
+                        ) : (
+                            <div className="CardBodyImage"></div>
+                        )
+                    )}
+
+                    <div className="Card_Content" onClick={handleCardClick}>
+                        <span className="Card_Date">
+                            {gameInfo.project_Date}
+                        </span>
+                    </div>
+                </div>
             </Card>
+
         );
     }
 
