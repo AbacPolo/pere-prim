@@ -13,8 +13,8 @@
 
 .GameCard_Container {
     /*  Base  */
-    width: 60%;
-    max-width: 325px;
+    width: 20%;
+    /*max-width: 325px;*/
     aspect-ratio: 3/5;
     border-radius: 18px;
     background-color: transparent;
@@ -25,8 +25,8 @@
 }
 
 .GameCard_Container_OnGallery {
-    max-width: 300px;
-    min-width: 100px;
+    /*max-width: 300px;
+    min-width: 100px;*/
 }
 
 .GameCard_Container:hover {
@@ -79,22 +79,20 @@
 @media only screen and (max-width: 1240px) {
     .GameCard_Container {
         /*height: 100%;*/
-        min-width: 320px;
+        /*min-width: 320px;*/
     }
 
     .GameCard_Container_OnGallery {
-        max-width: 200px;
-        min-width: 100px;
+        /*max-width: 200px;
+        min-width: 100px;*/
     }
 }
 
 /* ----- Movile ----- */
 @media only screen and (max-width: 704px) {
     .GameCard_Container {
-        /*height: 100%;*/
-        /*height: 300px;*/
-        max-width: 400px;
-        min-width: 250px;
+/*        max-width: 400px;
+        min-width: 250px;*/
     }
 
     .GameCard_Container_Featured {
@@ -103,8 +101,8 @@
     }
 
     .GameCard_Container_OnGallery {
-        max-width: 120px;
-        min-width: 100px;
+        /*max-width: 120px;
+        min-width: 100px;*/
     }
 
     .Card_Date {
