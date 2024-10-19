@@ -12,7 +12,7 @@ import {
 
 function SocialsCard({ socialsInfo }) {
   return (
-    <Card className="SocialsCard_Container">
+    <Card elevation={0} className="SocialsCard_Container">
       <CardContent className="SocialsCard_Wrapper">
         {socialsInfo.map((card) =>
           card.content.map((social, index) => (
