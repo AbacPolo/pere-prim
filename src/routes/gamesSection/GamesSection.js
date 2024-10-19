@@ -5,6 +5,7 @@ import GameCard from "../../components/gameCard/GameCard";
 import IndexMenu from "../../components/indexMenu/IndexMenu";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllGames, getAllGames, getgamesAreLoaded, getgamesAreLoading } from "../gamePage/gamePageSlice";
+import ReactGA from 'react-ga4';
 
 function GamesSection() {
     const [activeCategory, setActiveCategory] = useState("");
@@ -27,6 +28,8 @@ function GamesSection() {
     const checkIfTagExists = (tagKey, tagMap) => {
         return Object.values(tagMap).includes(tagKey);
     };
+
+    ReactGA.send({ hitType: "pageview", page: "/Projects", title: "Projects", });
 
     return (
         <div className="GamesSection_Container">

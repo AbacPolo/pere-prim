@@ -1,11 +1,11 @@
 .ImageCarousel_Container {
+    height: 100%;
     width: 100%;
     height: fit-content;
     margin: 0;
     box-sizing: border-box;
-    padding-top: 1rem;
-    margin-top: 10px;
-    
+/*    padding-top: 1rem;
+    margin-top: 10px;*/
     flex-grow: 1;
 }
 
@@ -66,13 +66,84 @@
     max-height: 400px;
 }
 
-.Carousel_Button {
-    width: 43px;
-    height: 43px;
+.CardCarousel_Date {
+    font-size: 4vw;
+    color: rgb(225, 225, 225);
+    position: absolute;
+    padding-top: 4px;
+    right: 15px;
+    bottom: 5px;
 }
 
 @media only screen and (min-width: 1241px) {
     .ImageCarousel_Container {
         display: none;
     }
+
+    .CardCarousel_Date {
+        font-size: 20px;
+    }
 }
+
+/* ------------- Swiper -------------- */
+.swiper {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 60%;
+    aspect-ratio: 3/5;
+
+    /* Transition ? */
+    transition: all 1s ease;
+}
+
+/*.swiper-slide.expanded {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    transition: all 1s ease;
+}*/
+
+.swiper-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgb(60, 60, 60);
+}
+
+.swiper-image {
+    height: 100%;
+    object-fit: cover;
+    z-index: -100;
+}
+
+.swiper-card-content {
+    position: absolute;
+    bottom: 0px;
+    /*left: 50%;
+    transform: translate(-50%, -50%);*/
+
+    height: 100%;
+    width: 100%;
+    align-content: center;
+    z-index: 100;
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(9,9,121,0) 20%, rgba(0,212,255,0) 100%);
+}
+
+/*.swiper-card-title {
+    width: 100%;
+    text-align: center;
+    color: white;
+    position: absolute;
+    bottom: 10px;
+}*/
+
+
+

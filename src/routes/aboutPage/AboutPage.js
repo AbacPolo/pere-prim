@@ -15,6 +15,7 @@ import {
   getBannerIsLoaded,
   getBannerIsLoading,
 } from "../../components/mainBanner/mainBannerSlice";
+import ReactGA from 'react-ga4';
 
 function AboutPage() {
   const dispatch = useDispatch();
@@ -34,6 +35,8 @@ function AboutPage() {
     aboutIsLoading,
     dispatch,
   ]);
+
+    ReactGA.send({ hitType: "pageview", page: "/About", title: "About", });
 
   if (aboutInfo) {
     const sectionsNameArray = aboutInfo.cards

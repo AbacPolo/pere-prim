@@ -5,6 +5,15 @@ import { PortableText } from "@portabletext/react";
 import components from "../../portableTextComponents";
 
 function DataCard({ data }) {
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+    const [month, year] = formattedDate.split(' ');
+
+    return `${month.slice(0, 3)}. ${year}`;
+  };
+
   return (
     <Card className="DataCard_Container">
       <CardContent className="DataCard_Wrapper">
@@ -28,9 +37,19 @@ function DataCard({ data }) {
             <Typography variant="body1" sx={{ color: "#A3B1BE" }}>
               {data.location}
             </Typography>
-            <Typography variant="body1" sx={{ color: "#A3B1BE" }}>
-              {data.date}
-            </Typography>
+              {data.currentlyHere ?
+                (
+                  <Typography variant="body1" sx={{ color: "#A3B1BE" }}>
+                    {formatDate(data.startDate)} - Currenly
+                  </Typography>
+                )
+                :
+                (
+                  <Typography variant = "body1" sx = {{ color: "#A3B1BE" }}>
+                    {formatDate(data.startDate)} - {formatDate(data.endDate)}
+                  </Typography>
+                )
+              }
           </div>
         </div>
 

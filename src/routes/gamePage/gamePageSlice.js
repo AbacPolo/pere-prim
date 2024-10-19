@@ -7,15 +7,10 @@ export const fetchAllGames = createAsyncThunk(
       name,
       description,
       project_Date,
-      engine,
       game_Tags,
       _type,
-      bannerImage{
-          asset->{
-            _id,
-            url
-           }
-         },
+      bannerImage{ asset->{_id,url} },
+      cardImage{ asset->{_id,url} },
       preview[]{
         ...,
         image{

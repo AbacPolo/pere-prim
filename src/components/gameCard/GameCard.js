@@ -18,124 +18,117 @@ function GameCard({ gameInfo, page, index, cardType }) {
 
     const handleCardClick = () => {
         navigate(`/Projects/${gameInfo.name}`);
-        // if (gameInfo._type === "game") {
-        //   navigate(`/Projects/${gameInfo.name}`);
-        // } else if (gameInfo._type === "engine") {
-        //   navigate(`/Engines/${gameInfo.name}`);
-        // }
     };
-
-    // console.log("gameInfo", gameInfo);
-
-    //if (gameInfo) {
-    //    return (
-    //        <PopupState variant="popover" popupId="demo-popup-popover">
-    //            {(popupState) => (
-    //                <Card
-    //                    className={classNames("hidden fadeIn", {
-    //                        GameCard_Container: page === index,
-    //                    })}
-    //                >
-    //                    <CardActionArea
-    //                        className="CardActionArea"
-    //                        onClick={handleCardClick}
-    //                        {...bindHover(popupState)}
-    //                    >
-    //                        <div className="Card_Header">
-    //                            <Typography
-    //                                variant="h4"
-    //                                className={classNames("Card_Title", {
-    //                                    Big_Title: cardType !== "compact",
-    //                                })}
-    //                            >
-    //                                {gameInfo.name}
-    //                            </Typography>
-    //                            <CardMedia
-    //                                className="gameImage"
-    //                                component="img"
-    //                                src={gameInfo.bannerImage.asset.url}
-    //                                alt={`${gameInfo.name} Banner`}
-    //                            />
-    //                            <span className="Card_Date">
-    //                                {gameInfo.project_Date}
-    //                            </span>
-    //                        </div>
-    //                        {cardType !== "compact" &&
-    //                            gameInfo.description !== "" &&
-    //                            gameInfo.description !== undefined ? (
-    //                            <CardContent className="Card_Description">
-    //                                <Typography variant="caption">
-    //                                    {gameInfo.description}
-    //                                </Typography>
-    //                            </CardContent>
-    //                        ) : null}
-    //                    </CardActionArea>
-    //                    {/*{gameInfo.preview && (*/}
-    //                    {/*  <HoverPopover*/}
-    //                    {/*    {...bindPopover(popupState)}*/}
-    //                    {/*    anchorOrigin={{*/}
-    //                    {/*      vertical: "center",*/}
-    //                    {/*      horizontal: "right",*/}
-    //                    {/*    }}*/}
-    //                    {/*    transformOrigin={{*/}
-    //                    {/*      vertical: "center",*/}
-    //                    {/*      horizontal: "left",*/}
-    //                    {/*    }}*/}
-    //                    {/*    className="Popover_Container"*/}
-    //                    {/*  >*/}
-    //                    {/*    <PreviewCard key={index} previewinfo={gameInfo.preview} />*/}
-    //                    {/*  </HoverPopover>*/}
-    //                    {/*)}*/}
-    //                </Card>
-    //            )}
-    //        </PopupState>
-    //    );
-    //}
 
     if (gameInfo) {
         return (
 
-            <Card
-                className={classNames("hidden fadeIn", {
-                    GameCard_Container: page === index,
-                }, {
-                    GameCard_Container_Featured: cardType === "compact",
-                })}
-            >
-                <CardActionArea
-                    className="CardActionArea"
-                    onClick={handleCardClick}
-                >
-                    <div className="Card_Header">
-                        <Typography
-                            variant="h4"
-                            className={classNames("Card_Title", {
-                                Big_Title: cardType !== "compact",
-                            })}
-                        >
-                            {gameInfo.name}
-                        </Typography>
-                        <CardMedia
-                            className="gameImage"
+            //<Card
+            //    className={classNames("hidden fadeIn", {
+            //        GameCard_Container: page === index,
+            //    }, {
+            //        GameCard_Container_Featured: cardType === "compact",
+            //    })}
+            //>
+            //    <CardActionArea
+            //        className="CardActionArea"
+            //        onClick={handleCardClick}
+            //    >
+            //        <div className="Card_Header">
+            //            <Typography
+            //                variant="h4"
+            //                className={classNames("Card_Title", {
+            //                    Big_Title: cardType !== "compact",
+            //                })}
+            //            >
+            //                {gameInfo.name}
+            //            </Typography>
+            //            <CardMedia
+            //                className="gameImage"
+            //                component="img"
+            //                src={gameInfo.bannerImage.asset.url}
+            //                alt={`${gameInfo.name} Banner`}
+            //            />
+            //            <span className="Card_Date">
+            //                {gameInfo.project_Date}
+            //            </span>
+            //        </div>
+            //        {cardType !== "compact" &&
+            //            gameInfo.description !== "" &&
+            //            gameInfo.description !== undefined ? (
+            //            <CardContent className="Card_Description">
+            //                <Typography variant="caption">
+            //                    {gameInfo.description}
+            //                </Typography>
+            //            </CardContent>
+            //        ) : null}
+            //    </CardActionArea>
+            //</Card>
+
+
+
+            //<Card className={classNames({
+            //    GameCard_Container: page === index
+            //},{ GameCard_Container_OnGallery: cardType !== "featured", })}>
+
+            //    {/*{cardType === "featured" ? (*/}
+            //    {/*    <div></div>*/}
+            //    {/*): null}*/}
+
+            //    {gameInfo.cardImage?.asset?.url ? (
+            //        <CardMedia className={classNames("hidden fadeIn", "CardBodyImage")}
+            //            component="img"
+            //            src={gameInfo.cardImage.asset.url}
+            //            alt={`${gameInfo.name} Vertical`}
+            //            onClick={handleCardClick}>
+
+            //        </CardMedia>
+            //    ) : (
+            //        /*Else Try to load banner Image*/
+            //        gameInfo.bannerImage?.asset?.url ? (
+            //            <CardMedia className={classNames("hidden fadeIn", "CardBodyImage")} component="img"
+            //                src={gameInfo.bannerImage.asset.url}
+            //                alt={`${gameInfo.name} Vertical`}
+            //                onClick={handleCardClick}>
+
+            //            </CardMedia>
+            //        ) : (
+            //            <div className="CardBodyImage"></div>
+            //        )
+            //    )}
+            //</Card>
+
+
+            <Card className={classNames({
+                GameCard_Container: page === index
+            }, { GameCard_Container_OnGallery: cardType !== "featured", })}>
+                <div className="Card_Bordy">
+                    {gameInfo.cardImage?.asset?.url ? (
+                        <CardMedia className={classNames("hidden fadeIn", "CardBodyImage")}
                             component="img"
-                            src={gameInfo.bannerImage.asset.url}
-                            alt={`${gameInfo.name} Banner`}
-                        />
-                        <span className="Card_Date">
-                            {gameInfo.project_Date}
-                        </span>
+                            src={gameInfo.cardImage.asset.url}
+                            alt={`${gameInfo.name} Vertical`}>
+                        </CardMedia>
+                    ) : (
+                        /*Else Try to load banner Image*/
+                        gameInfo.bannerImage?.asset?.url ? (
+                            <CardMedia className={classNames("hidden fadeIn", "CardBodyImage")} component="img"
+                                src={gameInfo.bannerImage.asset.url}
+                                alt={`${gameInfo.name} Vertical`}>
+                            </CardMedia>
+                        ) : (
+                            <div className="CardBodyImage"></div>
+                        )
+                    )}
+
+                    <div className="Card_Content" onClick={handleCardClick}>
+                        {/*<span className="Card_Date">*/}
+                        {/*    {gameInfo.project_Date}*/}
+                        {/*</span>*/}
                     </div>
-                    {cardType !== "compact" &&
-                        gameInfo.description !== "" &&
-                        gameInfo.description !== undefined ? (
-                        <CardContent className="Card_Description">
-                            <Typography variant="caption">
-                                {gameInfo.description}
-                            </Typography>
-                        </CardContent>
-                    ) : null}
-                </CardActionArea>
+                </div>
             </Card>
+
         );
     }
 

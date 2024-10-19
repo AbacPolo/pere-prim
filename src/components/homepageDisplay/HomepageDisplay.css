@@ -31,9 +31,9 @@
   gap: 1rem;
 }
 
-.HomepageDisplayCards_Container .GameCard_Container {
-  max-width: 400px;
-}
+/*.HomepageDisplayCards_Container .GameCard_Container {
+  max-width: 300px;
+}*/
 
 @media only screen and (max-width: 1240px) {
   .HomepageDisplay_Container {

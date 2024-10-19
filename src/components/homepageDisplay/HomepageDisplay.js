@@ -28,11 +28,6 @@ function HomepageDisplay() {
     if (carousel) {
       const carouselCards = carousel.preview.map((card) => {
         return allGames.filter((game) => game.name === card.name)[0];
-        // if (card._type === "game") {
-        //   return allGames.filter((game) => game.name === card.name)[0];
-        // } else {
-        //   return allEngines.filter((engine) => engine.name === card.name)[0];
-        // }
       });
       setCarouselInfo(carouselCards);
     }
@@ -63,7 +58,7 @@ function HomepageDisplay() {
           <div className="HomepageDisplayCards_Container">
             {carouselInfo.map((gameInfo, index) =>
               index < 4 ? (
-                <GameCard key={index} gameInfo={gameInfo} cardType="compact" />
+                <GameCard key={index} gameInfo={gameInfo} cardType="featured" />
               ) : null
             )}
           </div>

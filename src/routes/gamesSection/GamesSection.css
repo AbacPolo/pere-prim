@@ -34,13 +34,16 @@
 }
 
 .GamesSectionCard_Wrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    /*flex-direction: column;
+  align-items: center;*/
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -50,9 +53,9 @@
   }
 
   .GamesSectionCard_Wrapper {
-    flex-direction: row;
-    align-items: stretch;
-    flex-wrap: wrap;
+/*    flex-direction: row;
+    align-items: stretch;*/
+    /*flex-wrap: wrap;*/
   }
 }
 

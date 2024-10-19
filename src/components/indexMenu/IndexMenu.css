@@ -12,6 +12,8 @@
 .CategoryMenu_Button {
   text-transform: lowercase;
   color: #a3b1be;
+  border-radius:18px;
+  border-color: orange;
 }
 
 .CategoryMenu_Button > p {

@@ -7,7 +7,7 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/youtube";
 import { PortableText } from "@portabletext/react";
 import components from "../../portableTextComponents";
 import { Download } from "@mui/icons-material";
@@ -15,6 +15,19 @@ import classNames from "classnames";
 import DataCard from "../dataCard/DataCard";
 
 function SectionCard({ sectionInfo }) {
+
+    let sortedSection = [...sectionInfo.content];
+
+    if (sectionInfo.name === "Experience" || sectionInfo.name === "Education") {
+        sortedSection.sort((a, b) => {
+            if (a.currentlyHere !== b.currentlyHere) {
+                return a.currentlyHere ? -1 : 1;
+            }
+            //return a.startDate > b.startDate ? -1 : 1;
+            return a.endDate > b.endDate ? -1 : 1;
+        });
+    }
+
   return (
     <Card id={sectionInfo.name} className="SectionCard_Container">
       <CardContent className="SectionCard_Wrapper">
@@ -24,7 +37,7 @@ function SectionCard({ sectionInfo }) {
           </Typography>
         ) : null}
 
-        {sectionInfo.content.map((contentBlock, index) => {
+        {sortedSection.map((contentBlock, index) => {
           switch (contentBlock._type) {
             case "video":
               return (
