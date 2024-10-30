@@ -30,13 +30,15 @@
 }
 
 .Text_Container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
     .Text_Container h1 {
+        border-right: .15em solid orange;
+        animation: blink-caret 1.0s step-end infinite;
         margin-left: 8px;
         font-size: 3.0rem;
         white-space: nowrap;
@@ -51,6 +53,11 @@
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
 }
 
 /* ----- Movile ----- */
@@ -92,13 +99,11 @@
     }
 }
 
-
 @media only screen and (min-width: 1921px) {
-  /*.profile_Image {
+    /*.profile_Image {
     max-width: 500px;
   }*/
-
-  /*.MainTitle_xl {
+    /*.MainTitle_xl {
     font-size: 6rem;
   }
 
