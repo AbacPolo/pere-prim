@@ -1,5 +1,8 @@
 # Pere Prim Portfolio - Game Developer
 
+![www.pereprm.com](resources/webPreview01.jpg)
+![www.pereprm.com](resources/webPreview02.jpg)
+
 -----------------------
 ## To Start Web
 In the base directory
