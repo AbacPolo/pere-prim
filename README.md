@@ -1,6 +1,11 @@
-# Pere Prim Portfolio - Game Developer
+# $\color{orange}{\text{ Pere Prim - Game Developer }}$
+
+## Web Preview - Desktop
 
 ![www.pereprm.com](resources/webPreview01.jpg)
+
+## Web Preview - Mobile
+
 ![www.pereprm.com](resources/webPreview02.jpg)
 
 -----------------------
