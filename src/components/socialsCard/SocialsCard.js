@@ -7,7 +7,6 @@ import {
   GitHub,
   LinkedIn,
   Public,
-  Twitter,
 } from "@mui/icons-material";
 
 function SocialsCard({ socialsInfo }) {

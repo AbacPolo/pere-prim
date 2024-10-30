@@ -39,7 +39,7 @@ function MainBanner() {
           ></img>
           <div className="Text_Container">
             <Typography variant="h1" className="MainTitle_xl">
-              {pageBanner.mainTitle}
+                {pageBanner.mainTitle}
             </Typography>
             <Typography variant="h3" className="Subtitle_xl">
               {pageBanner.subtitle}

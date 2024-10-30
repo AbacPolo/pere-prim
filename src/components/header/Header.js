@@ -98,14 +98,6 @@ function Header() {
             >
               <Typography variant="h5">Projects</Typography>
             </MenuItem>
-            {/* <MenuItem
-              className={classNames("menuItem", {
-                selected: location.pathname === "/Engines",
-              })}
-              onClick={() => handleClose("Engines")}
-            >
-              <Typography variant="h5">Engines</Typography>
-            </MenuItem> */}
             <MenuItem
               className={classNames("menuItem", {
                 selected: location.pathname === "/About",
@@ -132,14 +124,6 @@ function Header() {
             >
               <Typography variant="h5">Projects</Typography>
             </Button>
-            {/* <Button variant="outlined"
-              className={classNames("menuItem", {
-                selected: location.pathname === "/Engines",
-              })}
-              onClick={() => handleClose("Engines")}
-            >
-              <Typography variant="h5">Engines</Typography>
-            </Button> */}
             <Button variant="outlined"
               className={classNames("menuItem", {
                 selected: location.pathname === "/About",
