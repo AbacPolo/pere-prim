@@ -59,7 +59,8 @@
 .Socials_Container {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: normal;
+    /*justify-content: space-evenly;*/
 }
 
 @keyframes blink-caret {
@@ -88,6 +89,10 @@
 @media only screen and (max-width: 1240px) {
     .profile_Image {
         display: none;
+    }
+
+    .Socials_Container {
+        justify-content: space-evenly;
     }
 }
 
