@@ -116,6 +116,7 @@
     font-weight: bold;
     color: #fff;
     background-color: rgb(60, 60, 60);
+    box-shadow: 0px 17px 15px 11px rgba(0, 0, 0, 0.71);
 }
 
 .swiper-image {

@@ -1,9 +1,11 @@
 import React from "react";
-import "./MainBanner.css";
 import { IconButton, Skeleton, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import { getBannerIsLoaded, getMainBanner } from "./mainBannerSlice";
 import { IconSelector } from "../socialsCard/SocialsCard";
+
+import Typewriter from 'typewriter-effect';
+import "./MainBanner.css";
 
 function MainBanner() {
   const pageBanner = useSelector(getMainBanner);
@@ -38,10 +40,25 @@ function MainBanner() {
             alt="Profile"
           ></img>
           <div className="Text_Container">
-            <Typography variant="h1" className="MainTitle_xl">
-                {pageBanner.mainTitle}
+            <Typography variant="h1" className="MainTitle">
+               Pere
+                <Typewriter
+                    onInit={(typewriter) => {
+                    typewriter
+                        .typeString('Prm')
+                        .pauseFor(2000)
+                        .deleteAll()
+                        .typeString('Prim')
+                        .pauseFor(8000)
+                        .start();
+                }}
+                options={{
+                    cursor: '',
+                    loop: true,
+                }}
+                />
             </Typography>
-            <Typography variant="h3" className="Subtitle_xl">
+            <Typography variant="h3" className="Subtitle">
               {pageBanner.subtitle}
             </Typography>
             <div className="Socials_Container">
