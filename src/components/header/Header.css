@@ -60,6 +60,7 @@
 
 .selected {
     background-color: #15161b;
+    border: 2px solid orange;
 }
 
 .wasdIcon {

@@ -15,11 +15,11 @@ function MainBanner() {
     return (
       <div className="MainBanner_Container">
         <div className="MainBanner_Wrapper">
-          <Skeleton variant="rectangular" width="80%" height={280} />
+          <Skeleton variant="rectangular" width="40%" height={70} />
           <div className="Text_Container">
             <Skeleton variant="rectangular" width="100%" height={45} />
             <Skeleton variant="rectangular" width="100%" height={28} />
-            <div className="Socials_Container">
+            <div className="MainBanner_Socials">
               <Skeleton variant="circular" width={32} height={32} />
               <Skeleton variant="circular" width={32} height={32} />
               <Skeleton variant="circular" width={32} height={32} />
@@ -61,7 +61,7 @@ function MainBanner() {
             <Typography variant="h3" className="Subtitle">
               {pageBanner.subtitle}
             </Typography>
-            <div className="Socials_Container">
+            <div className="MainBanner_Socials">
               {pageBanner.socials.map((card) =>
                 card.content.map((social, index) => (
                   <IconButton
