@@ -45,6 +45,7 @@
     box-sizing: border-box;
     max-height: 30vh;
     object-fit: cover;
+    box-shadow: 0px 17px 15px 11px rgba(0, 0, 0, 0.71);
 }
 
 

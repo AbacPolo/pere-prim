@@ -1,9 +1,11 @@
 import React from "react";
-import "./MainBanner.css";
 import { IconButton, Skeleton, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import { getBannerIsLoaded, getMainBanner } from "./mainBannerSlice";
 import { IconSelector } from "../socialsCard/SocialsCard";
+
+import Typewriter from 'typewriter-effect';
+import "./MainBanner.css";
 
 function MainBanner() {
   const pageBanner = useSelector(getMainBanner);
@@ -13,11 +15,11 @@ function MainBanner() {
     return (
       <div className="MainBanner_Container">
         <div className="MainBanner_Wrapper">
-          <Skeleton variant="rectangular" width="80%" height={280} />
+          <Skeleton variant="rectangular" width="40%" height={70} />
           <div className="Text_Container">
             <Skeleton variant="rectangular" width="100%" height={45} />
             <Skeleton variant="rectangular" width="100%" height={28} />
-            <div className="Socials_Container">
+            <div className="MainBanner_Socials">
               <Skeleton variant="circular" width={32} height={32} />
               <Skeleton variant="circular" width={32} height={32} />
               <Skeleton variant="circular" width={32} height={32} />
@@ -38,13 +40,28 @@ function MainBanner() {
             alt="Profile"
           ></img>
           <div className="Text_Container">
-            <Typography variant="h1" className="MainTitle_xl">
-                {pageBanner.mainTitle}
+            <Typography variant="h1" className="MainTitle">
+               Pere
+                <Typewriter
+                    onInit={(typewriter) => {
+                    typewriter
+                        .typeString('Prm')
+                        .pauseFor(2000)
+                        .deleteAll()
+                        .typeString('Prim')
+                        .pauseFor(8000)
+                        .start();
+                }}
+                options={{
+                    cursor: '',
+                    loop: true,
+                }}
+                />
             </Typography>
-            <Typography variant="h3" className="Subtitle_xl">
+            <Typography variant="h3" className="Subtitle">
               {pageBanner.subtitle}
             </Typography>
-            <div className="Socials_Container">
+            <div className="MainBanner_Socials">
               {pageBanner.socials.map((card) =>
                 card.content.map((social, index) => (
                   <IconButton

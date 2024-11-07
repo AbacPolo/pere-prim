@@ -34,25 +34,33 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    min-width: 500px;
 }
 
-    .Text_Container h1 {
-        border-right: .15em solid orange;
-        animation: blink-caret 1.0s step-end infinite;
-        margin-left: 8px;
-        font-size: 3.0rem;
-        white-space: nowrap;
-    }
+.MainTitle {
+    border-right: .15em solid orange;
+    animation: blink-caret 1.0s step-end infinite;
+    margin-left: 8px;
+    font-size: 3.0rem;
+    white-space: nowrap;
+    display: inline;
+}
 
     .Text_Container h3 {
         margin-left: 8px;
         white-space: nowrap;
     }
 
-.Socials_Container {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
+.MainTitle div {
+    display: inline !important;
+    margin-left: 15px;
+}
+
+.MainBanner_Socials {
+    width: 100%;
+    display: flex;
+    justify-content: normal;
+    /*justify-content: space-evenly;*/
 }
 
 @keyframes blink-caret {
@@ -81,6 +89,10 @@
 @media only screen and (max-width: 1240px) {
     .profile_Image {
         display: none;
+    }
+
+    .MainBanner_Socials {
+        justify-content: center;
     }
 }
 
