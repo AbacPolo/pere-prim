@@ -1,9 +1,10 @@
 .SocialsCard_Container {
-  width: 100%;
-  height: fit-content;
-  margin: 0;
-  box-sizing: border-box;
-  background-color: #232730;
+    width: 100%;
+    height: fit-content;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #232730;
+    box-shadow: 0px 17px 15px 11px rgba(0, 0, 0, 0.71);
 }
 
 .SocialsCard_Wrapper {
