@@ -90,7 +90,8 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    width: 60%;
+    /*width: 60%;*/
+    width: 30vh;
     aspect-ratio: 3/5;
 
     /* Transition ? */

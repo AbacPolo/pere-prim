@@ -29,11 +29,6 @@ export default {
             type: 'string',
         },
         {
-            title: 'Date',
-            name: 'date',
-            type: 'string',
-        },
-        {
             title: 'Start Date',
             name: 'startDate',
             type: 'date',
