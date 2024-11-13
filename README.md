@@ -17,8 +17,7 @@ In the base directory
 In the Sanity directory (pere-prm)
 1. npm install
 2. sanity start
-<br>In case ask something
-3. Y (and enter)
+3. sanity build
 
 To Publish the sanity changes
 1. sanity login (if you are not logged)
