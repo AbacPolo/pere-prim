@@ -2,7 +2,7 @@
 
 ## Web Preview - Desktop
 
-![www.pereprm.com](resources/Desktop.jpg)
+![www.pereprm.com](resources/Desktop.png)
 
 ## Web Preview - Mobile
 
