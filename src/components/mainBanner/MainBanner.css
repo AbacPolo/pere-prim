@@ -76,6 +76,10 @@
         white-space: nowrap;
     }
 
+    .Text_Container {
+        min-width: auto;
+    }
+
     .profile_Image {
         /*width: 80%;
         max-width: 120px;

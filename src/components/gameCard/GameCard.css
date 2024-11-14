@@ -28,6 +28,7 @@
     /*max-width: 300px;
     min-width: 100px;*/
     width: 17%;
+    max-width: 300px;
 }
 
 .GameCard_Container:hover {
