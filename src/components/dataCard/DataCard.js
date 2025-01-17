@@ -4,7 +4,7 @@ import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { PortableText } from "@portabletext/react";
 import components from "../../portableTextComponents";
 
-function DataCard({ data }) {
+function DataCard({ data, type }) {
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -37,7 +37,9 @@ function DataCard({ data }) {
 
      var finalString = "(";
      if (totalAnios > 0) { finalString += totalAnios + " year" + (totalAnios > 1 ? "s " : " "); }
-     finalString += totalMeses + " month" + (totalMeses > 1 ? "s)" : ")");
+     if (totalMeses > 0) { finalString += totalMeses + " month" + (totalMeses > 1 ? "s)" : ")"); }
+     else { finalString += ")"; } // Si l'any es exacte (sense mesos) tanquem els parentesis.
+     
 
      return finalString;
   }
@@ -64,9 +66,15 @@ function DataCard({ data }) {
             <Typography variant="body1" sx={{ color: "#A3B1BE" }}>
               {data.location}
             </Typography>
-             <Typography variant="body1" sx={{ color: "#A3B1BE" }}>
-               {formatDate(data.startDate)} - {data.currentlyHere ? "Currently" : formatDate(data.endDate)} {CalcularDiferenciaFechas(data.startDate, data.currentlyHere ? null : data.endDate) }
-             </Typography>
+            {type === "Experience" ? (
+              <Typography variant="body1" sx={{ color: "#A3B1BE" }}>
+                {formatDate(data.startDate)} - {data.currentlyHere ? "Currently" : formatDate(data.endDate)} {CalcularDiferenciaFechas(data.startDate, data.currentlyHere ? null : data.endDate) }
+              </Typography>
+            ) : (
+              <Typography variant="body1" sx={{ color: "#A3B1BE" }}>
+                {formatDate(data.startDate)} - {data.currentlyHere ? "Currently" : formatDate(data.endDate)}
+              </Typography>
+            )}
           </div>
         </div>
 
