@@ -22,6 +22,7 @@
     -webkit-box-shadow: 0px 17px 15px 11px rgba(0,0,0,0.71);
     -moz-box-shadow: 0px 17px 15px 11px rgba(0,0,0,0.71);
     box-shadow: 0px 17px 15px 11px rgba(0,0,0,0.71);
+    transition: transform .2s;
 }
 
 .GameCard_Container_OnGallery {
@@ -32,6 +33,9 @@
 
 .GameCard_Container:hover {
     outline: 4px solid #f5ac10;
+    transform: scale(1.1);
+    z-index: 10;
+    cursor: pointer;
 }
 
 .Card_Bordy {

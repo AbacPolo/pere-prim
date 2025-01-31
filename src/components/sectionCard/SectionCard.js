@@ -90,7 +90,7 @@ function SectionCard({ sectionInfo }) {
                 </Button>
               );
             case "businessCard":
-              return <DataCard key={index} data={contentBlock}/>;
+                  return <DataCard key={index} data={contentBlock} type={sectionInfo.name} />;
             default:
               return <div key={index}>ERROR</div>;
           }
