@@ -21,12 +21,12 @@
 }
 
 .profile_Image {
-  width: 80%;
-  max-width: 150px;
-  aspect-ratio: 1 / 1;
-  border: 2px solid #f5ac10;
-  box-shadow: 0px 0px 5px 0px #000;
-  box-sizing: border-box;
+    width: 80%;
+    max-width: 150px;
+    aspect-ratio: 1 / 1;
+    border: 2px solid #f5ac10;
+    box-shadow: 0px 17px 15px 11px rgba(0,0,0,0.71);
+    box-sizing: border-box;
 }
 
 .Text_Container {
