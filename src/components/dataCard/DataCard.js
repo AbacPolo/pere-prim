@@ -28,6 +28,7 @@ function DataCard({ data, type }) {
     // Calcular la diferencia de años y meses
     let totalAnios = anioFinal - anioInicio;
     let totalMeses = mesFinal - mesInicio;
+    totalMeses += 1;
 
     // Ajustar si los meses de la fecha final son menores que los de la fecha inicial
     if (totalMeses < 0) {
