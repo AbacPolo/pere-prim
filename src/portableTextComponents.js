@@ -9,9 +9,11 @@ const components = {
     h5: ({ children }) => <Typography variant="h5">{children}</Typography>,
     h6: ({ children }) => <Typography variant="h6">{children}</Typography>,
     normal: ({ children }) => <Typography variant="body1">{children}</Typography>,
+
   },
   list: {
-    bullet: ({ children }) => <Typography variant="body1">{children}</Typography>
+      bullet: ({ children }) => <Typography variant="body1" className="List_Container">{children}</Typography>,
+      number: ({ children }) => <Typography variant="body1" className="List_Container">{children}</Typography>,
   },
   marks: {
     link: ({ value, children }) => {
