@@ -6,6 +6,7 @@ export const fetchMainBanner = createAsyncThunk(
     const query = encodeURIComponent(`*[_type == "homepage"]{
         mainTitle,
         subtitle,
+        subtitle2,
         bannerImage{
           asset->{
             _id,

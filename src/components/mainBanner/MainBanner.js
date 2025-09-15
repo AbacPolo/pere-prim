@@ -59,7 +59,10 @@ function MainBanner() {
                 />
             </Typography>
             <Typography variant="h3" className="Subtitle">
-              {pageBanner.subtitle}
+                {pageBanner.subtitle}
+            </Typography>
+            <Typography variant="h5" className="Subtitle2">
+                {pageBanner.subtitle2}
             </Typography>
             <div className="MainBanner_Socials">
               {pageBanner.socials.map((card) =>

@@ -23,6 +23,11 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      type: 'string',
+      name: 'subtitle2',
+      title: 'Subtitle2'
+    },
+    {
       type: 'array',
       name: 'socials',
       title: 'Socials',
